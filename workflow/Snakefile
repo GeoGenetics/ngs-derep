@@ -1,0 +1,60 @@
+from snakemake.utils import min_version
+min_version("7.25.0")
+
+# Define wrapper versions
+wrapper_ver = "v2.13.0"
+
+
+
+include: "rules/utils.smk"
+include: "rules/setup.smk"
+include: "rules/derep.smk"
+include: "rules/repr_read.smk"
+
+
+
+##########################
+### Read Dereplication ###
+##########################
+rule multiqc:
+    input:
+        ### Merged lanes
+        expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="derep/merge_lanes", read_type_trim="collapsed"), units),
+        expand_pandas(expand(rules.nonpareil.output, tool="derep/merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
+        expand_pandas(expand(rules.nonpareil_plot.output, tool="derep/merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
+        ### Read extension
+        expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="derep/tadpole", read_type_trim="collapsed"), units) if is_activated("reads/extension") else [],
+        expand_pandas(expand(rules.nonpareil.output, tool="derep/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+        expand_pandas(expand(rules.nonpareil_plot.output, tool="derep/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+        ### Read derep
+        expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="derep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed"), units) if is_activated("reads/derep") else [],
+        expand_pandas(expand(rules.nonpareil.output, tool="derep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/derep") else [],
+        expand_pandas(expand(rules.nonpareil_plot.output, tool="derep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/derep") else [],
+        ### Read grep
+        expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed"), units) if is_activated("reads/extension") else [],
+        expand_pandas(expand(rules.nonpareil.output, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+        expand_pandas(expand(rules.nonpareil_plot.output, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+    output:
+        html = "reports/multiqc.html",
+        data = "reports/multiqc_data.zip",
+    log:
+        "logs/reports/multiqc.log"
+    benchmark:
+        "benchmarks/reports/multiqc.log"
+    localrule: True
+    threads: 1
+    resources:
+        mem = lambda w, attempt: f"{10 * attempt} GiB",
+        runtime = lambda w, attempt: f"{30 * attempt} m",
+    wrapper:
+        wrapper_ver + "/bio/multiqc"
+
+
+
+rule all:
+    input:
+        qc = rules.multiqc.output.html,
+        res = expand_pandas(expand(rules.seqkit_grep.output.fastx if is_activated("reads/extension") else "temp/reads/derep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz" if is_activated("reads/derep") else rules.merge_lanes.output, tool=config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units),
+    message:
+        "Read Dereping finished successfully!"
+    default_target: True
