@@ -15,7 +15,7 @@ rule merge_lanes:
         "benchmarks/reads/derep/merge_lanes/{sample}_{library}_{read_type_trim}.tsv"
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{1 * attempt} GiB",
+        mem = lambda w, attempt: f"{1 * attempt} GB",
         runtime = lambda w, attempt: f"{1 * attempt} h",
     shell:
         "cat {input} > {output}"
@@ -32,13 +32,14 @@ rule loglog:
     benchmark:
         "benchmarks/reads/derep/loglog/{sample}_{library}_{read_type_trim}.tsv"
     params:
+        command="loglog.sh",
         extra = "seed=1234 k={k} ignorebadquality".format(k=config["reads"]["extension"]["k"]),
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{5 * attempt} GiB",
+        mem = lambda w, attempt: f"{5 * attempt} GB",
         runtime = lambda w, attempt: f"{30 * attempt} m",
     wrapper:
-        wrapper_ver + "/bio/bbtools/loglog"
+        wrapper_ver + "/bio/bbtools"
 
 
 
@@ -63,14 +64,15 @@ rule read_extension:
     benchmark:
         "benchmarks/reads/derep/tadpole/{sample}_{library}_{read_type_trim}.tsv"
     params:
+        command="tadpole.sh",
         mode = "extend",
         extra = lambda w, input: "k={k} filtermem={c} ".format(k=config["reads"]["extension"]["k"], c=_get_filtermem(input.tsv, table_cap=0.5, bits=16, hashes=3)) + check_cmd(config["reads"]["extension"]["params"], forbidden_args = ["threads", "in", "filtermem", "k", "out"]),
     threads: 24
     resources:
-        mem = lambda w, attempt: f"{300 * attempt} GiB",
+        mem = lambda w, attempt: f"{300 * attempt} GB",
         runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
-        wrapper_ver + "/bio/bbtools/tadpole"
+        wrapper_ver + "/bio/bbtools"
 
 
 
@@ -88,7 +90,7 @@ rule vsearch:
         extra = check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["--fastx_uniques", "--fastqout", "--sizein", "--sizeout"]),
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{100 * attempt} GiB",
+        mem = lambda w, attempt: f"{100 * attempt} GB",
         runtime = lambda w, attempt: f"{5 * attempt} h",
     wrapper:
         "vsearch_log/bio/vsearch"
@@ -110,7 +112,7 @@ rule seqkit:
         extra = "--ignore-case --by-seq " + check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["-j", "--threads", "-s", "--by-seq", "-i", "--ignore-case", "-D", "--dup-num-file", "-o", "--out-file"]),
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{75 * attempt} GiB",
+        mem = lambda w, attempt: f"{75 * attempt} GB",
         runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/seqkit"
@@ -135,7 +137,7 @@ rule seqkit_stats:
         extra = "--tabular --all"
     threads: 4
     resources:
-        mem = lambda w, attempt: f"{1 * attempt} GiB",
+        mem = lambda w, attempt: f"{1 * attempt} GB",
         runtime = lambda w, attempt: f"{30 * attempt} m",
     wrapper:
         wrapper_ver + "/bio/seqkit"

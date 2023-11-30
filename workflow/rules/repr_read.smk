@@ -16,7 +16,7 @@ rule seqkit_fx2tab:
         extra = "--name"
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{1 * attempt} GiB",
+        mem = lambda w, attempt: f"{1 * attempt} GB",
         runtime = lambda w, attempt: f"{30 * attempt} m",
     wrapper:
         wrapper_ver + "/bio/seqkit"
@@ -37,7 +37,7 @@ rule seqkit_grep:
         extra = "--by-name --delete-matched",
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{50 * attempt} GiB",
+        mem = lambda w, attempt: f"{50 * attempt} GB",
         runtime = lambda w, attempt: f"{5 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/seqkit"
@@ -66,7 +66,7 @@ rule nonpareil:
         extra = "-F",
     threads: 2
     resources:
-        mem = lambda w, attempt: f"{10 * attempt} GiB",
+        mem = lambda w, attempt: f"{10 * attempt} GB",
         runtime = lambda w, attempt: f"{1 * attempt} h",
         # tmpdir used for FASTQ decompression, since nonpareil does not support gziped input
 #        tmpdir = get_tmp(large = True),
@@ -89,7 +89,7 @@ rule nonpareil_plot:
     localrule: True
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{5 * attempt} GiB",
+        mem = lambda w, attempt: f"{5 * attempt} GB",
         runtime = lambda w, attempt: f"{1 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/nonpareil/plot"
