@@ -48,7 +48,7 @@ rule seqkit_grep:
 ### QC ###
 ##########
 
-rule nonpareil:
+rule nonpareil_infer:
     input:
 #        rules.seqkit_grep.output.fastx,
         "temp/reads/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz"
@@ -76,16 +76,21 @@ rule nonpareil:
 
 rule nonpareil_plot:
     input:
-        npo = rules.nonpareil.output.redund_sum,
+        npo = rules.nonpareil_infer.output.redund_sum,
     output:
         plot = "reports/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.pdf",
         model = "stats/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.RData",
+        json = "stats/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.json",
     log:
         "logs/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.plot.log",
     params:
         enforce_consistency = True,
         star = 90,
         correction_factor = True,
+        plot_observed = True,
+        plot_model = True,
+        plot_dispersion = "ci95",
+        plot_diversity = True,
     localrule: True
     threads: 1
     resources:
