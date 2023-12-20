@@ -83,7 +83,7 @@ rule vsearch:
         fastqout = temp("temp/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.fastq.gz"),
         log = "stats/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.log",
     log:
-        "logs/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.log"
+        "logs/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "benchmarks/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.tsv"
     params:
@@ -93,7 +93,7 @@ rule vsearch:
         mem = lambda w, attempt: f"{100 * attempt} GB",
         runtime = lambda w, attempt: f"{5 * attempt} h",
     wrapper:
-        "vsearch_log/bio/vsearch"
+        wrapper_ver + "/bio/vsearch"
 
 
 
