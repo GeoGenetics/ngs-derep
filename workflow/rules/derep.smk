@@ -15,7 +15,7 @@ rule merge_lanes:
         "benchmarks/reads/derep/merge_lanes/{sample}_{library}_{read_type_trim}.tsv"
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{1 * attempt} GB",
+        mem = lambda w, attempt: f"{1 * attempt} GiB",
         runtime = lambda w, attempt: f"{1 * attempt} h",
     shell:
         "cat {input} > {output}"
@@ -36,7 +36,7 @@ rule loglog:
         extra = "seed=1234 k={k} ignorebadquality".format(k=config["reads"]["extension"]["k"]),
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{5 * attempt} GB",
+        mem = lambda w, attempt: f"{5 * attempt} GiB",
         runtime = lambda w, attempt: f"{30 * attempt} m",
     wrapper:
         wrapper_ver + "/bio/bbtools"
@@ -69,7 +69,7 @@ rule read_extension:
         extra = lambda w, input: "k={k} filtermem={c} ".format(k=config["reads"]["extension"]["k"], c=_get_filtermem(input.tsv, table_cap=0.5, bits=16, hashes=3)) + check_cmd(config["reads"]["extension"]["params"], forbidden_args = ["threads", "in", "filtermem", "k", "out"]),
     threads: 24
     resources:
-        mem = lambda w, attempt: f"{300 * attempt} GB",
+        mem = lambda w, attempt: f"{300 * attempt} GiB",
         runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/bbtools"
@@ -90,7 +90,7 @@ rule vsearch:
         extra = check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["--fastx_uniques", "--fastqout", "--sizein", "--sizeout"]),
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{100 * attempt} GB",
+        mem = lambda w, attempt: f"{100 * attempt} GiB",
         runtime = lambda w, attempt: f"{5 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/vsearch"
@@ -102,7 +102,8 @@ rule seqkit:
         fastx = rules.read_extension.output if is_activated("reads/extension") else rules.merge_lanes.output.fq,
     output:
         fastx = temp("temp/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.fastq.gz"),
-        dup_num = "stats/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.dup.tsv"
+        # touch() needed, since file is not created if no dup reads
+        dup_num = touch("stats/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.dup.tsv")
     log:
         "logs/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.log"
     benchmark:
@@ -112,7 +113,7 @@ rule seqkit:
         extra = "--ignore-case --by-seq " + check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["-j", "--threads", "-s", "--by-seq", "-i", "--ignore-case", "-D", "--dup-num-file", "-o", "--out-file"]),
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{75 * attempt} GB",
+        mem = lambda w, attempt: f"{75 * attempt} GiB",
         runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/seqkit"
@@ -137,7 +138,7 @@ rule seqkit_stats:
         extra = "--tabular --all"
     threads: 4
     resources:
-        mem = lambda w, attempt: f"{1 * attempt} GB",
+        mem = lambda w, attempt: f"{1 * attempt} GiB",
         runtime = lambda w, attempt: f"{30 * attempt} m",
     wrapper:
         wrapper_ver + "/bio/seqkit"
