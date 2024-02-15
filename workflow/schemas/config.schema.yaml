@@ -57,7 +57,16 @@ properties:
       - extension
       - derep
 
+  report:
+    type: object
+    properties:
+      multiqc:
+        type: string
+    required:
+      - multiqc
+
 required:
   - samples
   - units
   - reads
+  - report

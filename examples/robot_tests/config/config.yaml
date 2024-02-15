@@ -25,3 +25,6 @@ reads:
     # vsearch or seqkit
     tool: vsearch
     params: "--strand both --minseqlength 30"
+
+report:
+  multiqc: "--verbose"
