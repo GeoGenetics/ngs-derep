@@ -128,7 +128,7 @@ rule seqkit_stats:
     input:
         fastx = "temp/reads/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz"
     output:
-        stats = temp("stats/reads/{tool}/{sample}_{library}_{read_type_trim}.tsv"),
+        stats = "stats/reads/{tool}/{sample}_{library}_{read_type_trim}.tsv",
     log:
         "logs/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.log"
     benchmark:
