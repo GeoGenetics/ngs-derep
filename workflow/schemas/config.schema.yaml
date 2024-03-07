@@ -52,10 +52,19 @@ properties:
           - tool
           - params
 
+      low_complex:
+        type: object
+        properties:
+          params:
+            type: string
+        required:
+          - params
+
     required:
       - trim
       - extension
       - derep
+      - low_complex
 
   report:
     type: object

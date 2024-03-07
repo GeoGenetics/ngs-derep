@@ -1,7 +1,7 @@
 snakemake.utils.min_version("7.25.0")
 
 # Define wrapper versions
-wrapper_ver = "v3.3.6"
+wrapper_ver = "v3.4.1"
 
 
 
@@ -9,7 +9,8 @@ include: "rules/utils.smk"
 include: "rules/setup.smk"
 include: "rules/derep.smk"
 include: "rules/repr_read.smk"
-
+include: "rules/low_complex.smk"
+include: "rules/nonpareil.smk"
 
 
 ##########################
@@ -29,6 +30,9 @@ rule multiqc:
         ### Read grep
         expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed"), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
         expand_pandas(expand(rules.nonpareil_plot.output.json, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
+        ### Low complexity filter
+        expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="derep/low_complexity", read_type_trim="collapsed"), units),
+        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="derep/low_complexity", read_type_trim="collapsed", allow_missing=True), units),
     output:
         html = "reports/multiqc.html",
         data = "reports/multiqc_data.zip",
@@ -48,20 +52,10 @@ rule multiqc:
 
 
 
-def _get_results():
-    if is_activated("reads/extension") and is_activated("reads/derep"):
-        return expand(rules.seqkit_grep.output.fastx, tool=config["reads"]["derep"]["tool"], allow_missing=True)
-    elif not is_activated("reads/extension") and is_activated("reads/derep"):
-        return expand("temp/reads/derep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz", tool=config["reads"]["derep"]["tool"], allow_missing=True)
-    elif is_activated("reads/extension") and not is_activated("reads/derep"):
-        return rules.read_extension.output.out
-    else:
-        return rules.merge_lanes.output
-
 rule all:
     input:
         qc = rules.multiqc.output.html,
-        res = expand_pandas(expand(_get_results(), read_type_trim="collapsed", allow_missing=True), units),
+        res = expand_pandas(expand(rules.low_complexity.output.out, read_type_trim="collapsed", allow_missing=True), units),
     message:
         "Read Dereping finished successfully!"
     default_target: True
