@@ -27,8 +27,8 @@ rule multiqc:
         expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="derep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed"), units) if is_activated("reads/derep") else [],
         expand_pandas(expand(rules.nonpareil_plot.output.json, tool="derep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/derep") else [],
         ### Read grep
-        expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed"), units) if is_activated("reads/extension") else [],
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+        expand_pandas(format_partial(rules.seqkit_stats.output.stats, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed"), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
+        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
     output:
         html = "reports/multiqc.html",
         data = "reports/multiqc_data.zip",
@@ -48,10 +48,20 @@ rule multiqc:
 
 
 
+def _get_results():
+    if is_activated("reads/extension") and is_activated("reads/derep"):
+        return expand(rules.seqkit_grep.output.fastx, tool=config["reads"]["derep"]["tool"], allow_missing=True)
+    elif not is_activated("reads/extension") and is_activated("reads/derep"):
+        return expand("temp/reads/derep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz", tool=config["reads"]["derep"]["tool"], allow_missing=True)
+    elif is_activated("reads/extension") and not is_activated("reads/derep"):
+        return rules.read_extension.output.out
+    else:
+        return rules.merge_lanes.output
+
 rule all:
     input:
         qc = rules.multiqc.output.html,
-        res = expand_pandas(expand(rules.seqkit_grep.output.fastx if is_activated("reads/extension") else "temp/reads/derep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz" if is_activated("reads/derep") else rules.merge_lanes.output, tool=config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units),
+        res = expand_pandas(expand(_get_results(), read_type_trim="collapsed", allow_missing=True), units),
     message:
         "Read Dereping finished successfully!"
     default_target: True

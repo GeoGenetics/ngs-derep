@@ -20,9 +20,9 @@
 <text text-anchor="start" x="1138.5" y="-46" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/vsearch/CGG&#45;3&#45;007859&#45;QSB1_LV3003056737_collapsed.fastq.gz</text>
 <text text-anchor="start" x="1138.5" y="-28" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/vsearch/CGG&#45;3&#45;007861&#45;QSB1_LV3003056754_collapsed.fastq.gz</text>
 <text text-anchor="start" x="1576.5" y="-10" font-family="sans" font-size="10.00" fill="#000000"> &#160;</text>
-<polygon fill="#d95757" stroke="#d95757" points="1132.5,-98 1132.5,-98 1590.5,-98 1590.5,-98 1132.5,-98"/>
-<polygon fill="#d95757" stroke="#d95757" points="1132.5,-22 1132.5,-22 1590.5,-22 1590.5,-22 1132.5,-22"/>
-<polygon fill="none" stroke="#d95757" stroke-width="2" points="1132,-1 1132,-127 1589,-127 1589,-1 1132,-1"/>
+<polygon fill="#d9ad57" stroke="#d9ad57" points="1132.5,-98 1132.5,-98 1590.5,-98 1590.5,-98 1132.5,-98"/>
+<polygon fill="#d9ad57" stroke="#d9ad57" points="1132.5,-22 1132.5,-22 1590.5,-22 1590.5,-22 1132.5,-22"/>
+<polygon fill="none" stroke="#d9ad57" stroke-width="2" points="1132,-1 1132,-127 1589,-127 1589,-1 1132,-1"/>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <text text-anchor="start" x="1396.5" y="-211.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="889.5" y="-192" font-family="monospace" font-size="10.00" fill="#000000">reports/multiqc.html</text>
 <text text-anchor="start" x="889.5" y="-174" font-family="monospace" font-size="10.00" fill="#000000">reports/multiqc_data.zip</text>
-<polygon fill="#57d9d9" stroke="#57d9d9" points="883.5,-392 883.5,-392 1407.5,-392 1407.5,-392 883.5,-392"/>
-<polygon fill="#57d9d9" stroke="#57d9d9" points="883.5,-226 883.5,-226 1407.5,-226 1407.5,-226 883.5,-226"/>
-<polygon fill="none" stroke="#57d9d9" stroke-width="2" points="883,-165 883,-421 1406,-421 1406,-165 883,-165"/>
+<polygon fill="#d9d957" stroke="#d9d957" points="883.5,-392 883.5,-392 1407.5,-392 1407.5,-392 883.5,-392"/>
+<polygon fill="#d9d957" stroke="#d9d957" points="883.5,-226 883.5,-226 1407.5,-226 1407.5,-226 883.5,-226"/>
+<polygon fill="none" stroke="#d9d957" stroke-width="2" points="883,-165 883,-421 1406,-421 1406,-165 883,-165"/>
 </g>
 <!-- 1&#45;&gt;0 -->
 <g id="edge2" class="edge">
@@ -66,9 +66,9 @@
 <text text-anchor="start" x="663.5" y="-700.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
 <text text-anchor="start" x="724.5" y="-700.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="7.5" y="-681" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/{tool}/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.tsv</text>
-<polygon fill="#57d982" stroke="#57d982" points="1.5,-755 1.5,-755 735.5,-755 735.5,-755 1.5,-755"/>
-<polygon fill="#57d982" stroke="#57d982" points="1.5,-715 1.5,-715 735.5,-715 735.5,-715 1.5,-715"/>
-<polygon fill="none" stroke="#57d982" stroke-width="2" points="1,-672 1,-784 734,-784 734,-672 1,-672"/>
+<polygon fill="#add957" stroke="#add957" points="1.5,-755 1.5,-755 735.5,-755 735.5,-755 1.5,-755"/>
+<polygon fill="#add957" stroke="#add957" points="1.5,-715 1.5,-715 735.5,-715 735.5,-715 1.5,-715"/>
+<polygon fill="none" stroke="#add957" stroke-width="2" points="1,-672 1,-784 734,-784 734,-672 1,-672"/>
 </g>
 <!-- 2&#45;&gt;1 -->
 <g id="edge3" class="edge">
@@ -88,12 +88,12 @@
 <text text-anchor="start" x="1062.5" y="-1045.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
 <text text-anchor="start" x="1123.5" y="-1045.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="316.5" y="-1026" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/merge_lanes/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.fastq.gz</text>
-<polygon fill="#82d957" stroke="#82d957" points="310.5,-1100 310.5,-1100 1134.5,-1100 1134.5,-1100 310.5,-1100"/>
-<polygon fill="#82d957" stroke="#82d957" points="310.5,-1060 310.5,-1060 1134.5,-1060 1134.5,-1060 310.5,-1060"/>
-<polygon fill="none" stroke="#82d957" stroke-width="2" points="310,-1017 310,-1129 1133,-1129 1133,-1017 310,-1017"/>
+<polygon fill="#57add9" stroke="#57add9" points="310.5,-1100 310.5,-1100 1134.5,-1100 1134.5,-1100 310.5,-1100"/>
+<polygon fill="#57add9" stroke="#57add9" points="310.5,-1060 310.5,-1060 1134.5,-1060 1134.5,-1060 310.5,-1060"/>
+<polygon fill="none" stroke="#57add9" stroke-width="2" points="310,-1017 310,-1129 1133,-1129 1133,-1017 310,-1017"/>
 </g>
 <!-- 3&#45;&gt;2 -->
-<g id="edge6" class="edge">
+<g id="edge5" class="edge">
 <title>3&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M662.6467,-1015.643C599.5124,-954.1138 499.4701,-856.6149 433.6523,-792.4705"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="435.8035,-789.6797 426.1991,-785.2068 430.9178,-794.6928 435.8035,-789.6797"/>
@@ -113,12 +113,12 @@
 <text text-anchor="start" x="760.5" y="-690" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.npa</text>
 <text text-anchor="start" x="760.5" y="-672" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.npc</text>
 <text text-anchor="start" x="760.5" y="-654" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.npo</text>
-<polygon fill="#57d957" stroke="#57d957" points="754.5,-782 754.5,-782 1548.5,-782 1548.5,-782 754.5,-782"/>
-<polygon fill="#57d957" stroke="#57d957" points="754.5,-742 754.5,-742 1548.5,-742 1548.5,-742 754.5,-742"/>
-<polygon fill="none" stroke="#57d957" stroke-width="2" points="754,-645 754,-811 1547,-811 1547,-645 754,-645"/>
+<polygon fill="#d98257" stroke="#d98257" points="754.5,-782 754.5,-782 1548.5,-782 1548.5,-782 754.5,-782"/>
+<polygon fill="#d98257" stroke="#d98257" points="754.5,-742 754.5,-742 1548.5,-742 1548.5,-742 754.5,-742"/>
+<polygon fill="none" stroke="#d98257" stroke-width="2" points="754,-645 754,-811 1547,-811 1547,-645 754,-645"/>
 </g>
 <!-- 3&#45;&gt;5 -->
-<g id="edge9" class="edge">
+<g id="edge8" class="edge">
 <title>3&#45;&gt;5</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M709.8202,-1015.5943C703.1723,-965.7401 702.5461,-894.4425 740.5,-848 749.6474,-836.8067 765.5155,-826.2399 785.8455,-816.3682"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="787.5694,-819.4264 795.1568,-812.0316 784.614,-813.0809 787.5694,-819.4264"/>
@@ -136,9 +136,9 @@
 <text text-anchor="start" x="1540.5" y="-895.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="757.5" y="-876" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/vsearch/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.log</text>
 <text text-anchor="start" x="757.5" y="-858" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/vsearch/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.fastq.gz</text>
-<polygon fill="#add957" stroke="#add957" points="751.5,-950 751.5,-950 1551.5,-950 1551.5,-950 751.5,-950"/>
-<polygon fill="#add957" stroke="#add957" points="751.5,-910 751.5,-910 1551.5,-910 1551.5,-910 751.5,-910"/>
-<polygon fill="none" stroke="#add957" stroke-width="2" points="751,-849 751,-979 1550,-979 1550,-849 751,-849"/>
+<polygon fill="#82d957" stroke="#82d957" points="751.5,-950 751.5,-950 1551.5,-950 1551.5,-950 751.5,-950"/>
+<polygon fill="#82d957" stroke="#82d957" points="751.5,-910 751.5,-910 1551.5,-910 1551.5,-910 751.5,-910"/>
+<polygon fill="none" stroke="#82d957" stroke-width="2" points="751,-849 751,-979 1550,-979 1550,-849 751,-849"/>
 </g>
 <!-- 3&#45;&gt;6 -->
 <g id="edge10" class="edge">
@@ -160,9 +160,9 @@
 <text text-anchor="start" x="748.5" y="-504" font-family="monospace" font-size="10.00" fill="#000000">reports/reads/nonpareil/{tool}/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.pdf</text>
 <text text-anchor="start" x="748.5" y="-486" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.RData</text>
 <text text-anchor="start" x="748.5" y="-468" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,CGG&#45;3&#45;007859&#45;QSB1|CGG&#45;3&#45;007861&#45;QSB1}_{library,LV3003056737|LV3003056754}_{read_type_trim}.json</text>
-<polygon fill="#d9ad57" stroke="#d9ad57" points="742.5,-578 742.5,-578 1548.5,-578 1548.5,-578 742.5,-578"/>
-<polygon fill="#d9ad57" stroke="#d9ad57" points="742.5,-538 742.5,-538 1548.5,-538 1548.5,-538 742.5,-538"/>
-<polygon fill="none" stroke="#d9ad57" stroke-width="2" points="742,-459 742,-607 1547,-607 1547,-459 742,-459"/>
+<polygon fill="#57d9ad" stroke="#57d9ad" points="742.5,-578 742.5,-578 1548.5,-578 1548.5,-578 742.5,-578"/>
+<polygon fill="#57d9ad" stroke="#57d9ad" points="742.5,-538 742.5,-538 1548.5,-538 1548.5,-538 742.5,-538"/>
+<polygon fill="none" stroke="#57d9ad" stroke-width="2" points="742,-459 742,-607 1547,-607 1547,-459 742,-459"/>
 </g>
 <!-- 4&#45;&gt;1 -->
 <g id="edge4" class="edge">
@@ -183,13 +183,13 @@
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1419.0352,-134.2319 1410.3319,-128.1901 1413.3679,-138.3407 1419.0352,-134.2319"/>
 </g>
 <!-- 6&#45;&gt;2 -->
-<g id="edge5" class="edge">
+<g id="edge6" class="edge">
 <title>6&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M872.5146,-847.9652C789.3912,-828.2194 698.7946,-806.6983 617.5784,-787.4056"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="618.2598,-783.9701 607.7216,-785.0641 616.642,-790.7806 618.2598,-783.9701"/>
 </g>
 <!-- 6&#45;&gt;5 -->
-<g id="edge8" class="edge">
+<g id="edge9" class="edge">
 <title>6&#45;&gt;5</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M1150.5,-847.8996C1150.5,-839.5691 1150.5,-830.9235 1150.5,-822.2632"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1154.0001,-822.1081 1150.5,-812.1082 1147.0001,-822.1082 1154.0001,-822.1081"/>
