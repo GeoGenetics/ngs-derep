@@ -1,6 +1,6 @@
-
-assert not (is_activated("reads/extension") and not is_activated("reads/derep")), "You specified read extension WITHOUT dereplication, but this will lead to loosing information about DNA damage patterns. Are you sure?"
-
+#############
+### RULES ###
+#############
 
 rule seqkit_fx2tab:
     input:

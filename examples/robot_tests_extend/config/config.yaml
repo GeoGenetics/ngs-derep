@@ -1,0 +1,33 @@
+
+# - Only tested with Phred33 quality scores
+
+samples: config/samples.tsv
+
+units: config/units.tsv
+
+
+
+#############
+### READS ###
+#############
+reads:
+  trim:
+    activate: true
+    tool: fastp
+
+  extension:
+    activate: true
+    k: 17
+    params: "mode=extend ibb=f prefilter=0 el=100 er=100 overwrite=true trimends=9 ecc=t ecco=f conservative=t ignorebadquality"
+
+  derep:
+    activate: false
+    # vsearch or seqkit
+    tool: vsearch
+    params: "--strand both --minseqlength 30"
+
+  low_complex:
+    params: "maxns=25 minlen=30 entropy=0.7 entropywindow=40 entropyk=4"
+
+report:
+  multiqc: "--verbose"
