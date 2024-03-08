@@ -14,18 +14,6 @@ properties:
   reads:
     type: object
     properties:
-      trim:
-        type: object
-        properties:
-          activate:
-            type: boolean
-          tool:
-            type: string
-            enum: ["adapterremoval", "bbduk", "cutadapt", "fastp", "trimmomatic"]
-        required:
-          - activate
-          - tool
-
       extension:
         type: object
         properties:
@@ -61,7 +49,6 @@ properties:
           - params
 
     required:
-      - trim
       - extension
       - derep
       - low_complex

@@ -11,6 +11,8 @@ This module implements read derelication steps:
 - Select original representative read
   - [seqkit fx2tab](https://bioinf.shenwei.me/seqkit/usage/#fx2tab-tab2fx)
   - [seqkit grep](https://bioinf.shenwei.me/seqkit/usage/#grep)
+- Remove low complexity reads
+  - [BBDuk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/)
 
 And QC steps:
 - [MultiQC](https://multiqc.info/) (aggregates QC from several of the tools above)

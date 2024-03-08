@@ -7,6 +7,7 @@ wrapper_ver = "v3.4.1"
 
 include: "rules/utils.smk"
 include: "rules/setup.smk"
+include: "rules/extend.smk"
 include: "rules/derep.smk"
 include: "rules/repr_read.smk"
 include: "rules/low_complex.smk"
@@ -19,11 +20,11 @@ include: "rules/nonpareil.smk"
 rule multiqc:
     input:
         ### Merged lanes
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="derep/merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="derep/merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
+        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
+        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
         ### Read extension
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="derep/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="derep/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="extend/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="extend/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
         ### Read derep
         expand_pandas(expand(rules.seqkit_stats.output.stats, tool="derep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/derep") else [],
         expand_pandas(expand(rules.nonpareil_plot.output.json, tool="derep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/derep") else [],
@@ -31,8 +32,8 @@ rule multiqc:
         expand_pandas(expand(rules.seqkit_stats.output.stats, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
         expand_pandas(expand(rules.nonpareil_plot.output.json, tool="represent/grep/" + config["reads"]["derep"]["tool"], read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
         ### Low complexity filter
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="derep/low_complexity", read_type_trim="collapsed", allow_missing=True), units),
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="derep/low_complexity", read_type_trim="collapsed", allow_missing=True), units),
+        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="low_complexity", read_type_trim="collapsed", allow_missing=True), units),
+        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="low_complexity", read_type_trim="collapsed", allow_missing=True), units),
     output:
         html = "reports/multiqc.html",
         data = "reports/multiqc_data.zip",
@@ -57,5 +58,5 @@ rule all:
         qc = rules.multiqc.output.html,
         res = expand_pandas(expand(rules.low_complexity.output.out, read_type_trim="collapsed", allow_missing=True), units),
     message:
-        "Read Dereping finished successfully!"
+        "Read DeReping/Extension finished successfully!"
     default_target: True

@@ -19,13 +19,13 @@ rule low_complexity:
     input:
         _get_results(),
     output:
-        out = temp("temp/reads/derep/low_complexity/{sample}_{library}_{read_type_trim}.fastq.gz"),
-	outmatch = temp("temp/reads/derep/low_complexity/{sample}_{library}_{read_type_trim}.discarded.fastq.gz"),
-	stats = "stats/reads/derep/low_complexity/{sample}_{library}_{read_type_trim}.txt"
+        out = "results/reads/low_complexity/{sample}_{library}_{read_type_trim}.fastq.gz",
+        outmatch = temp("temp/reads/low_complexity/{sample}_{library}_{read_type_trim}.discarded.fastq.gz"),
+        stats = "stats/reads/low_complexity/{sample}_{library}_{read_type_trim}.txt"
     log:
-        "logs/reads/derep/low_complexity/{sample}_{library}_{read_type_trim}.log"
+        "logs/reads/low_complexity/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/derep/low_complexity/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/low_complexity/{sample}_{library}_{read_type_trim}.tsv"
     params:
         command="bbduk.sh",
         extra=check_cmd(config["reads"]["low_complex"]["params"]),

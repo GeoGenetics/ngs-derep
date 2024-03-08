@@ -11,10 +11,6 @@ units: config/units.tsv
 ### READS ###
 #############
 reads:
-  trim:
-    activate: true
-    tool: fastp
-
   extension:
     activate: false
     k: 17
@@ -27,7 +23,7 @@ reads:
     params: "--strand both --minseqlength 30"
 
   low_complex:
-    params: "maxns=25 minlen=30 entropy=0.7 entropywindow=40 entropyk=4"
+    params: "maxns=25 minlen=30 entropy=0.6 entropywindow=30 entropyk=6"
 
 report:
   multiqc: "--verbose"

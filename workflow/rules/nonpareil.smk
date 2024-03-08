@@ -4,8 +4,7 @@
 
 rule nonpareil_infer:
     input:
-#        rules.seqkit_grep.output.fastx,
-        "temp/reads/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz"
+        lambda w: expand("{path}/reads/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz", path = "results" if w.tool == "low_complexity" else "temp", allow_missing=True),
     output:
         redund_sum = "stats/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.npo",
         redund_val = "stats/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.npa",
@@ -22,8 +21,6 @@ rule nonpareil_infer:
     resources:
         mem = lambda w, attempt: f"{10 * attempt} GiB",
         runtime = lambda w, attempt: f"{1 * attempt} h",
-        # tmpdir used for FASTQ decompression, since nonpareil does not support gziped input
-#        tmpdir = get_tmp(large = True),
     wrapper:
          wrapper_ver + "/bio/nonpareil/infer"
 

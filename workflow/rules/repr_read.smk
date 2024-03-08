@@ -34,7 +34,7 @@ rule seqkit_grep:
         "benchmarks/reads/represent/grep/{tool}/{sample}_{library}_{read_type_trim}.tsv"
     params:
         command = "grep",
-        extra = "--by-name --delete-matched",
+        extra = "--delete-matched",
     threads: 10
     resources:
         mem = lambda w, attempt: f"{50 * attempt} GiB",
