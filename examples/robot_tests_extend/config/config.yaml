@@ -23,6 +23,11 @@ reads:
     params: "--strand both --minseqlength 30"
 
   low_complex:
+    # dust threshold:
+    # 1 <=> e0.7 w30 k4
+    # 2 <=> e0.6 w30 k4
+    # 3 <=> e0.5 w30 k6
+    # 4 <=> e0.5 w30 k6 (SGA default)
     params: "maxns=25 minlen=30 entropy=0.6 entropywindow=30 entropyk=6"
 
 report:
