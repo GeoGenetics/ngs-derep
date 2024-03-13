@@ -35,7 +35,7 @@ rule nonpareil_plot:
     log:
         "logs/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.plot.log",
     params:
-        enforce_consistency = True,
+        enforce_consistency = False,
         star = 90,
         correction_factor = True,
         plot_observed = True,
