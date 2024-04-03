@@ -30,7 +30,7 @@ rule low_complexity:
         command="bbduk.sh",
         extra=check_cmd(config["reads"]["low_complex"]["params"]),
         ref=["adapters", "artifacts"],
-    threads: 1
+    threads: 4
     resources:
         mem = lambda w, attempt: f"{1 * attempt} GiB",
         runtime = lambda w, attempt: f"{1 * attempt} h",
