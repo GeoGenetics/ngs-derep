@@ -12,7 +12,7 @@ rule vsearch:
     log:
         "logs/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "benchmarks/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         extra = check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["--fastx_uniques", "--fastqout", "--sizein", "--sizeout"]),
     threads: 1
@@ -34,13 +34,13 @@ rule seqkit:
     log:
         "logs/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command = "rmdup",
         extra = "--ignore-case --by-seq " + check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["-j", "--threads", "-s", "--by-seq", "-i", "--ignore-case", "-D", "--dup-num-file", "-o", "--out-file"]),
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{100 * attempt} GiB",
-        runtime = lambda w, attempt: f"{2 * attempt} h",
+        mem = lambda w, attempt: f"{250 * attempt} GiB",
+        runtime = lambda w, attempt: f"{5 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/seqkit"

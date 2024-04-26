@@ -25,14 +25,14 @@ rule low_complexity:
     log:
         "logs/reads/low_complexity/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/low_complexity/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/low_complexity/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="bbduk.sh",
         extra=check_cmd(config["reads"]["low_complex"]["params"]),
         ref=["adapters", "artifacts"],
     threads: 4
     resources:
-        mem = lambda w, attempt: f"{1 * attempt} GiB",
-        runtime = lambda w, attempt: f"{1 * attempt} h",
+        mem = lambda w, attempt: f"{4 * attempt} GiB",
+        runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
         wrapper_ver + "/bio/bbtools"

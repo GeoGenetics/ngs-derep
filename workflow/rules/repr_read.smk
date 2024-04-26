@@ -10,7 +10,7 @@ rule seqkit_fx2tab:
     log:
         "logs/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.{tool}.log"
     benchmark:
-        "benchmarks/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.{tool}.tsv"
+        "benchmarks/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.{tool}.jsonl"
     params:
         command = "fx2tab",
         extra = "--name"
@@ -31,7 +31,7 @@ rule seqkit_grep:
     log:
         "logs/reads/represent/grep/{tool}/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/represent/grep/{tool}/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/represent/grep/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command = "grep",
         extra = "--delete-matched",

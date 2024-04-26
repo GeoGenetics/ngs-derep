@@ -13,14 +13,14 @@ rule nonpareil_infer:
     log:
         "logs/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "benchmarks/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.tsv",
+        "benchmarks/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.jsonl",
     params:
         alg = "kmer",
         extra = "-F",
     threads: 2
     resources:
-        mem = lambda w, attempt: f"{10 * attempt} GiB",
-        runtime = lambda w, attempt: f"{1 * attempt} h",
+        mem = lambda w, attempt: f"{7 * attempt} GiB",
+        runtime = lambda w, attempt: f"{3 * attempt} h",
     wrapper:
          wrapper_ver + "/bio/nonpareil/infer"
 

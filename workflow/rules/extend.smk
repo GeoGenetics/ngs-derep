@@ -12,7 +12,7 @@ rule merge_lanes:
     log:
         "logs/reads/merge_lanes/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/merge_lanes/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/merge_lanes/{sample}_{library}_{read_type_trim}.jsonl"
     threads: 1
     resources:
         mem = lambda w, attempt: f"{1 * attempt} GiB",
@@ -30,7 +30,7 @@ rule loglog:
     log:
         "logs/reads/extend/loglog/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/extend/loglog/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/extend/loglog/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="loglog.sh",
         extra = "seed=1234 k={k} ignorebadquality".format(k=config["reads"]["extension"]["k"]),
@@ -60,7 +60,7 @@ rule read_extension:
     log:
         "logs/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="tadpole.sh",
         mode = "extend",
@@ -86,7 +86,7 @@ rule seqkit_stats:
     log:
         "logs/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.tsv"
+        "benchmarks/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command = "stats",
         extra = "--tabular --all"
