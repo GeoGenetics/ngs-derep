@@ -1,6 +1,6 @@
 # NGS Derep - a generic module for read dereplication
 
-[![Snakemake](https://img.shields.io/badge/snakemake-≥7.25.0-brightgreen.svg)](https://snakemake.readthedocs.io/en/stable/)
+[![Snakemake](https://img.shields.io/badge/snakemake-≥8.11.2-brightgreen.svg)](https://snakemake.readthedocs.io/en/stable/)
 
 This module implements read derelication steps:
 - Read extension:

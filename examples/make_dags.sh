@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SNAKEMAKE_OPTS="--snakefile ../../workflow/Snakefile --configfile config/config.yaml --printshellcmds --software-deployment-method conda --conda-prefix /tmp/cache/conda --benchmark-extended --forceall $@"
+SNAKEMAKE_OPTS="--snakefile ../../workflow/Snakefile --configfile config/config.yaml --forceall $@"
 
 for TEST in robot_tests_all robot_tests_extend robot_tests_derep robot_tests_none
 do
