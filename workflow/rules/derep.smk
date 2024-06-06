@@ -14,7 +14,7 @@ rule vsearch:
     benchmark:
         "benchmarks/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.jsonl"
     params:
-        extra = check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["--fastx_uniques", "--fastqout", "--sizein", "--sizeout"]),
+        extra = config["reads"]["derep"]["params"],
     threads: 1
     resources:
         mem = lambda w, attempt: f"{100 * attempt} GiB",
@@ -37,7 +37,7 @@ rule seqkit:
         "benchmarks/reads/derep/seqkit/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command = "rmdup",
-        extra = "--ignore-case --by-seq " + check_cmd(config["reads"]["derep"]["params"], forbidden_args = ["-j", "--threads", "-s", "--by-seq", "-i", "--ignore-case", "-D", "--dup-num-file", "-o", "--out-file"]),
+        extra = "--ignore-case --by-seq " + config["reads"]["derep"]["params"],
     threads: 10
     resources:
         mem = lambda w, attempt: f"{250 * attempt} GiB",

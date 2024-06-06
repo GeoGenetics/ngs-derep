@@ -23,6 +23,7 @@ properties:
             type: integer
           params:
             type: string
+            pattern: "^((?!\b--?(threads|in|filtermem|k|out)[ =]).)*$"
         required:
           - activate
           - k
@@ -36,6 +37,7 @@ properties:
             enum: ["vsearch", "seqkit"]
           params:
             type: string
+            pattern: "^((?!\b--?(fastx_uniques|fastqout|sizein|sizeout|j|threads|s|by-seq|i|ignore-case|D|dup-num-file|o|out-file)[ =]).)*$"
         required:
           - tool
           - params
@@ -45,6 +47,7 @@ properties:
         properties:
           params:
             type: string
+            pattern: "^((?!\b--?(in|in1|in2|ref|out|out1|out2|outm|outs)[ =]).)*$"
         required:
           - params
 

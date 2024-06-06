@@ -28,7 +28,7 @@ rule low_complexity:
         "benchmarks/reads/low_complexity/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="bbduk.sh",
-        extra=check_cmd(config["reads"]["low_complex"]["params"]),
+        extra=config["reads"]["low_complex"]["params"],
         ref=["adapters", "artifacts"],
     threads: 4
     resources:
