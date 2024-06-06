@@ -39,7 +39,7 @@ rule loglog:
         mem = lambda w, attempt: f"{5 * attempt} GiB",
         runtime = lambda w, attempt: f"{30 * attempt} m",
     wrapper:
-        wrapper_ver + "/bio/bbtools"
+        f"{wrapper_ver}/bio/bbtools"
 
 
 
@@ -70,7 +70,7 @@ rule read_extension:
         mem = lambda w, attempt: f"{300 * attempt} GiB",
         runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
-        wrapper_ver + "/bio/bbtools"
+        f"{wrapper_ver}/bio/bbtools"
 
 
 
@@ -95,4 +95,4 @@ rule seqkit_stats:
         mem = lambda w, attempt: f"{1 * attempt} GiB",
         runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
-        wrapper_ver + "/bio/seqkit"
+        f"{wrapper_ver}/bio/seqkit"

@@ -35,4 +35,4 @@ rule low_complexity:
         mem = lambda w, attempt: f"{4 * attempt} GiB",
         runtime = lambda w, attempt: f"{2 * attempt} h",
     wrapper:
-        wrapper_ver + "/bio/bbtools"
+        f"{wrapper_ver}/bio/bbtools"

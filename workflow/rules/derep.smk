@@ -20,7 +20,7 @@ rule vsearch:
         mem = lambda w, attempt: f"{100 * attempt} GiB",
         runtime = lambda w, attempt: f"{5 * attempt} h",
     wrapper:
-        wrapper_ver + "/bio/vsearch"
+        f"{wrapper_ver}/bio/vsearch"
 
 
 
@@ -43,4 +43,4 @@ rule seqkit:
         mem = lambda w, attempt: f"{250 * attempt} GiB",
         runtime = lambda w, attempt: f"{5 * attempt} h",
     wrapper:
-        wrapper_ver + "/bio/seqkit"
+        f"{wrapper_ver}/bio/seqkit"
