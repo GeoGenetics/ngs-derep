@@ -15,6 +15,7 @@ rule vsearch:
         "benchmarks/reads/derep/vsearch/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         extra = config["reads"]["derep"]["params"],
+    priority: 10
     threads: 1
     resources:
         mem = lambda w, attempt: f"{100 * attempt} GiB",
@@ -38,6 +39,7 @@ rule seqkit:
     params:
         command = "rmdup",
         extra = "--ignore-case --by-seq " + config["reads"]["derep"]["params"],
+    priority: 10
     threads: 10
     resources:
         mem = lambda w, attempt: f"{250 * attempt} GiB",
