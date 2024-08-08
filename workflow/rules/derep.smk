@@ -42,7 +42,7 @@ rule seqkit:
     priority: 10
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{250 * attempt} GiB",
-        runtime = lambda w, attempt: f"{5 * attempt} h",
+        mem = lambda w, attempt, input: f"{(1e-2 * input.size_mb + 30) * attempt} GiB",
+        runtime = lambda w, attempt, input: f"{1e-4 * input.size_mb * attempt} h",
     wrapper:
         f"{wrapper_ver}/bio/seqkit"
