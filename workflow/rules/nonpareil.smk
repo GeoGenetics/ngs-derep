@@ -29,19 +29,13 @@ rule nonpareil_plot:
     input:
         npo = rules.nonpareil_infer.output.redund_sum,
     output:
-        plot = "reports/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.pdf",
-        model = "stats/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.RData",
+        pdf = "reports/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.pdf",
+        tsv = "stats/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.tsv",
         json = "stats/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.json",
     log:
         "logs/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.plot.log",
-    params:
-        enforce_consistency = False,
-        star = 90,
-        correction_factor = True,
-        plot_observed = True,
-        plot_model = True,
-        plot_dispersion = "ci95",
-        plot_diversity = True,
+#    params: # Needs nonpareil>3.5.5
+#        extra = "--star 90 --dispersion ci95",
     localrule: True
     threads: 1
     resources:
