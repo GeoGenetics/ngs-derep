@@ -44,10 +44,13 @@ rule loglog:
 
 
 def _get_filtermem(log, table_cap, bits, hashes):
+    import sys
     with open(str(log), "r") as f:
         cardinality_lines = list(filter(lambda x: re.search(r'^Cardinality:', x), f.readlines()))
         assert len(cardinality_lines) == 1, "several cardinality values found"
         cardinality = int(cardinality_lines[0].strip().split(" ")[-1])
+        if cardinality == sys.maxsize:
+            cardinality = 0
         return int(cardinality*bits*hashes/8/table_cap)
 
 
