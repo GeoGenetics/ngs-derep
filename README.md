@@ -6,8 +6,7 @@ This module implements read derelication steps:
 - Read extension:
   - [Tadpole](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/tadpole-guide/)
 - Dereplication
-  - [vsearch](https://github.com/torognes/vsearch)
-  - [seqkit rmdup](https://bioinf.shenwei.me/seqkit/usage/#rmdup)
+  - [vsearch](https://github.com/torognes/vsearch) / [seqkit rmdup](https://bioinf.shenwei.me/seqkit/usage/#rmdup)
 - Select original representative read
   - [seqkit fx2tab](https://bioinf.shenwei.me/seqkit/usage/#fx2tab-tab2fx)
   - [seqkit grep](https://bioinf.shenwei.me/seqkit/usage/#grep)
@@ -16,8 +15,8 @@ This module implements read derelication steps:
 
 And QC steps:
 - [MultiQC](https://multiqc.info/) (aggregates QC from several of the tools above)
-- [seqkit stats](https://bioinf.shenwei.me/seqkit/usage/#stats)
-- [nonpareil](https://github.com/lmrodriguezr/nonpareil)
+  - [seqkit stats](https://bioinf.shenwei.me/seqkit/usage/#stats) (on each of the four steps above)
+  - [nonpareil](https://github.com/lmrodriguezr/nonpareil) (on each of the four steps above)
 
 This module can be used directly, but is designed to be used together with other modules.
 
