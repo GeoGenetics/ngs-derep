@@ -14,7 +14,7 @@ reads:
   extension:
     activate: true
     k: 17
-    params: "mode=extend ibb=f prefilter=0 el=100 er=100 overwrite=true trimends=9 ecc=t ecco=f conservative=t ignorebadquality"
+    params: "ibb=f prefilter=0 el=100 er=100 overwrite=true trimends=9 ecc=t ecco=f conservative=t ignorebadquality"
 
   derep:
     activate: false

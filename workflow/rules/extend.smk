@@ -67,7 +67,7 @@ rule read_extension:
     params:
         command="tadpole.sh",
         mode = "extend",
-        extra = lambda w, input: "k={k} filtermem={c} {extra}".format(k=config["reads"]["extension"]["k"], c=_get_filtermem(input.flag[0], table_cap=0.5, bits=16, hashes=3), extra=config["reads"]["extension"]["params"]),
+        extra = lambda w, input: "mode=extend k={k} filtermem={c} {extra}".format(k=config["reads"]["extension"]["k"], c=_get_filtermem(input.flag[0], table_cap=0.5, bits=16, hashes=3), extra=config["reads"]["extension"]["params"]),
     threads: 24
     resources:
         mem = lambda w, attempt: f"{300 * attempt} GiB",

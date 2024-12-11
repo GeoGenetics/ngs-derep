@@ -23,7 +23,7 @@ properties:
             type: integer
           params:
             type: string
-            pattern: "^((?!\b--?(threads|in|filtermem|k|out)[ =]).)*$"
+            pattern: "^((?!\b--?(threads|in|filtermem|mode|k|out)[ =]).)*$"
         required:
           - activate
           - k
