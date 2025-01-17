@@ -12,29 +12,29 @@
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<text text-anchor="start" x="847.5" y="-125.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">all</text>
-<text text-anchor="start" x="662.5" y="-101.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="666.5" y="-101.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
-<text text-anchor="start" x="719.5" y="-101.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="662.5" y="-82" font-family="monospace" font-size="10.00" fill="#000000">reports/multiqc.html</text>
-<text text-anchor="start" x="662.5" y="-64" font-family="monospace" font-size="10.00" fill="#000000">results/reads/low_complexity/HD827sonic_1_lib1_collapsed.fastq.gz</text>
-<text text-anchor="start" x="662.5" y="-46" font-family="monospace" font-size="10.00" fill="#000000">results/reads/low_complexity/HD827sonic_2_lib1_collapsed.fastq.gz</text>
-<text text-anchor="start" x="662.5" y="-28" font-family="monospace" font-size="10.00" fill="#000000">results/reads/low_complexity/HD827sonic_2_lib2_collapsed.fastq.gz</text>
-<text text-anchor="start" x="1046.5" y="-10" font-family="sans" font-size="10.00" fill="#000000"> &#160;</text>
-<polygon fill="#57a7d9" stroke="#57a7d9" points="656.5,-116 656.5,-116 1060.5,-116 1060.5,-116 656.5,-116"/>
-<polygon fill="#57a7d9" stroke="#57a7d9" points="656.5,-22 656.5,-22 1060.5,-22 1060.5,-22 656.5,-22"/>
-<polygon fill="none" stroke="#57a7d9" stroke-width="2" points="656,-1 656,-145 1059,-145 1059,-1 656,-1"/>
+<text text-anchor="start" x="835.5" y="-125.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">all</text>
+<text text-anchor="start" x="650.5" y="-101.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="654.5" y="-101.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
+<text text-anchor="start" x="707.5" y="-101.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="650.5" y="-82" font-family="monospace" font-size="10.00" fill="#000000">reports/multiqc.html</text>
+<text text-anchor="start" x="650.5" y="-64" font-family="monospace" font-size="10.00" fill="#000000">results/reads/low_complexity/HD827sonic_1_lib1_collapsed.fastq.gz</text>
+<text text-anchor="start" x="650.5" y="-46" font-family="monospace" font-size="10.00" fill="#000000">results/reads/low_complexity/HD827sonic_2_lib1_collapsed.fastq.gz</text>
+<text text-anchor="start" x="650.5" y="-28" font-family="monospace" font-size="10.00" fill="#000000">results/reads/low_complexity/HD827sonic_2_lib2_collapsed.fastq.gz</text>
+<text text-anchor="start" x="1034.5" y="-10" font-family="sans" font-size="10.00" fill="#000000"> &#160;</text>
+<polygon fill="#d95757" stroke="#d95757" points="644.5,-116 644.5,-116 1048.5,-116 1048.5,-116 644.5,-116"/>
+<polygon fill="#d95757" stroke="#d95757" points="644.5,-22 644.5,-22 1048.5,-22 1048.5,-22 644.5,-22"/>
+<polygon fill="none" stroke="#d95757" stroke-width="2" points="644,-1 644,-145 1047,-145 1047,-1 644,-1"/>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<text text-anchor="start" x="959.5" y="-815.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">multiqc</text>
+<text text-anchor="start" x="935.5" y="-815.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">multiqc</text>
 <text text-anchor="start" x="760.5" y="-791.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="764.5" y="-791.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
 <text text-anchor="start" x="817.5" y="-791.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="760.5" y="-772" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/vsearch/HD827sonic_1_lib1_collapsed.tsv</text>
-<text text-anchor="start" x="760.5" y="-754" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/vsearch/HD827sonic_2_lib1_collapsed.tsv</text>
-<text text-anchor="start" x="760.5" y="-736" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/vsearch/HD827sonic_2_lib2_collapsed.tsv</text>
+<text text-anchor="start" x="760.5" y="-772" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/HD827sonic_1_lib1_collapsed.tsv</text>
+<text text-anchor="start" x="760.5" y="-754" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/HD827sonic_2_lib1_collapsed.tsv</text>
+<text text-anchor="start" x="760.5" y="-736" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/HD827sonic_2_lib2_collapsed.tsv</text>
 <text text-anchor="start" x="760.5" y="-718" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/extend/tadpole/HD827sonic_1_lib1_collapsed.tsv</text>
 <text text-anchor="start" x="760.5" y="-700" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/extend/tadpole/HD827sonic_2_lib1_collapsed.tsv</text>
 <text text-anchor="start" x="760.5" y="-682" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/extend/tadpole/HD827sonic_2_lib2_collapsed.tsv</text>
@@ -44,9 +44,9 @@
 <text text-anchor="start" x="760.5" y="-610" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/merge_lanes/HD827sonic_1_lib1_collapsed.tsv</text>
 <text text-anchor="start" x="760.5" y="-592" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/merge_lanes/HD827sonic_2_lib1_collapsed.tsv</text>
 <text text-anchor="start" x="760.5" y="-574" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/merge_lanes/HD827sonic_2_lib2_collapsed.tsv</text>
-<text text-anchor="start" x="760.5" y="-556" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/derep/vsearch/HD827sonic_1_lib1_collapsed.json</text>
-<text text-anchor="start" x="760.5" y="-538" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/derep/vsearch/HD827sonic_2_lib1_collapsed.json</text>
-<text text-anchor="start" x="760.5" y="-520" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/derep/vsearch/HD827sonic_2_lib2_collapsed.json</text>
+<text text-anchor="start" x="760.5" y="-556" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/derep/HD827sonic_1_lib1_collapsed.json</text>
+<text text-anchor="start" x="760.5" y="-538" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/derep/HD827sonic_2_lib1_collapsed.json</text>
+<text text-anchor="start" x="760.5" y="-520" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/derep/HD827sonic_2_lib2_collapsed.json</text>
 <text text-anchor="start" x="760.5" y="-502" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/extend/tadpole/HD827sonic_1_lib1_collapsed.json</text>
 <text text-anchor="start" x="760.5" y="-484" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/extend/tadpole/HD827sonic_2_lib1_collapsed.json</text>
 <text text-anchor="start" x="760.5" y="-466" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/extend/tadpole/HD827sonic_2_lib2_collapsed.json</text>
@@ -56,26 +56,26 @@
 <text text-anchor="start" x="760.5" y="-394" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/merge_lanes/HD827sonic_1_lib1_collapsed.json</text>
 <text text-anchor="start" x="760.5" y="-376" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib1_collapsed.json</text>
 <text text-anchor="start" x="760.5" y="-358" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.json</text>
-<text text-anchor="start" x="760.5" y="-340" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/represent/grep/vsearch/HD827sonic_1_lib1_collapsed.json</text>
-<text text-anchor="start" x="760.5" y="-322" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/represent/grep/vsearch/HD827sonic_2_lib1_collapsed.json</text>
-<text text-anchor="start" x="760.5" y="-304" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/represent/grep/vsearch/HD827sonic_2_lib2_collapsed.json</text>
-<text text-anchor="start" x="760.5" y="-286" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/represent/grep/vsearch/HD827sonic_1_lib1_collapsed.tsv</text>
-<text text-anchor="start" x="760.5" y="-268" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/represent/grep/vsearch/HD827sonic_2_lib1_collapsed.tsv</text>
-<text text-anchor="start" x="760.5" y="-250" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/represent/grep/vsearch/HD827sonic_2_lib2_collapsed.tsv</text>
-<text text-anchor="start" x="1154.5" y="-229.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="1158.5" y="-229.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
-<text text-anchor="start" x="1219.5" y="-229.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="760.5" y="-340" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/represent/grep/HD827sonic_1_lib1_collapsed.json</text>
+<text text-anchor="start" x="760.5" y="-322" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/represent/grep/HD827sonic_2_lib1_collapsed.json</text>
+<text text-anchor="start" x="760.5" y="-304" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/represent/grep/HD827sonic_2_lib2_collapsed.json</text>
+<text text-anchor="start" x="760.5" y="-286" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/represent/grep/HD827sonic_1_lib1_collapsed.tsv</text>
+<text text-anchor="start" x="760.5" y="-268" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/represent/grep/HD827sonic_2_lib1_collapsed.tsv</text>
+<text text-anchor="start" x="760.5" y="-250" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/represent/grep/HD827sonic_2_lib2_collapsed.tsv</text>
+<text text-anchor="start" x="1106.5" y="-229.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="1110.5" y="-229.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
+<text text-anchor="start" x="1171.5" y="-229.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="760.5" y="-210" font-family="monospace" font-size="10.00" fill="#000000">reports/multiqc.html</text>
 <text text-anchor="start" x="760.5" y="-192" font-family="monospace" font-size="10.00" fill="#000000">reports/multiqc_data.zip</text>
-<polygon fill="#57d96b" stroke="#57d96b" points="754.5,-806 754.5,-806 1230.5,-806 1230.5,-806 754.5,-806"/>
-<polygon fill="#57d96b" stroke="#57d96b" points="754.5,-244 754.5,-244 1230.5,-244 1230.5,-244 754.5,-244"/>
-<polygon fill="none" stroke="#57d96b" stroke-width="2" points="754,-183 754,-835 1229,-835 1229,-183 754,-183"/>
+<polygon fill="#82d957" stroke="#82d957" points="754.5,-806 754.5,-806 1182.5,-806 1182.5,-806 754.5,-806"/>
+<polygon fill="#82d957" stroke="#82d957" points="754.5,-244 754.5,-244 1182.5,-244 1182.5,-244 754.5,-244"/>
+<polygon fill="none" stroke="#82d957" stroke-width="2" points="754,-183 754,-835 1181,-835 1181,-183 754,-183"/>
 </g>
 <!-- 1&#45;&gt;0 -->
-<g id="edge2" class="edge">
+<g id="edge1" class="edge">
 <title>1&#45;&gt;0</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M890.9682,-181.8965C888.1633,-172.7701 885.464,-163.9874 882.8993,-155.6426"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="886.2356,-154.5839 879.9522,-146.0534 879.5445,-156.6404 886.2356,-154.5839"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M875.971,-181.8965C873.4451,-172.8693 871.0132,-164.1784 868.701,-155.9149"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="872.0068,-154.7403 865.9415,-146.0534 865.2657,-156.6266 872.0068,-154.7403"/>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
@@ -89,37 +89,37 @@
 <text text-anchor="start" x="1345.5" y="-1114.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
 <text text-anchor="start" x="1406.5" y="-1114.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="845.5" y="-1095" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.tsv</text>
-<polygon fill="#d95757" stroke="#d95757" points="839.5,-1169 839.5,-1169 1417.5,-1169 1417.5,-1169 839.5,-1169"/>
-<polygon fill="#d95757" stroke="#d95757" points="839.5,-1129 839.5,-1129 1417.5,-1129 1417.5,-1129 839.5,-1129"/>
-<polygon fill="none" stroke="#d95757" stroke-width="2" points="839,-1086 839,-1198 1416,-1198 1416,-1086 839,-1086"/>
+<polygon fill="#57add9" stroke="#57add9" points="839.5,-1169 839.5,-1169 1417.5,-1169 1417.5,-1169 839.5,-1169"/>
+<polygon fill="#57add9" stroke="#57add9" points="839.5,-1129 839.5,-1129 1417.5,-1129 1417.5,-1129 839.5,-1129"/>
+<polygon fill="none" stroke="#57add9" stroke-width="2" points="839,-1086 839,-1198 1416,-1198 1416,-1086 839,-1086"/>
 </g>
 <!-- 2&#45;&gt;1 -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>2&#45;&gt;1</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M1115.2512,-1084.989C1103.2224,-1029.0021 1083.8276,-938.7306 1063.9251,-846.0963"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1067.3331,-845.2957 1061.8105,-836.2541 1060.4892,-846.7662 1067.3331,-845.2957"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M1113.0896,-1084.989C1098.9381,-1029.0021 1076.1207,-938.7306 1052.706,-846.0963"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1056.0622,-845.0914 1050.2183,-836.2541 1049.2756,-846.8069 1056.0622,-845.0914"/>
 </g>
 <!-- 3 -->
 <g id="node4" class="node">
 <title>3</title>
-<text text-anchor="start" x="299.5" y="-2363.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">merge_lanes</text>
-<text text-anchor="start" x="44.5" y="-2339.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="48.5" y="-2339.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
-<text text-anchor="start" x="101.5" y="-2339.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="44.5" y="-2320" font-family="monospace" font-size="10.00" fill="#000000">&lt;input function&gt;</text>
-<text text-anchor="start" x="594.5" y="-2299.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="598.5" y="-2299.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
-<text text-anchor="start" x="659.5" y="-2299.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="44.5" y="-2280" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/merge_lanes/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
-<polygon fill="#57d9bb" stroke="#57d9bb" points="38.5,-2354 38.5,-2354 670.5,-2354 670.5,-2354 38.5,-2354"/>
-<polygon fill="#57d9bb" stroke="#57d9bb" points="38.5,-2314 38.5,-2314 670.5,-2314 670.5,-2314 38.5,-2314"/>
-<polygon fill="none" stroke="#57d9bb" stroke-width="2" points="38,-2271 38,-2383 669,-2383 669,-2271 38,-2271"/>
+<text text-anchor="start" x="288.5" y="-2363.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">merge_lanes</text>
+<text text-anchor="start" x="33.5" y="-2339.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="37.5" y="-2339.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
+<text text-anchor="start" x="90.5" y="-2339.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="33.5" y="-2320" font-family="monospace" font-size="10.00" fill="#000000">&lt;input function&gt;</text>
+<text text-anchor="start" x="583.5" y="-2299.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="587.5" y="-2299.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
+<text text-anchor="start" x="648.5" y="-2299.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="33.5" y="-2280" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/merge_lanes/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
+<polygon fill="#add957" stroke="#add957" points="27.5,-2354 27.5,-2354 659.5,-2354 659.5,-2354 27.5,-2354"/>
+<polygon fill="#add957" stroke="#add957" points="27.5,-2314 27.5,-2314 659.5,-2314 659.5,-2314 27.5,-2314"/>
+<polygon fill="none" stroke="#add957" stroke-width="2" points="27,-2271 27,-2383 658,-2383 658,-2271 27,-2271"/>
 </g>
 <!-- 3&#45;&gt;2 -->
-<g id="edge9" class="edge">
+<g id="edge5" class="edge">
 <title>3&#45;&gt;2</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M670.143,-2302.3651C808.2159,-2287.559 952.2262,-2265.3817 1012.5,-2234 1133.8287,-2170.83 1222.5,-2145.7886 1222.5,-2009 1222.5,-2009 1222.5,-2009 1222.5,-1514 1222.5,-1401.0438 1223.2639,-1369.792 1189.5,-1262 1183.852,-1243.9685 1175.617,-1225.3994 1166.9831,-1208.4176"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1169.8842,-1206.411 1162.1593,-1199.16 1163.6764,-1209.6457 1169.8842,-1206.411"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M659.2365,-2301.6416C797.0947,-2286.6784 940.8955,-2264.5781 1001.5,-2234 1126.6431,-2170.8589 1222.5,-2149.1699 1222.5,-2009 1222.5,-2009 1222.5,-2009 1222.5,-1514 1222.5,-1400.4551 1213.0256,-1370.7866 1180.5,-1262 1175.188,-1244.2334 1167.8937,-1225.6293 1160.4153,-1208.5176"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1163.5211,-1206.8884 1156.2531,-1199.1795 1157.1274,-1209.7382 1163.5211,-1206.8884"/>
 </g>
 <!-- 5 -->
 <g id="node6" class="node">
@@ -136,84 +136,84 @@
 <text text-anchor="start" x="7.5" y="-1104" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.npa</text>
 <text text-anchor="start" x="7.5" y="-1086" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.npc</text>
 <text text-anchor="start" x="7.5" y="-1068" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.npo</text>
-<polygon fill="#6bd957" stroke="#6bd957" points="1.5,-1196 1.5,-1196 639.5,-1196 639.5,-1196 1.5,-1196"/>
-<polygon fill="#6bd957" stroke="#6bd957" points="1.5,-1156 1.5,-1156 639.5,-1156 639.5,-1156 1.5,-1156"/>
-<polygon fill="none" stroke="#6bd957" stroke-width="2" points="1,-1059 1,-1225 638,-1225 638,-1059 1,-1059"/>
+<polygon fill="#57d957" stroke="#57d957" points="1.5,-1196 1.5,-1196 639.5,-1196 639.5,-1196 1.5,-1196"/>
+<polygon fill="#57d957" stroke="#57d957" points="1.5,-1156 1.5,-1156 639.5,-1156 639.5,-1156 1.5,-1156"/>
+<polygon fill="none" stroke="#57d957" stroke-width="2" points="1,-1059 1,-1225 638,-1225 638,-1059 1,-1059"/>
 </g>
 <!-- 3&#45;&gt;5 -->
-<g id="edge15" class="edge">
+<g id="edge11" class="edge">
 <title>3&#45;&gt;5</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M315.3958,-2269.9544C277.9872,-2208.3251 226.5,-2105.9007 226.5,-2009 226.5,-2009 226.5,-2009 226.5,-1514 226.5,-1401.3108 220.8172,-1369.5376 254.5,-1262 257.2857,-1253.1061 260.7501,-1244.1122 264.6186,-1235.2589"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="267.8327,-1236.6459 268.7849,-1226.094 261.4603,-1233.749 267.8327,-1236.6459"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M307.8533,-2269.7996C273.672,-2207.8331 226.5,-2104.9368 226.5,-2009 226.5,-2009 226.5,-2009 226.5,-1514 226.5,-1401.1006 225.3193,-1369.9135 258.5,-1262 261.2273,-1253.1301 264.576,-1244.1248 268.2879,-1235.2395"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="271.5122,-1236.6014 272.2766,-1226.0342 265.0892,-1233.8183 271.5122,-1236.6014"/>
 </g>
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<text text-anchor="start" x="627.5" y="-2063.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">read_extension</text>
-<text text-anchor="start" x="374.5" y="-2039.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="378.5" y="-2039.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
-<text text-anchor="start" x="431.5" y="-2039.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="374.5" y="-2020" font-family="monospace" font-size="10.00" fill="#000000">logs/reads/extend/loglog/{sample}_{library}_{read_type_trim}.log</text>
-<text text-anchor="start" x="374.5" y="-2002" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/loglog/{sample}_{library}_{read_type_trim}.flag</text>
-<text text-anchor="start" x="374.5" y="-1984" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz</text>
-<text text-anchor="start" x="942.5" y="-1963.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="946.5" y="-1963.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
-<text text-anchor="start" x="1007.5" y="-1963.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="374.5" y="-1944" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/tadpole/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
-<polygon fill="#93d957" stroke="#93d957" points="368.5,-2054 368.5,-2054 1018.5,-2054 1018.5,-2054 368.5,-2054"/>
-<polygon fill="#93d957" stroke="#93d957" points="368.5,-1978 368.5,-1978 1018.5,-1978 1018.5,-1978 368.5,-1978"/>
-<polygon fill="none" stroke="#93d957" stroke-width="2" points="368,-1935 368,-2083 1017,-2083 1017,-1935 368,-1935"/>
+<text text-anchor="start" x="616" y="-2063.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">extend_tadpole</text>
+<text text-anchor="start" x="363.5" y="-2039.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="367.5" y="-2039.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
+<text text-anchor="start" x="420.5" y="-2039.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="363.5" y="-2020" font-family="monospace" font-size="10.00" fill="#000000">logs/reads/extend/loglog/{sample}_{library}_{read_type_trim}.log</text>
+<text text-anchor="start" x="363.5" y="-2002" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/loglog/{sample}_{library}_{read_type_trim}.flag</text>
+<text text-anchor="start" x="363.5" y="-1984" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz</text>
+<text text-anchor="start" x="931.5" y="-1963.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="935.5" y="-1963.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
+<text text-anchor="start" x="996.5" y="-1963.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="363.5" y="-1944" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/tadpole/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
+<polygon fill="#d98257" stroke="#d98257" points="357.5,-2054 357.5,-2054 1007.5,-2054 1007.5,-2054 357.5,-2054"/>
+<polygon fill="#d98257" stroke="#d98257" points="357.5,-1978 357.5,-1978 1007.5,-1978 1007.5,-1978 357.5,-1978"/>
+<polygon fill="none" stroke="#d98257" stroke-width="2" points="357,-1935 357,-2083 1006,-2083 1006,-1935 357,-1935"/>
 </g>
 <!-- 3&#45;&gt;6 -->
 <g id="edge16" class="edge">
 <title>3&#45;&gt;6</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M343.1629,-2269.5553C338.3777,-2224.247 339.6862,-2161.9137 372.5,-2120 381.0241,-2109.112 397.2167,-2098.4781 417.9724,-2088.3725"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="419.5699,-2091.4892 427.138,-2084.0747 416.598,-2085.1514 419.5699,-2091.4892"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M332.1629,-2269.5553C327.3777,-2224.247 328.6862,-2161.9137 361.5,-2120 370.0241,-2109.112 386.2167,-2098.4781 406.9724,-2088.3725"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="408.5699,-2091.4892 416.138,-2084.0747 405.598,-2085.1514 408.5699,-2091.4892"/>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
 <title>7</title>
-<text text-anchor="start" x="665" y="-2213.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">loglog</text>
-<text text-anchor="start" x="389.5" y="-2189.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="393.5" y="-2189.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
-<text text-anchor="start" x="446.5" y="-2189.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="389.5" y="-2170" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz</text>
-<text text-anchor="start" x="927.5" y="-2149.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="931.5" y="-2149.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
-<text text-anchor="start" x="992.5" y="-2149.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="389.5" y="-2130" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/loglog/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.flag</text>
-<polygon fill="#577fd9" stroke="#577fd9" points="383.5,-2204 383.5,-2204 1003.5,-2204 1003.5,-2204 383.5,-2204"/>
-<polygon fill="#577fd9" stroke="#577fd9" points="383.5,-2164 383.5,-2164 1003.5,-2164 1003.5,-2164 383.5,-2164"/>
-<polygon fill="none" stroke="#577fd9" stroke-width="2" points="383,-2121 383,-2233 1002,-2233 1002,-2121 383,-2121"/>
+<text text-anchor="start" x="654" y="-2213.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">loglog</text>
+<text text-anchor="start" x="378.5" y="-2189.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="382.5" y="-2189.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
+<text text-anchor="start" x="435.5" y="-2189.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="378.5" y="-2170" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz</text>
+<text text-anchor="start" x="916.5" y="-2149.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="920.5" y="-2149.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
+<text text-anchor="start" x="981.5" y="-2149.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="378.5" y="-2130" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/loglog/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.flag</text>
+<polygon fill="#d9ad57" stroke="#d9ad57" points="372.5,-2204 372.5,-2204 992.5,-2204 992.5,-2204 372.5,-2204"/>
+<polygon fill="#d9ad57" stroke="#d9ad57" points="372.5,-2164 372.5,-2164 992.5,-2164 992.5,-2164 372.5,-2164"/>
+<polygon fill="none" stroke="#d9ad57" stroke-width="2" points="372,-2121 372,-2233 991,-2233 991,-2121 372,-2121"/>
 </g>
 <!-- 3&#45;&gt;7 -->
 <g id="edge18" class="edge">
 <title>3&#45;&gt;7</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M482.6284,-2269.8635C506.0021,-2259.5212 530.4632,-2248.6977 554.0898,-2238.2435"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="555.7215,-2241.3489 563.45,-2234.1018 552.889,-2234.9475 555.7215,-2241.3489"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M471.6284,-2269.8635C495.0021,-2259.5212 519.4632,-2248.6977 543.0898,-2238.2435"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="544.7215,-2241.3489 552.45,-2234.1018 541.889,-2234.9475 544.7215,-2241.3489"/>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
 <title>9</title>
-<text text-anchor="start" x="656.5" y="-1559.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">seqkit_grep</text>
+<text text-anchor="start" x="635.5" y="-1559.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">seqkit_grep</text>
 <text text-anchor="start" x="367.5" y="-1535.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="371.5" y="-1535.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
 <text text-anchor="start" x="424.5" y="-1535.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="367.5" y="-1516" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz</text>
-<text text-anchor="start" x="367.5" y="-1498" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.{tool}.tsv</text>
-<text text-anchor="start" x="977.5" y="-1477.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="981.5" y="-1477.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
-<text text-anchor="start" x="1042.5" y="-1477.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="367.5" y="-1458" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/grep/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
-<polygon fill="#d9cf57" stroke="#d9cf57" points="361.5,-1550 361.5,-1550 1053.5,-1550 1053.5,-1550 361.5,-1550"/>
-<polygon fill="#d9cf57" stroke="#d9cf57" points="361.5,-1492 361.5,-1492 1053.5,-1492 1053.5,-1492 361.5,-1492"/>
-<polygon fill="none" stroke="#d9cf57" stroke-width="2" points="361,-1449 361,-1579 1052,-1579 1052,-1449 361,-1449"/>
+<text text-anchor="start" x="367.5" y="-1498" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.tsv</text>
+<text text-anchor="start" x="935.5" y="-1477.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="939.5" y="-1477.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
+<text text-anchor="start" x="1000.5" y="-1477.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="367.5" y="-1458" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/grep/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
+<polygon fill="#57d9d9" stroke="#57d9d9" points="361.5,-1550 361.5,-1550 1011.5,-1550 1011.5,-1550 361.5,-1550"/>
+<polygon fill="#57d9d9" stroke="#57d9d9" points="361.5,-1492 361.5,-1492 1011.5,-1492 1011.5,-1492 361.5,-1492"/>
+<polygon fill="none" stroke="#57d9d9" stroke-width="2" points="361,-1449 361,-1579 1010,-1579 1010,-1449 361,-1449"/>
 </g>
 <!-- 3&#45;&gt;9 -->
-<g id="edge20" class="edge">
+<g id="edge21" class="edge">
 <title>3&#45;&gt;9</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M338.7487,-2269.9938C323.6864,-2206.6933 302.5,-2101.2578 302.5,-2009 302.5,-2009 302.5,-2009 302.5,-1832 302.5,-1732.7137 290.2797,-1687.1781 359.5,-1616 370.5144,-1604.6741 390.6059,-1593.8597 415.7804,-1583.7933"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="417.2143,-1586.9914 425.2778,-1580.1189 414.6886,-1580.463 417.2143,-1586.9914"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M330.9303,-2269.8246C319.1168,-2206.376 302.5,-2100.8116 302.5,-2009 302.5,-2009 302.5,-2009 302.5,-1832 302.5,-1732.7137 290.8994,-1687.7756 359.5,-1616 370.1742,-1604.8318 390.0068,-1593.9846 414.8278,-1583.7903"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="416.1931,-1587.014 424.1904,-1580.0647 413.6049,-1580.51 416.1931,-1587.014"/>
 </g>
 <!-- 4 -->
 <g id="node5" class="node">
@@ -229,15 +229,15 @@
 <text text-anchor="start" x="18.5" y="-918" font-family="monospace" font-size="10.00" fill="#000000">reports/reads/nonpareil/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.pdf</text>
 <text text-anchor="start" x="18.5" y="-900" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.json</text>
 <text text-anchor="start" x="18.5" y="-882" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/nonpareil/{tool}/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.tsv</text>
-<polygon fill="#d9a757" stroke="#d9a757" points="12.5,-992 12.5,-992 662.5,-992 662.5,-992 12.5,-992"/>
-<polygon fill="#d9a757" stroke="#d9a757" points="12.5,-952 12.5,-952 662.5,-952 662.5,-952 12.5,-952"/>
-<polygon fill="none" stroke="#d9a757" stroke-width="2" points="12,-873 12,-1021 661,-1021 661,-873 12,-873"/>
+<polygon fill="#57d982" stroke="#57d982" points="12.5,-992 12.5,-992 662.5,-992 662.5,-992 12.5,-992"/>
+<polygon fill="#57d982" stroke="#57d982" points="12.5,-952 12.5,-952 662.5,-952 662.5,-952 12.5,-952"/>
+<polygon fill="none" stroke="#57d982" stroke-width="2" points="12,-873 12,-1021 661,-1021 661,-873 12,-873"/>
 </g>
 <!-- 4&#45;&gt;1 -->
-<g id="edge4" class="edge">
+<g id="edge3" class="edge">
 <title>4&#45;&gt;1</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M448.7262,-871.9541C529.7986,-817.7408 642.4683,-742.3983 744.1537,-674.4011"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="746.3354,-677.1526 752.7026,-668.6844 742.4443,-671.3337 746.3354,-677.1526"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M444.6141,-871.9541C526.8233,-814.8897 642.758,-734.4152 744.5783,-663.738"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="746.5995,-666.5957 752.8186,-658.0182 742.6079,-660.8452 746.5995,-666.5957"/>
 </g>
 <!-- 5&#45;&gt;4 -->
 <g id="edge10" class="edge">
@@ -246,91 +246,91 @@
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="332.5591,-1032.503 329.9409,-1022.2368 325.5855,-1031.895 332.5591,-1032.503"/>
 </g>
 <!-- 6&#45;&gt;2 -->
-<g id="edge7" class="edge">
+<g id="edge6" class="edge">
 <title>6&#45;&gt;2</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M973.3786,-1933.8821C993.9054,-1923.3971 1013.5612,-1911.4969 1031.5,-1898 1128.1331,-1825.2948 1184.5,-1793.9297 1184.5,-1673 1184.5,-1673 1184.5,-1673 1184.5,-1514 1184.5,-1401.7454 1189.2021,-1372.1368 1167.5,-1262 1164.0574,-1244.5293 1158.7827,-1226.0869 1153.1817,-1209.0412"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1156.3697,-1207.5415 1149.8577,-1199.1842 1149.7367,-1209.7784 1156.3697,-1207.5415"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M952.1408,-1933.8773C1071.1972,-1882.7611 1184.5,-1800.5963 1184.5,-1673 1184.5,-1673 1184.5,-1673 1184.5,-1514 1184.5,-1406.5125 1160.9608,-1283.5494 1144.1362,-1209.3897"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1147.4587,-1208.2193 1141.8099,-1199.256 1140.6362,-1209.7856 1147.4587,-1208.2193"/>
 </g>
 <!-- 6&#45;&gt;5 -->
-<g id="edge13" class="edge">
+<g id="edge12" class="edge">
 <title>6&#45;&gt;5</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M410.9889,-1933.9546C395.1797,-1923.4952 380.4762,-1911.578 367.5,-1898 196.731,-1719.3104 250.8288,-1395.5316 291.6637,-1236.0025"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="295.0831,-1236.7597 294.209,-1226.201 288.3078,-1235.0002 295.0831,-1236.7597"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M419.8672,-1933.8571C403.7655,-1923.4123 388.7461,-1911.5257 375.5,-1898 202.3224,-1721.1672 253.3627,-1396.1569 292.6493,-1236.1078"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="296.0777,-1236.8242 295.0993,-1226.2746 289.2854,-1235.1318 296.0777,-1236.8242"/>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
 <title>8</title>
-<text text-anchor="start" x="666.5" y="-1877.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">vsearch</text>
-<text text-anchor="start" x="384.5" y="-1853.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="388.5" y="-1853.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
-<text text-anchor="start" x="441.5" y="-1853.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="384.5" y="-1834" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.fastq.gz</text>
-<text text-anchor="start" x="946.5" y="-1813.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="950.5" y="-1813.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
-<text text-anchor="start" x="1011.5" y="-1813.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="384.5" y="-1794" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/vsearch/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.log</text>
-<text text-anchor="start" x="384.5" y="-1776" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/vsearch/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
-<polygon fill="#57d993" stroke="#57d993" points="378.5,-1868 378.5,-1868 1022.5,-1868 1022.5,-1868 378.5,-1868"/>
-<polygon fill="#57d993" stroke="#57d993" points="378.5,-1828 378.5,-1828 1022.5,-1828 1022.5,-1828 378.5,-1828"/>
-<polygon fill="none" stroke="#57d993" stroke-width="2" points="378,-1767 378,-1897 1021,-1897 1021,-1767 378,-1767"/>
+<text text-anchor="start" x="649.5" y="-1877.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">vsearch</text>
+<text text-anchor="start" x="391.5" y="-1853.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="395.5" y="-1853.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
+<text text-anchor="start" x="448.5" y="-1853.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="391.5" y="-1834" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.fastq.gz</text>
+<text text-anchor="start" x="905.5" y="-1813.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="909.5" y="-1813.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
+<text text-anchor="start" x="970.5" y="-1813.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="391.5" y="-1794" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/derep/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.log</text>
+<text text-anchor="start" x="391.5" y="-1776" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
+<polygon fill="#5782d9" stroke="#5782d9" points="385.5,-1868 385.5,-1868 981.5,-1868 981.5,-1868 385.5,-1868"/>
+<polygon fill="#5782d9" stroke="#5782d9" points="385.5,-1828 385.5,-1828 981.5,-1828 981.5,-1828 385.5,-1828"/>
+<polygon fill="none" stroke="#5782d9" stroke-width="2" points="385,-1767 385,-1897 980,-1897 980,-1767 385,-1767"/>
 </g>
 <!-- 6&#45;&gt;8 -->
 <g id="edge19" class="edge">
 <title>6&#45;&gt;8</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M695.4686,-1933.9361C695.8024,-1925.4959 696.1428,-1916.8888 696.4773,-1908.4315"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="699.9835,-1908.3417 696.8815,-1898.2111 692.9889,-1908.065 699.9835,-1908.3417"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M681.9241,-1933.9361C681.9718,-1925.4959 682.0204,-1916.8888 682.0682,-1908.4315"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="685.5693,-1908.2308 682.1259,-1898.2111 678.5694,-1908.1912 685.5693,-1908.2308"/>
 </g>
 <!-- 7&#45;&gt;6 -->
 <g id="edge17" class="edge">
 <title>7&#45;&gt;6</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M692.5,-2119.6538C692.5,-2111.4553 692.5,-2102.8789 692.5,-2094.2845"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="696.0001,-2094.2088 692.5,-2084.2088 689.0001,-2094.2088 696.0001,-2094.2088"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M681.5,-2119.6538C681.5,-2111.4553 681.5,-2102.8789 681.5,-2094.2845"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="685.0001,-2094.2088 681.5,-2084.2088 678.0001,-2094.2088 685.0001,-2094.2088"/>
 </g>
 <!-- 8&#45;&gt;2 -->
-<g id="edge8" class="edge">
+<g id="edge7" class="edge">
 <title>8&#45;&gt;2</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M989.3894,-1765.9586C1018.3851,-1754.965 1041.5438,-1742.8999 1053.5,-1730 1186.8354,-1586.1407 1162.6214,-1330.4595 1141.566,-1209.2807"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1145.0027,-1208.6153 1139.8013,-1199.3851 1138.1114,-1209.8443 1145.0027,-1208.6153"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M943.913,-1765.9044C974.1587,-1754.5618 998.753,-1742.4103 1011.5,-1730 1153.9911,-1591.2727 1148.3754,-1331.9412 1136.3789,-1209.4153"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1139.8551,-1209.0035 1135.3552,-1199.4119 1132.8915,-1209.7162 1139.8551,-1209.0035"/>
 </g>
 <!-- 8&#45;&gt;5 -->
-<g id="edge14" class="edge">
+<g id="edge13" class="edge">
 <title>8&#45;&gt;5</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M419.6312,-1765.9407C392.1214,-1754.9673 370.357,-1742.9125 359.5,-1730 298.6916,-1657.6791 304.8044,-1383.6586 312.9277,-1236.6155"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="316.4435,-1236.4344 313.5151,-1226.2524 309.4547,-1236.0382 316.4435,-1236.4344"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M418.7037,-1765.8706C391.5618,-1754.7989 370.0523,-1742.7355 359.5,-1730 299.2147,-1657.2425 305.0958,-1383.4154 313.0494,-1236.5139"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="316.5644,-1236.3397 313.6248,-1226.1608 309.5752,-1235.9512 316.5644,-1236.3397"/>
 </g>
 <!-- 10 -->
 <g id="node11" class="node">
 <title>10</title>
-<text text-anchor="start" x="649.5" y="-1709.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">seqkit_fx2tab</text>
+<text text-anchor="start" x="628.5" y="-1709.6" font-family="sans" font-weight="bold" font-size="18.00" fill="#000000">seqkit_fx2tab</text>
 <text text-anchor="start" x="376.5" y="-1685.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="380.5" y="-1685.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
 <text text-anchor="start" x="433.5" y="-1685.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="376.5" y="-1666" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz</text>
-<text text-anchor="start" x="968.5" y="-1645.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="972.5" y="-1645.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
-<text text-anchor="start" x="1033.5" y="-1645.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="376.5" y="-1626" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/fx2tab/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.{tool}.tsv</text>
-<polygon fill="#bbd957" stroke="#bbd957" points="370.5,-1700 370.5,-1700 1044.5,-1700 1044.5,-1700 370.5,-1700"/>
-<polygon fill="#bbd957" stroke="#bbd957" points="370.5,-1660 370.5,-1660 1044.5,-1660 1044.5,-1660 370.5,-1660"/>
-<polygon fill="none" stroke="#bbd957" stroke-width="2" points="370,-1617 370,-1729 1043,-1729 1043,-1617 370,-1617"/>
+<text text-anchor="start" x="376.5" y="-1666" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz</text>
+<text text-anchor="start" x="926.5" y="-1645.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="930.5" y="-1645.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
+<text text-anchor="start" x="991.5" y="-1645.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
+<text text-anchor="start" x="376.5" y="-1626" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/fx2tab/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.tsv</text>
+<polygon fill="#57d9ad" stroke="#57d9ad" points="370.5,-1700 370.5,-1700 1002.5,-1700 1002.5,-1700 370.5,-1700"/>
+<polygon fill="#57d9ad" stroke="#57d9ad" points="370.5,-1660 370.5,-1660 1002.5,-1660 1002.5,-1660 370.5,-1660"/>
+<polygon fill="none" stroke="#57d9ad" stroke-width="2" points="370,-1617 370,-1729 1001,-1729 1001,-1617 370,-1617"/>
 </g>
 <!-- 8&#45;&gt;10 -->
 <g id="edge22" class="edge">
 <title>8&#45;&gt;10</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M702.4078,-1765.951C702.779,-1757.5194 703.1594,-1748.8799 703.5315,-1740.4269"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="707.0369,-1740.3793 703.9802,-1730.235 700.0437,-1740.0714 707.0369,-1740.3793"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M683.7462,-1765.951C683.9053,-1757.5194 684.0683,-1748.8799 684.2278,-1740.4269"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="687.7307,-1740.2993 684.4201,-1730.235 680.732,-1740.1672 687.7307,-1740.2993"/>
 </g>
 <!-- 9&#45;&gt;2 -->
-<g id="edge6" class="edge">
+<g id="edge8" class="edge">
 <title>9&#45;&gt;2</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M1027.1524,-1447.9513C1055.4424,-1437.1966 1077.8049,-1425.1961 1089.5,-1412 1115.3852,-1382.7926 1123.69,-1279.1955 1126.3225,-1209.1554"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1129.8232,-1209.193 1126.6712,-1199.078 1122.8274,-1208.9509 1129.8232,-1209.193"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M1011.0709,-1453.5024C1046.8366,-1441.5003 1075.4238,-1427.6768 1089.5,-1412 1115.5741,-1382.9611 1123.8244,-1279.3155 1126.3943,-1209.2194"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1129.8953,-1209.2458 1126.7337,-1199.1337 1122.8993,-1209.0103 1129.8953,-1209.2458"/>
 </g>
 <!-- 9&#45;&gt;5 -->
-<g id="edge12" class="edge">
+<g id="edge14" class="edge">
 <title>9&#45;&gt;5</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M420.8584,-1447.8935C392.9068,-1436.9447 370.7309,-1424.9091 359.5,-1412 337.016,-1386.1563 327.17,-1303.3864 322.8584,-1236.2324"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="326.3383,-1235.7926 322.2372,-1226.0237 319.3512,-1236.2178 326.3383,-1235.7926"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M419.9625,-1447.9125C392.3465,-1436.8157 370.3861,-1424.7341 359.5,-1412 337.2775,-1386.0051 327.3983,-1303.4896 323.0079,-1236.4534"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="326.4881,-1236.0251 322.3742,-1226.2616 319.5016,-1236.4596 326.4881,-1236.0251"/>
 </g>
 <!-- 11 -->
 <g id="node12" class="node">
@@ -339,43 +339,43 @@
 <text text-anchor="start" x="376.5" y="-1367.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="380.5" y="-1367.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">↪ input</text>
 <text text-anchor="start" x="433.5" y="-1367.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
-<text text-anchor="start" x="376.5" y="-1348" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/grep/vsearch/{sample}_{library}_{read_type_trim}.fastq.gz</text>
+<text text-anchor="start" x="376.5" y="-1348" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/represent/grep/{sample}_{library}_{read_type_trim}.fastq.gz</text>
 <text text-anchor="start" x="1004.5" y="-1327.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="1008.5" y="-1327.8" font-family="sans" font-weight="bold" font-size="14.00" fill="#000000">output →</text>
 <text text-anchor="start" x="1069.5" y="-1327.8" font-family="sans" font-size="10.00" fill="#000000"> </text>
 <text text-anchor="start" x="376.5" y="-1308" font-family="monospace" font-size="10.00" fill="#000000">results/reads/low_complexity/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.fastq.gz</text>
 <text text-anchor="start" x="376.5" y="-1290" font-family="monospace" font-size="10.00" fill="#000000">stats/reads/low_complexity/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.txt</text>
 <text text-anchor="start" x="376.5" y="-1272" font-family="monospace" font-size="10.00" fill="#000000">temp/reads/low_complexity/{sample,HD827sonic_1|HD827sonic_2}_{library,lib1|lib2}_{read_type_trim}.discarded.fastq.gz</text>
-<polygon fill="#d97f57" stroke="#d97f57" points="370.5,-1382 370.5,-1382 1080.5,-1382 1080.5,-1382 370.5,-1382"/>
-<polygon fill="#d97f57" stroke="#d97f57" points="370.5,-1342 370.5,-1342 1080.5,-1342 1080.5,-1342 370.5,-1342"/>
-<polygon fill="none" stroke="#d97f57" stroke-width="2" points="370,-1263 370,-1411 1079,-1411 1079,-1263 370,-1263"/>
+<polygon fill="#d9d957" stroke="#d9d957" points="370.5,-1382 370.5,-1382 1080.5,-1382 1080.5,-1382 370.5,-1382"/>
+<polygon fill="#d9d957" stroke="#d9d957" points="370.5,-1342 370.5,-1342 1080.5,-1342 1080.5,-1342 370.5,-1342"/>
+<polygon fill="none" stroke="#d9d957" stroke-width="2" points="370,-1263 370,-1411 1079,-1411 1079,-1263 370,-1263"/>
 </g>
 <!-- 9&#45;&gt;11 -->
 <g id="edge23" class="edge">
 <title>9&#45;&gt;11</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M713.2281,-1447.84C714.0822,-1439.4415 714.9655,-1430.7559 715.8444,-1422.1133"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="719.3424,-1422.3101 716.8721,-1412.0073 712.3783,-1421.6019 719.3424,-1422.3101"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M700.0776,-1447.84C701.9482,-1439.3503 703.8835,-1430.567 705.8083,-1421.8315"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="709.2391,-1422.5262 707.973,-1412.0073 702.4031,-1421.0199 709.2391,-1422.5262"/>
 </g>
 <!-- 10&#45;&gt;9 -->
-<g id="edge21" class="edge">
+<g id="edge20" class="edge">
 <title>10&#45;&gt;9</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M706.5,-1615.5974C706.5,-1607.4394 706.5,-1598.9443 706.5,-1590.4945"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="710.0001,-1590.2358 706.5,-1580.2358 703.0001,-1590.2359 710.0001,-1590.2358"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M685.5,-1615.5974C685.5,-1607.4394 685.5,-1598.9443 685.5,-1590.4945"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="689.0001,-1590.2358 685.5,-1580.2358 682.0001,-1590.2359 689.0001,-1590.2358"/>
 </g>
 <!-- 11&#45;&gt;0 -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>11&#45;&gt;0</title>
-<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M718.403,-1261.665C701.3849,-1037.1853 659.9411,-376.3596 744.5,-182 748.7027,-172.34 754.212,-163.1125 760.5374,-154.4069"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="763.5105,-156.2826 766.8362,-146.2232 757.9633,-152.013 763.5105,-156.2826"/>
+<path fill="none" stroke="#c0c0c0" stroke-width="2" d="M718.9029,-1261.8742C703.2967,-1037.9854 665.4247,-378.6544 744.5,-182 748.3292,-172.477 753.4076,-163.2813 759.2545,-154.5413"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="762.1627,-156.4907 765.08,-146.3054 756.4478,-152.4483 762.1627,-156.4907"/>
 </g>
 <!-- 11&#45;&gt;2 -->
-<g id="edge5" class="edge">
+<g id="edge9" class="edge">
 <title>11&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M879.7339,-1261.8868C919.6599,-1242.5678 962.1478,-1222.0091 1000.4573,-1203.4723"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="1002.1098,-1206.5609 1009.5869,-1199.0547 999.0609,-1200.2598 1002.1098,-1206.5609"/>
 </g>
 <!-- 11&#45;&gt;5 -->
-<g id="edge11" class="edge">
+<g id="edge15" class="edge">
 <title>11&#45;&gt;5</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M568.4957,-1261.8868C547.0503,-1251.5613 524.8694,-1240.8816 502.9873,-1230.3457"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="504.4908,-1227.1851 493.9624,-1226.0004 501.454,-1233.4921 504.4908,-1227.1851"/>

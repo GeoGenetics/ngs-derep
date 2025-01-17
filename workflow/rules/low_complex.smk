@@ -1,11 +1,11 @@
 
 def _get_results():
     if is_activated("reads/extension") and is_activated("reads/derep"):
-        return expand(rules.seqkit_grep.output.fastx, tool=config["reads"]["derep"]["tool"], allow_missing=True)
+        return rules.seqkit_grep.output.fastx
     elif not is_activated("reads/extension") and is_activated("reads/derep"):
-        return expand("temp/reads/derep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz", tool=config["reads"]["derep"]["tool"], allow_missing=True)
+        return "temp/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
     elif is_activated("reads/extension") and not is_activated("reads/derep"):
-        return rules.read_extension.output.out
+        return rules.extend_tadpole.output.out
     else:
         return rules.merge_lanes.output
 

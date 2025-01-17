@@ -4,16 +4,16 @@
 
 rule seqkit_fx2tab:
     input:
-        fastx = "temp/reads/derep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz",
+        fastx = "temp/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz",
     output:
-        tsv = temp("temp/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.{tool}.tsv"),
+        tsv = temp("temp/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.tsv"),
     log:
-        "logs/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.{tool}.log"
+        "logs/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.{tool}.jsonl"
+        "benchmarks/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command = "fx2tab",
-        extra = "--name"
+        extra = "--name --only-id"
     threads: 10
     resources:
         mem = lambda w, attempt: f"{1 * attempt} GiB",
@@ -24,14 +24,14 @@ rule seqkit_fx2tab:
 
 rule seqkit_grep:
     input:
-        fastx = rules.read_extension.input.sample,
+        fastx = rules.extend_tadpole.input.sample,
         pattern = rules.seqkit_fx2tab.output.tsv,
     output:
-        fastx = temp("temp/reads/represent/grep/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz"),
+        fastx = temp("temp/reads/represent/grep/{sample}_{library}_{read_type_trim}.fastq.gz"),
     log:
-        "logs/reads/represent/grep/{tool}/{sample}_{library}_{read_type_trim}.log"
+        "logs/reads/represent/grep/{sample}_{library}_{read_type_trim}.log"
     benchmark:
-        "benchmarks/reads/represent/grep/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
+        "benchmarks/reads/represent/grep/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command = "grep",
         extra = "--delete-matched",
