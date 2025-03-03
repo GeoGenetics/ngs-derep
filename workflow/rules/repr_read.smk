@@ -17,7 +17,7 @@ rule seqkit_fx2tab:
     threads: 10
     resources:
         mem = lambda w, attempt: f"{1 * attempt} GiB",
-        runtime = lambda w, attempt: f"{30 * attempt} m",
+        runtime = lambda w, attempt: f"{15 * attempt} m",
     wrapper:
         f"{wrapper_ver}/bio/seqkit"
 
@@ -37,7 +37,7 @@ rule seqkit_grep:
         extra = "--delete-matched",
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{50 * attempt} GiB",
-        runtime = lambda w, attempt: f"{5 * attempt} h",
+        mem = lambda w, attempt: f"{10 * attempt} GiB",
+        runtime = lambda w, attempt: f"{30 * attempt} m",
     wrapper:
         f"{wrapper_ver}/bio/seqkit"

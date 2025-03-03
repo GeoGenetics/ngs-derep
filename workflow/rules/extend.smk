@@ -36,8 +36,8 @@ rule loglog:
         extra = "seed=1234 k={k} ignorebadquality".format(k=config["reads"]["extension"]["k"]),
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{5 * attempt} GiB",
-        runtime = lambda w, attempt: f"{30 * attempt} m",
+        mem = lambda w, attempt: f"{1 * attempt} GiB",
+        runtime = lambda w, attempt: f"{15 * attempt} m",
     wrapper:
         f"{wrapper_ver}/bio/bbtools"
 
@@ -70,8 +70,8 @@ rule extend_tadpole:
         extra = lambda w, input: "k={k} filtermem={c} {extra}".format(k=config["reads"]["extension"]["k"], c=_get_filtermem(input.flag[0], table_cap=0.5, bits=16, hashes=3), extra=config["reads"]["extension"]["params"]),
     threads: 10
     resources:
-        mem = lambda w, attempt: f"{300 * attempt} GiB",
-        runtime = lambda w, attempt: f"{2 * attempt} h",
+        mem = lambda w, attempt: f"{100 * attempt} GiB",
+        runtime = lambda w, attempt: f"{1 * attempt} h",
     wrapper:
         f"{wrapper_ver}/bio/bbtools"
 
