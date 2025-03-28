@@ -19,43 +19,141 @@ include: "rules/nonpareil.smk"
 rule multiqc:
     input:
         ### Merge lanes
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="merge_lanes", read_type_trim="collapsed", allow_missing=True), units),
+        expand_pandas(
+            expand(
+                rules.seqkit_stats.output.stats,
+                tool="merge_lanes",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        ),
+        expand_pandas(
+            expand(
+                rules.nonpareil_plot.output.json,
+                tool="merge_lanes",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        ),
         ### Read extension
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="extend/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="extend/tadpole", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") else [],
+        expand_pandas(
+            expand(
+                rules.seqkit_stats.output.stats,
+                tool="extend/tadpole",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        )
+        if is_activated("reads/extension")
+        else [],
+        expand_pandas(
+            expand(
+                rules.nonpareil_plot.output.json,
+                tool="extend/tadpole",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        )
+        if is_activated("reads/extension")
+        else [],
         ### Read derep
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="derep", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/derep") else [],
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="derep", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/derep") else [],
+        expand_pandas(
+            expand(
+                rules.seqkit_stats.output.stats,
+                tool="derep",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        )
+        if is_activated("reads/derep")
+        else [],
+        expand_pandas(
+            expand(
+                rules.nonpareil_plot.output.json,
+                tool="derep",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        )
+        if is_activated("reads/derep")
+        else [],
         ### Read grep
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="represent/grep", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="represent/grep", read_type_trim="collapsed", allow_missing=True), units) if is_activated("reads/extension") and is_activated("reads/derep") else [],
+        expand_pandas(
+            expand(
+                rules.seqkit_stats.output.stats,
+                tool="represent/grep",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        )
+        if is_activated("reads/extension") and is_activated("reads/derep")
+        else [],
+        expand_pandas(
+            expand(
+                rules.nonpareil_plot.output.json,
+                tool="represent/grep",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        )
+        if is_activated("reads/extension") and is_activated("reads/derep")
+        else [],
         ### Low complexity filter
-        expand_pandas(expand(rules.seqkit_stats.output.stats, tool="low_complexity", read_type_trim="collapsed", allow_missing=True), units),
-        expand_pandas(expand(rules.nonpareil_plot.output.json, tool="low_complexity", read_type_trim="collapsed", allow_missing=True), units),
+        expand_pandas(
+            expand(
+                rules.seqkit_stats.output.stats,
+                tool="low_complexity",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        ),
+        expand_pandas(
+            expand(
+                rules.nonpareil_plot.output.json,
+                tool="low_complexity",
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        ),
     output:
-        html = "reports/multiqc.html",
-        data = "reports/multiqc_data.zip",
+        html="reports/multiqc.html",
+        data="reports/multiqc_data.zip",
     log:
-        "logs/reports/multiqc.log"
+        "logs/reports/multiqc.log",
     benchmark:
         "benchmarks/reports/multiqc.log"
     params:
-        extra = "--force --clean-up " + config["report"]["multiqc"],
+        extra="--force --clean-up " + config["report"]["multiqc"],
     localrule: True
     threads: 1
     resources:
-        mem = lambda w, attempt: f"{10 * attempt} GiB",
-        runtime = lambda w, attempt: f"{30 * attempt} m",
+        mem=lambda w, attempt: f"{10* attempt} GiB",
+        runtime=lambda w, attempt: f"{30* attempt} m",
     wrapper:
         f"{wrapper_ver}/bio/multiqc"
 
 
-
 rule all:
     input:
-        qc = rules.multiqc.output.html,
-        res = expand_pandas(expand(rules.low_complexity.output.out, read_type_trim="collapsed", allow_missing=True), units),
+        qc=rules.multiqc.output.html,
+        res=expand_pandas(
+            expand(
+                rules.low_complexity.output.out,
+                read_type_trim="collapsed",
+                allow_missing=True,
+            ),
+            units,
+        ),
     message:
         "Read DeReping/Extension finished successfully!"
     default_target: True

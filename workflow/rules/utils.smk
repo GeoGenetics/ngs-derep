@@ -8,6 +8,7 @@ from typing import List, Dict
 
 ### General
 
+
 def flatten(list_of_lists: List) -> List:
     """Flatten an irregular list of lists recursively
 
@@ -37,8 +38,8 @@ def expand_pandas(string: List, df: pd.DataFrame, allow_missing=False) -> List:
     )
 
 
-
 ### Config
+
 
 def _item_or_sample(row, item):
     i = getattr(row, item, None)
