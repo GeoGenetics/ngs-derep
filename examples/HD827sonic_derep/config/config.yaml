@@ -19,8 +19,8 @@ reads:
   derep:
     activate: true
     # vsearch or seqkit
-    tool: seqkit
-    params: ""
+    tool: vsearch
+    params: "--strand both"
 
   low_complex:
     # dust threshold:
