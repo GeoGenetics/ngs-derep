@@ -1,4 +1,4 @@
-import np
+import numpy as np
 
 snakemake.utils.min_version("9.0.0")
 

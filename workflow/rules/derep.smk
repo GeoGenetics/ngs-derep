@@ -55,7 +55,7 @@ elif config["reads"]["derep"]["tool"] == "seqkit":
         priority: 10
         threads: 10
         resources:
-            mem=lambda w, attempt, input: f"{np.clip(3e-2* input.size_mb,50,300)* attempt} GiB",
-            runtime=lambda w, attempt, input: f"{np.clip(2e-4* input.size_mb,0.1,1)* attempt} h",
+            mem=lambda w, attempt, input: f"{np.clip(3e-2* input.size_mb,50,900)* attempt} GiB",
+            runtime=lambda w, attempt, input: f"{np.clip(2e-4* input.size_mb,0.5,5)* attempt} h",
         wrapper:
             f"{wrapper_ver}/bio/seqkit"
