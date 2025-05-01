@@ -36,9 +36,7 @@ rule loglog:
         "benchmarks/reads/extend/loglog/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="loglog.sh",
-        extra="seed=1234 k={k} ignorebadquality".format(
-            k=config["reads"]["extension"]["k"]
-        ),
+        extra="seed=1234 k={k} ignorebadquality".format(k=config["extension"]["k"]),
     threads: 1
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",
@@ -77,9 +75,9 @@ rule extend_tadpole:
         command="tadpole.sh",
         mode="extend",
         extra=lambda w, input: "k={k} filtermem={c} {extra}".format(
-            k=config["reads"]["extension"]["k"],
+            k=config["extension"]["k"],
             c=_get_filtermem(input.flag[0], table_cap=0.5, bits=16, hashes=3),
-            extra=config["reads"]["extension"]["params"],
+            extra=config["extension"]["params"],
         ),
     threads: 10
     resources:

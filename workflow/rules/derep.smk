@@ -2,7 +2,7 @@
 ### RULES ###
 #############
 
-if config["reads"]["derep"]["tool"] == "vsearch":
+if config["derep"]["tool"] == "vsearch":
 
     rule vsearch:
         input:
@@ -21,7 +21,7 @@ if config["reads"]["derep"]["tool"] == "vsearch":
         benchmark:
             "benchmarks/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
         params:
-            extra=config["reads"]["derep"]["params"],
+            extra=config["derep"]["params"],
         priority: 10
         threads: 1
         resources:
@@ -30,7 +30,7 @@ if config["reads"]["derep"]["tool"] == "vsearch":
         wrapper:
             f"{wrapper_ver}/bio/vsearch"
 
-elif config["reads"]["derep"]["tool"] == "seqkit":
+elif config["derep"]["tool"] == "seqkit":
 
     rule seqkit:
         input:
@@ -51,7 +51,7 @@ elif config["reads"]["derep"]["tool"] == "seqkit":
             "benchmarks/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
         params:
             command="rmdup",
-            extra="--ignore-case --by-seq " + config["reads"]["derep"]["params"],
+            extra="--ignore-case --by-seq " + config["derep"]["params"],
         priority: 10
         threads: 10
         resources:
