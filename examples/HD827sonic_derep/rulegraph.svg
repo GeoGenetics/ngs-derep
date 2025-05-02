@@ -30,11 +30,11 @@
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<path fill="none" stroke="#5682d8" stroke-width="2" d="M58,-252C58,-252 12,-252 12,-252 6,-252 0,-246 0,-240 0,-240 0,-228 0,-228 0,-222 6,-216 12,-216 12,-216 58,-216 58,-216 64,-216 70,-222 70,-228 70,-228 70,-240 70,-240 70,-246 64,-252 58,-252"/>
+<path fill="none" stroke="#56a9d8" stroke-width="2" d="M58,-252C58,-252 12,-252 12,-252 6,-252 0,-246 0,-240 0,-240 0,-228 0,-228 0,-222 6,-216 12,-216 12,-216 58,-216 58,-216 64,-216 70,-222 70,-228 70,-228 70,-240 70,-240 70,-246 64,-252 58,-252"/>
 <text text-anchor="middle" x="35" y="-231.5" font-family="sans" font-size="10.00" fill="#000000">seqkit_stats</text>
 </g>
 <!-- 2&#45;&gt;1 -->
-<g id="edge4" class="edge">
+<g id="edge3" class="edge">
 <title>2&#45;&gt;1</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M36.3932,-215.7623C38.2694,-191.201 41.6269,-147.2474 43.8341,-118.3541"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="47.3462,-118.3272 44.6182,-108.0896 40.3666,-117.794 47.3462,-118.3272"/>
@@ -46,7 +46,7 @@
 <text text-anchor="middle" x="101" y="-447.5" font-family="sans" font-size="10.00" fill="#000000">merge_lanes</text>
 </g>
 <!-- 3&#45;&gt;2 -->
-<g id="edge5" class="edge">
+<g id="edge7" class="edge">
 <title>3&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M87.0359,-431.6576C70.2599,-408.2108 43.3299,-365.6494 35,-324 30.9206,-303.6032 31.084,-280.082 32.1806,-262.2017"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="35.6779,-262.3672 32.9316,-252.1345 28.6973,-261.8464 35.6779,-262.3672"/>
@@ -58,7 +58,7 @@
 <text text-anchor="middle" x="170" y="-231.5" font-family="sans" font-size="10.00" fill="#000000">nonpareil_infer</text>
 </g>
 <!-- 3&#45;&gt;5 -->
-<g id="edge9" class="edge">
+<g id="edge11" class="edge">
 <title>3&#45;&gt;5</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M115.7873,-431.7988C133.5921,-408.4978 162.3126,-366.0867 172,-324 176.667,-303.7243 175.9393,-280.1983 174.1656,-262.2854"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="177.6245,-261.7278 172.9992,-252.1959 170.6708,-262.5317 177.6245,-261.7278"/>
@@ -66,8 +66,8 @@
 <!-- 6 -->
 <g id="node7" class="node">
 <title>6</title>
-<path fill="none" stroke="#56d8a9" stroke-width="2" d="M116,-396C116,-396 86,-396 86,-396 80,-396 74,-390 74,-384 74,-384 74,-372 74,-372 74,-366 80,-360 86,-360 86,-360 116,-360 116,-360 122,-360 128,-366 128,-372 128,-372 128,-384 128,-384 128,-390 122,-396 116,-396"/>
-<text text-anchor="middle" x="101" y="-375.5" font-family="sans" font-size="10.00" fill="#000000">seqkit</text>
+<path fill="none" stroke="#5682d8" stroke-width="2" d="M116,-396C116,-396 86,-396 86,-396 80,-396 74,-390 74,-384 74,-384 74,-372 74,-372 74,-366 80,-360 86,-360 86,-360 116,-360 116,-360 122,-360 128,-366 128,-372 128,-372 128,-384 128,-384 128,-390 122,-396 116,-396"/>
+<text text-anchor="middle" x="101" y="-375.5" font-family="sans" font-size="10.00" fill="#000000">vsearch</text>
 </g>
 <!-- 3&#45;&gt;6 -->
 <g id="edge12" class="edge">
@@ -82,7 +82,7 @@
 <text text-anchor="middle" x="169" y="-159.5" font-family="sans" font-size="10.00" fill="#000000">nonpareil_plot</text>
 </g>
 <!-- 4&#45;&gt;1 -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>4&#45;&gt;1</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M137.9619,-143.8314C120.9929,-133.8983 99.8846,-121.5422 82.1724,-111.1741"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="83.6578,-107.9881 73.2595,-105.9568 80.1215,-114.0292 83.6578,-107.9881"/>
@@ -94,13 +94,13 @@
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="172.8944,-190.3637 169.2557,-180.4133 165.8951,-190.4609 172.8944,-190.3637"/>
 </g>
 <!-- 6&#45;&gt;2 -->
-<g id="edge7" class="edge">
+<g id="edge5" class="edge">
 <title>6&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M78.6799,-359.9651C68.3262,-350.3781 56.8262,-337.7435 50,-324 40.4576,-304.7877 36.8134,-280.7168 35.4975,-262.3039"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="38.9863,-261.9978 34.9648,-252.1959 31.996,-262.3663 38.9863,-261.9978"/>
 </g>
 <!-- 6&#45;&gt;5 -->
-<g id="edge11" class="edge">
+<g id="edge9" class="edge">
 <title>6&#45;&gt;5</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M123.1305,-359.869C133.4376,-350.2584 144.9531,-337.6316 152,-324 161.9093,-304.8311 166.3717,-280.7577 168.377,-262.3327"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="171.8768,-262.4926 169.2964,-252.2169 164.9056,-261.859 171.8768,-262.4926"/>

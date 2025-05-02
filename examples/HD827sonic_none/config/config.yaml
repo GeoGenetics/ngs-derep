@@ -1,34 +1,27 @@
 
 # - Only tested with Phred33 quality scores
 
-samples: config/samples.tsv
-
-units: config/units.tsv
-
-
-
 #############
 ### READS ###
 #############
-reads:
-  extension:
-    activate: false
-    k: 16
-    params: "ibb=t prefilter=0 el=100 er=100 ecc=f ecco=f ignorebadquality extendrollback=0"
+extension:
+  activate: false
+  k: 16
+  params: "ibb=t prefilter=0 el=100 er=100 ecc=f ecco=f ignorebadquality extendrollback=0"
 
-  derep:
-    activate: false
-    # vsearch or seqkit
-    tool: seqkit
-    params: ""
+derep:
+  activate: false
+  # vsearch or seqkit
+  tool: seqkit
+  params: ""
 
-  low_complex:
-    # dust threshold:
-    # 1 <=> e0.8 w30 k4
-    # 2 <=> e0.7 w30 k4
-    # 3 <=> e0.6 w30 k4
-    # 4 <=> e0.5 w30 k4 (SGA default)
-    params: "maxns=25 minlen=30 entropy=0.7 entropywindow=30 entropyk=4"
+low_complex:
+  # dust threshold:
+  # 1 <=> e0.8 w30 k4
+  # 2 <=> e0.7 w30 k4
+  # 3 <=> e0.6 w30 k4
+  # 4 <=> e0.5 w30 k4 (SGA default)
+  params: "maxns=25 minlen=30 entropy=0.7 entropywindow=30 entropyk=4"
 
 report:
   multiqc: "--verbose"
