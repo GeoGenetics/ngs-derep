@@ -92,25 +92,24 @@ rule extend_tadpole:
 ##########
 
 
-rule seqkit_stats:
+rule fastqc:
     input:
-        fastx=lambda w: expand(
+        lambda w: expand(
             "{path}/reads/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz",
             path="results" if w.tool == "low_complexity" else "temp",
             allow_missing=True,
         ),
     output:
-        stats="stats/reads/{tool}/{sample}_{library}_{read_type_trim}.tsv",
+        html="stats/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.html",
+        zip="stats/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}_fastqc.zip",
     log:
-        "logs/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.log",
+        "logs/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "benchmarks/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
-    params:
-        command="stats",
-        extra="--tabular --all",
-    threads: 4
+        "benchmarks/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
+    threads: 2
     resources:
-        mem=lambda w, attempt: f"{1* attempt} GiB",
-        runtime=lambda w, attempt: f"{2* attempt} h",
+        # Memory is hard-coded to 250M per thread (https://github.com/bcbio/bcbio-nextgen/issues/2989)
+        mem=lambda w, threads: f"{512* threads} MiB",
+        runtime=lambda w, attempt: f"{1* attempt} h",
     wrapper:
-        f"{wrapper_ver}/bio/seqkit"
+        f"{wrapper_ver}/bio/fastqc"

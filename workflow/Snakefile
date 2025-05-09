@@ -42,7 +42,7 @@ rule multiqc:
     input:
         ### Merge lanes
         expand_pd(
-            rules.seqkit_stats.output.stats,
+            rules.fastqc.output.zip,
             units.assign(tool="merge_lanes", read_type_trim="collapsed"),
         ),
         expand_pd(
@@ -51,7 +51,7 @@ rule multiqc:
         ),
         ### Read extension
         expand_pd(
-            rules.seqkit_stats.output.stats,
+            rules.fastqc.output.zip,
             units.assign(tool="extend/tadpole", read_type_trim="collapsed"),
         )
         if is_activated("extension")
@@ -64,7 +64,7 @@ rule multiqc:
         else [],
         ### Read derep
         expand_pd(
-            rules.seqkit_stats.output.stats,
+            rules.fastqc.output.zip,
             units.assign(tool="derep", read_type_trim="collapsed"),
         )
         if is_activated("derep")
@@ -77,7 +77,7 @@ rule multiqc:
         else [],
         ### Read grep
         expand_pd(
-            rules.seqkit_stats.output.stats,
+            rules.fastqc.output.zip,
             units.assign(tool="represent/grep", read_type_trim="collapsed"),
         )
         if is_activated("extension") and is_activated("derep")
@@ -90,7 +90,7 @@ rule multiqc:
         else [],
         ### Low complexity filter
         expand_pd(
-            rules.seqkit_stats.output.stats,
+            rules.fastqc.output.zip,
             units.assign(tool="low_complexity", read_type_trim="collapsed"),
         ),
         expand_pd(

@@ -8,7 +8,7 @@ if config["derep"]["tool"] == "vsearch":
         input:
             fastx_uniques=(
                 rules.extend_tadpole.output.out
-                if is_activated("reads/extension")
+                if is_activated("extension")
                 else rules.merge_lanes.output.fq
             ),
         output:
@@ -36,7 +36,7 @@ elif config["derep"]["tool"] == "seqkit":
         input:
             fastx=(
                 rules.extend_tadpole.output
-                if is_activated("reads/extension")
+                if is_activated("extension")
                 else rules.merge_lanes.output.fq
             ),
         output:
