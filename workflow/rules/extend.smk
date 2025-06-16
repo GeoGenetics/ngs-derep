@@ -106,10 +106,11 @@ rule fastqc:
         "logs/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "benchmarks/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
-    threads: 2
+    wildcard_constraints:
+        tool="merge_lanes|extend/tadpole|derep|represent/grep|low_complexity",
+    threads: 4
     resources:
-        # Memory is hard-coded to 250M per thread (https://github.com/bcbio/bcbio-nextgen/issues/2989)
-        mem=lambda w, threads: f"{512* threads} MiB",
+        mem=lambda w, attempt: f"{5* attempt} GiB",
         runtime=lambda w, attempt: f"{1* attempt} h",
     wrapper:
         f"{wrapper_ver}/bio/fastqc"
