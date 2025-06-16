@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import List, Dict
+from typing import List
 
 
 #################
@@ -9,26 +9,11 @@ from typing import List, Dict
 ### General
 
 
-def expand_pandas(string: List, df: pd.DataFrame, allow_missing=False) -> List:
-    """Expand string following columns in the dataframe"""
-    return set(
-        flatten(
-            [
-                expand(string, **row._asdict(), allow_missing=allow_missing)
-                for row in df.itertuples(False)
-            ]
-        )
-    )
+def expand_pd(string: List, df: pd.DataFrame, allow_missing=False) -> List:
+    return set(expand(string, zip, **df.to_dict("list"), allow_missing=allow_missing))
 
 
 ### Config
-
-
-def _item_or_sample(row, item):
-    i = getattr(row, item, None)
-    if pd.isnull(i):
-        return getattr(row, "sample")
-    return i
 
 
 def is_activated(xpath):

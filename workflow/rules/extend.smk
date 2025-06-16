@@ -36,9 +36,7 @@ rule loglog:
         "benchmarks/reads/extend/loglog/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="loglog.sh",
-        extra="seed=1234 k={k} ignorebadquality".format(
-            k=config["reads"]["extension"]["k"]
-        ),
+        extra="seed=1234 k={k} ignorebadquality".format(k=config["extension"]["k"]),
     threads: 1
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",
@@ -77,9 +75,9 @@ rule extend_tadpole:
         command="tadpole.sh",
         mode="extend",
         extra=lambda w, input: "k={k} filtermem={c} {extra}".format(
-            k=config["reads"]["extension"]["k"],
+            k=config["extension"]["k"],
             c=_get_filtermem(input.flag[0], table_cap=0.5, bits=16, hashes=3),
-            extra=config["reads"]["extension"]["params"],
+            extra=config["extension"]["params"],
         ),
     threads: 10
     resources:
@@ -94,25 +92,25 @@ rule extend_tadpole:
 ##########
 
 
-rule seqkit_stats:
+rule fastqc:
     input:
-        fastx=lambda w: expand(
+        lambda w: expand(
             "{path}/reads/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz",
             path="results" if w.tool == "low_complexity" else "temp",
             allow_missing=True,
         ),
     output:
-        stats="stats/reads/{tool}/{sample}_{library}_{read_type_trim}.tsv",
+        html="stats/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.html",
+        zip="stats/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}_fastqc.zip",
     log:
-        "logs/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.log",
+        "logs/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "benchmarks/reads/stats/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
-    params:
-        command="stats",
-        extra="--tabular --all",
+        "benchmarks/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
+    wildcard_constraints:
+        tool="merge_lanes|extend/tadpole|derep|represent/grep|low_complexity",
     threads: 4
     resources:
-        mem=lambda w, attempt: f"{1* attempt} GiB",
-        runtime=lambda w, attempt: f"{2* attempt} h",
+        mem=lambda w, attempt: f"{5* attempt} GiB",
+        runtime=lambda w, attempt: f"{1* attempt} h",
     wrapper:
-        f"{wrapper_ver}/bio/seqkit"
+        f"{wrapper_ver}/bio/fastqc"

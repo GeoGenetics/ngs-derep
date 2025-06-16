@@ -2,13 +2,13 @@
 ### RULES ###
 #############
 
-if config["reads"]["derep"]["tool"] == "vsearch":
+if config["derep"]["tool"] == "vsearch":
 
     rule vsearch:
         input:
             fastx_uniques=(
                 rules.extend_tadpole.output.out
-                if is_activated("reads/extension")
+                if is_activated("extension")
                 else rules.merge_lanes.output.fq
             ),
         output:
@@ -21,7 +21,7 @@ if config["reads"]["derep"]["tool"] == "vsearch":
         benchmark:
             "benchmarks/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
         params:
-            extra=config["reads"]["derep"]["params"],
+            extra=config["derep"]["params"],
         priority: 10
         threads: 1
         resources:
@@ -30,13 +30,13 @@ if config["reads"]["derep"]["tool"] == "vsearch":
         wrapper:
             f"{wrapper_ver}/bio/vsearch"
 
-elif config["reads"]["derep"]["tool"] == "seqkit":
+elif config["derep"]["tool"] == "seqkit":
 
     rule seqkit:
         input:
             fastx=(
                 rules.extend_tadpole.output
-                if is_activated("reads/extension")
+                if is_activated("extension")
                 else rules.merge_lanes.output.fq
             ),
         output:
@@ -51,11 +51,11 @@ elif config["reads"]["derep"]["tool"] == "seqkit":
             "benchmarks/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
         params:
             command="rmdup",
-            extra="--ignore-case --by-seq " + config["reads"]["derep"]["params"],
+            extra="--ignore-case --by-seq " + config["derep"]["params"],
         priority: 10
         threads: 10
         resources:
             mem=lambda w, attempt, input: f"{np.clip(3e-2* input.size_mb,50,900)* attempt} GiB",
-            runtime=lambda w, attempt, input: f"{np.clip(2e-4* input.size_mb,0.5,5)* attempt} h",
+            runtime=lambda w, attempt, input: f"{np.clip(5e-4* input.size_mb,0.5,5)* attempt} h",
         wrapper:
             f"{wrapper_ver}/bio/seqkit"

@@ -1,13 +1,40 @@
 import numpy as np
+import pandas as pd
 
 snakemake.utils.min_version("9.0.0")
 
 # Define wrapper versions
-wrapper_ver = "v5.10.0"
+wrapper_ver = "v7.0.0"
+
+# Default value for testing purposes
+units = config.get(
+    "units",
+    pd.read_table(
+        "config/units.tsv",
+        converters={"seq_type": (lambda x: x.casefold())},
+        comment="#",
+    )
+    .set_index(["sample", "library", "lane"], drop=False)
+    .assign(
+        read_type_raw=lambda x: [["R1", "R2"]] * 4,
+        read_type_trim=lambda x: [
+            ["R1", "R2", "singleton", "collapsed", "collapsedtrunc"]
+        ]
+        * 4,
+    ),
+)
+snakemake.utils.validate(
+    units.drop(columns=["read_type_raw", "read_type_trim"]),
+    schema=Path(workflow.current_basedir) / "schemas/units.schema.yaml",
+)
+# Default value for testing purposes
+config = config.get("cfg", config)
+snakemake.utils.validate(
+    config, schema=Path(workflow.current_basedir) / "schemas/config.schema.yaml"
+)
 
 
 include: "rules/utils.smk"
-include: "rules/setup.smk"
 include: "rules/extend.smk"
 include: "rules/derep.smk"
 include: "rules/repr_read.smk"
@@ -21,111 +48,61 @@ include: "rules/nonpareil.smk"
 rule multiqc:
     input:
         ### Merge lanes
-        expand_pandas(
-            expand(
-                rules.seqkit_stats.output.stats,
-                tool="merge_lanes",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.fastqc.output.zip,
+            units.assign(tool="merge_lanes", read_type_trim="collapsed"),
         ),
-        expand_pandas(
-            expand(
-                rules.nonpareil_plot.output.json,
-                tool="merge_lanes",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.nonpareil_plot.output.json,
+            units.assign(tool="merge_lanes", read_type_trim="collapsed"),
         ),
         ### Read extension
-        expand_pandas(
-            expand(
-                rules.seqkit_stats.output.stats,
-                tool="extend/tadpole",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.fastqc.output.zip,
+            units.assign(tool="extend/tadpole", read_type_trim="collapsed"),
         )
-        if is_activated("reads/extension")
+        if is_activated("extension")
         else [],
-        expand_pandas(
-            expand(
-                rules.nonpareil_plot.output.json,
-                tool="extend/tadpole",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.nonpareil_plot.output.json,
+            units.assign(tool="extend/tadpole", read_type_trim="collapsed"),
         )
-        if is_activated("reads/extension")
+        if is_activated("extension")
         else [],
         ### Read derep
-        expand_pandas(
-            expand(
-                rules.seqkit_stats.output.stats,
-                tool="derep",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.fastqc.output.zip,
+            units.assign(tool="derep", read_type_trim="collapsed"),
         )
-        if is_activated("reads/derep")
+        if is_activated("derep")
         else [],
-        expand_pandas(
-            expand(
-                rules.nonpareil_plot.output.json,
-                tool="derep",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.nonpareil_plot.output.json,
+            units.assign(tool="derep", read_type_trim="collapsed"),
         )
-        if is_activated("reads/derep")
+        if is_activated("derep")
         else [],
         ### Read grep
-        expand_pandas(
-            expand(
-                rules.seqkit_stats.output.stats,
-                tool="represent/grep",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.fastqc.output.zip,
+            units.assign(tool="represent/grep", read_type_trim="collapsed"),
         )
-        if is_activated("reads/extension") and is_activated("reads/derep")
+        if is_activated("extension") and is_activated("derep")
         else [],
-        expand_pandas(
-            expand(
-                rules.nonpareil_plot.output.json,
-                tool="represent/grep",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.nonpareil_plot.output.json,
+            units.assign(tool="represent/grep", read_type_trim="collapsed"),
         )
-        if is_activated("reads/extension") and is_activated("reads/derep")
+        if is_activated("extension") and is_activated("derep")
         else [],
         ### Low complexity filter
-        expand_pandas(
-            expand(
-                rules.seqkit_stats.output.stats,
-                tool="low_complexity",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.fastqc.output.zip,
+            units.assign(tool="low_complexity", read_type_trim="collapsed"),
         ),
-        expand_pandas(
-            expand(
-                rules.nonpareil_plot.output.json,
-                tool="low_complexity",
-                read_type_trim="collapsed",
-                allow_missing=True,
-            ),
-            units,
+        expand_pd(
+            rules.nonpareil_plot.output.json,
+            units.assign(tool="low_complexity", read_type_trim="collapsed"),
         ),
     output:
         html="reports/multiqc.html",
@@ -135,7 +112,7 @@ rule multiqc:
     benchmark:
         "benchmarks/reports/multiqc.log"
     params:
-        extra="--force --clean-up " + config["report"]["multiqc"],
+        extra="--force --clean-up " + config.get("report", {}).get("multiqc", ""),
     localrule: True
     threads: 1
     resources:
@@ -148,7 +125,7 @@ rule multiqc:
 rule all:
     input:
         qc=rules.multiqc.output.html,
-        res=expand_pandas(
+        res=expand_pd(
             expand(
                 rules.low_complexity.output.out,
                 read_type_trim="collapsed",

@@ -1,9 +1,9 @@
 def _get_results():
-    if is_activated("reads/extension") and is_activated("reads/derep"):
+    if is_activated("extension") and is_activated("derep"):
         return rules.seqkit_grep.output.fastx
-    elif not is_activated("reads/extension") and is_activated("reads/derep"):
+    elif not is_activated("extension") and is_activated("derep"):
         return "temp/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
-    elif is_activated("reads/extension") and not is_activated("reads/derep"):
+    elif is_activated("extension") and not is_activated("derep"):
         return rules.extend_tadpole.output.out
     else:
         return rules.merge_lanes.output
@@ -29,7 +29,7 @@ rule low_complexity:
         "benchmarks/reads/low_complexity/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="bbduk.sh",
-        extra=config["reads"]["low_complex"]["params"],
+        extra=config["low_complex"]["params"],
         ref=["adapters", "artifacts"],
     priority: 10
     threads: 4
