@@ -47,6 +47,9 @@ snakemake.utils.validate(
 )
 
 
+##########################
+### Read Dereplication ###
+##########################
 include: "rules/utils.smk"
 include: "rules/extend.smk"
 include: "rules/derep.smk"
@@ -55,9 +58,6 @@ include: "rules/low_complex.smk"
 include: "rules/nonpareil.smk"
 
 
-##########################
-### Read Dereplication ###
-##########################
 rule multiqc:
     input:
         ### Merge lanes
