@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.11](https://github.com/GeoGenetics/ngs-derep/compare/v0.4.10...v0.4.11) (2025-06-19)
+
+
+### Bug Fixes
+
+* validation URL and schema ([#6](https://github.com/GeoGenetics/ngs-derep/issues/6)) ([2d352ef](https://github.com/GeoGenetics/ngs-derep/commit/2d352eff098f3aa86787b0d871d6ddd99da04fa1))
+
 ## [0.4.10](https://github.com/GeoGenetics/ngs-derep/compare/v0.4.9...v0.4.10) (2025-06-16)
 
 
