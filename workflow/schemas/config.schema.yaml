@@ -5,23 +5,20 @@ description: Read dereplication configuration file
 type: object
 properties:
 
-  reads:
+  extension:
     type: object
     properties:
-      extension:
-        type: object
-        properties:
-          activate:
-            type: boolean
-          k:
-            type: integer
-          params:
-            type: string
-            pattern: "^((?!\b--?(threads|in|filtermem|mode|k|out)[ =]).)*$"
-        required:
-          - activate
-          - k
-          - params
+      activate:
+        type: boolean
+      k:
+        type: integer
+      params:
+        type: string
+        pattern: "^((?!\b--?(threads|in|filtermem|mode|k|out)[ =]).)*$"
+    required:
+      - activate
+      - k
+      - params
 
   derep:
     type: object
