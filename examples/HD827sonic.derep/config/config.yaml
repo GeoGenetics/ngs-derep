@@ -1,11 +1,9 @@
 
-# - Only tested with Phred33 quality scores
-
 #############
 ### READS ###
 #############
 extension:
-  activate: true
+  activate: false
   k: 16
   params: "ibb=t prefilter=0 el=100 er=100 ecc=f ecco=f ignorebadquality extendrollback=0"
 
@@ -13,7 +11,7 @@ derep:
   activate: true
   # vsearch or seqkit
   tool: vsearch
-  params: "--strand both --minseqlength 30"
+  params: "--strand both"
 
 low_complex:
   # dust threshold:
