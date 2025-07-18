@@ -11,7 +11,7 @@ derep:
   activate: true
   # vsearch or seqkit
   tool: vsearch
-  params: "--strand both --minseqlength 30"
+  params: "--strand both"
 
 low_complex:
   # dust threshold:
@@ -19,7 +19,7 @@ low_complex:
   # 2 <=> e0.7 w30 k4
   # 3 <=> e0.6 w30 k4
   # 4 <=> e0.5 w30 k4 (SGA default)
-  params: "maxns=25 minlen=30 entropy=0.7 entropywindow=30 entropyk=4"
+  params: "entropy=0.7 entropywindow=30 entropyk=4"
 
 report:
   multiqc: "--verbose"
