@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.13](https://github.com/GeoGenetics/ngs-derep/compare/v0.4.12...v0.4.13) (2025-07-18)
+
+
+### Bug Fixes
+
+* resource typo ([#11](https://github.com/GeoGenetics/ngs-derep/issues/11)) ([11f96dc](https://github.com/GeoGenetics/ngs-derep/commit/11f96dc5fe73b075b039c3012e084a039395040b))
+
 ## [0.4.12](https://github.com/GeoGenetics/ngs-derep/compare/v0.4.11...v0.4.12) (2025-07-18)
 
 
