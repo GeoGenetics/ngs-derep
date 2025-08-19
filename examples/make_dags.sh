@@ -2,7 +2,7 @@
 
 SNAKEMAKE_OPTS="--snakefile ../../workflow/Snakefile --configfile config/config.yaml --software-deployment-method conda --keep-storage-local-copies --forceall $@"
 
-for TEST in HD827sonic_all HD827sonic_extend HD827sonic_derep HD827sonic_none
+for TEST in HD827sonic.all HD827sonic.extend HD827sonic.derep HD827sonic.none
 do
     cd $TEST/
     snakemake $SNAKEMAKE_OPTS --dryrun
