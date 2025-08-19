@@ -79,21 +79,9 @@ rule multiqc:
         )
         if is_activated("extension")
         else [],
-        expand_pd(
-            rules.nonpareil_plot.output.json,
-            units.assign(tool="extend/tadpole", read_type_trim="collapsed"),
-        )
-        if is_activated("extension")
-        else [],
         ### Read derep
         expand_pd(
             rules.fastqc.output.zip,
-            units.assign(tool="derep", read_type_trim="collapsed"),
-        )
-        if is_activated("derep")
-        else [],
-        expand_pd(
-            rules.nonpareil_plot.output.json,
             units.assign(tool="derep", read_type_trim="collapsed"),
         )
         if is_activated("derep")
@@ -105,19 +93,9 @@ rule multiqc:
         )
         if is_activated("extension") and is_activated("derep")
         else [],
-        expand_pd(
-            rules.nonpareil_plot.output.json,
-            units.assign(tool="represent/grep", read_type_trim="collapsed"),
-        )
-        if is_activated("extension") and is_activated("derep")
-        else [],
         ### Low complexity filter
         expand_pd(
             rules.fastqc.output.zip,
-            units.assign(tool="low_complexity", read_type_trim="collapsed"),
-        ),
-        expand_pd(
-            rules.nonpareil_plot.output.json,
             units.assign(tool="low_complexity", read_type_trim="collapsed"),
         ),
     output:
