@@ -40,6 +40,7 @@ def test_low_complexity(conda_prefix):
                 "../../workflow/Snakefile",
                 "-f",
                 "--notemp",
+                "-c1",
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--configfile",
