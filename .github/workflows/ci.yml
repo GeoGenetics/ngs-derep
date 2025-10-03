@@ -60,21 +60,10 @@ jobs:
 
       - name: Print logs
         if: always()
-        env:
-          files: '*.log'
-        shell: bash
-        run: |
-          set +e
-
-          for file in $files;  do
-            for log in `find $TMPDIR $TEMP $TMP /tmp /var/tmp /usr/tmp . -type f -name '$file'`; do
-              echo "$file: $log"
-              if [ -f "$log" ]; then
-                echo -e ::group::File: $log
-                cat $log
-                echo ::endgroup::
-              fi
-            done
-          done
-
-          exit 0
+        uses: fgvieira/print-logs@master
+        with:
+          working-directory: |
+            /tmp/
+	    logs/
+          files: |
+            *.log
