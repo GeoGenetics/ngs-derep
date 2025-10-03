@@ -61,21 +61,18 @@ jobs:
       - name: Print logs
         if: always()
         env:
-          wds: '/tmp/'
           files: '*.log'
         shell: bash
         run: |
           set +e
 
-          for wd in $wds; do
-            for file in $files;  do
-              for log in `find $wd -type f -name '$file'`; do
-                if [ -f "$log" ]; then
-                  echo -e ::group::File: $log
-                  cat $log
-                  echo ::endgroup::
-                fi
-              done
+          for file in $files;  do
+            for log in `find $TMPDIR $TEMP $TMP /tmp /var/tmp /usr/tmp . -type f -name '$file'`; do
+              if [ -f "$log" ]; then
+                echo -e ::group::File: $log
+                cat $log
+                echo ::endgroup::
+              fi
             done
           done
 
