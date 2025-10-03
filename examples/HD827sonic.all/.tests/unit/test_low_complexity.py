@@ -41,7 +41,6 @@ def test_low_complexity(conda_prefix):
                 "-f",
                 "--notemp",
                 "--show-failed-logs",
-                "-c1",
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--configfile",
@@ -50,6 +49,8 @@ def test_low_complexity(conda_prefix):
                 "conda",
                 "--directory",
                 workdir,
+                "--set-threads",
+                "extend_tadpole=1",
             ]
             + conda_prefix
         )
