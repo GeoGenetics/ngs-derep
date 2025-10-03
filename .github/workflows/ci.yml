@@ -68,7 +68,7 @@ jobs:
 
           for file in $files;  do
             for log in `find $TMPDIR $TEMP $TMP /tmp /var/tmp /usr/tmp . -type f -name '$file'`; do
-	      echo "$file: $log"
+              echo "$file: $log"
               if [ -f "$log" ]; then
                 echo -e ::group::File: $log
                 cat $log
