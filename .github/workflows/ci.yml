@@ -62,6 +62,6 @@ jobs:
         if: always()
         uses: next-actions/print-logs@master
         with:
-          working-directory: logs
+          working-directory: /tmp
           files: |
             *.log
