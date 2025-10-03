@@ -61,7 +61,7 @@ jobs:
       - name: Print logs
         if: always()
         env:
-          wds: '/tmp'
+          wds: '/tmp/'
           files: '*.log'
         shell: bash
         run: |
@@ -75,8 +75,8 @@ jobs:
                   cat $log
                   echo ::endgroup::
                 fi
-	      done
-	    done
+              done
+            done
           done
 
           exit 0
