@@ -50,7 +50,7 @@ def test_low_complexity(conda_prefix):
                 "--directory",
                 workdir,
                 "--set-threads",
-                "extend_tadpole=1",
+                "low_complexity=1",
             ]
             + conda_prefix
         )
