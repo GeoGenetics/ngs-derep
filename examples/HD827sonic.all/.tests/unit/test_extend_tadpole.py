@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 def test_extend_tadpole(conda_prefix):
 
-    with tempfile.TemporaryDirectory() as tmpdir:
+    with tempfile.TemporaryDirectory(delete=False) as tmpdir:
         workdir = Path(tmpdir) / "workdir"
         config_path = Path(".tests/unit/extend_tadpole/config")
         data_path = Path(".tests/unit/extend_tadpole/data")
