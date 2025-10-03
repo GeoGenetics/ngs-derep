@@ -39,6 +39,7 @@ def test_vsearch(conda_prefix):
                 "../../workflow/Snakefile",
                 "-f",
                 "--notemp",
+                "--show-failed-logs",
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--configfile",

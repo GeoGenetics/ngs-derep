@@ -38,6 +38,7 @@ def test_merge_lanes(conda_prefix):
                 "../../workflow/Snakefile",
                 "-f",
                 "--notemp",
+                "--show-failed-logs",
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--configfile",

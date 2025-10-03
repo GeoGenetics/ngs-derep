@@ -57,13 +57,3 @@ jobs:
 
       - name: Run examples
         run: pixi run -e test env --chdir ./examples/ ./make_dags.sh
-
-      - name: Print logs
-        if: always()
-        uses: fgvieira/print-logs@find_files
-        with:
-          working-directory: |
-            /tmp/
-            logs/
-          files: |
-            *.log
