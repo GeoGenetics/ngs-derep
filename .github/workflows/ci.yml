@@ -60,7 +60,7 @@ jobs:
 
       - name: Print logs
         if: always()
-        uses: fgvieira/print-logs@master
+        uses: fgvieira/print-logs@find_files
         with:
           working-directory: |
             /tmp/
