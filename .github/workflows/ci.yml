@@ -58,6 +58,13 @@ jobs:
       - name: Run examples
         run: pixi run -e test env --chdir ./examples/ ./make_dags.sh
 
+    steps:
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Log file
+          path: logs/reads/extend/tadpole/HD827sonic_2_lib3_collapsed.log
+
       - name: Print logs
         uses: next-actions/print-logs@master
         with:
