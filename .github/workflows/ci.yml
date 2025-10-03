@@ -58,7 +58,6 @@ jobs:
       - name: Run examples
         run: pixi run -e test env --chdir ./examples/ ./make_dags.sh
 
-    steps:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
