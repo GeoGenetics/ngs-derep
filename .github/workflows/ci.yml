@@ -60,8 +60,23 @@ jobs:
 
       - name: Print logs
         if: always()
-        uses: next-actions/print-logs@master
-        with:
-          working-directory: /tmp
-          files: |
-            *.log
+        env:
+          wds: '/tmp'
+          files: '*.log'
+        shell: bash
+        run: |
+          set +e
+
+          for wd in $wds; do
+            for file in $files;  do
+              for log in `find $wd -type f -name '$file'`; do
+                if [ -f "$log" ]; then
+                  echo -e ::group::File: $log
+                  cat $log
+                  echo ::endgroup::
+                fi
+	      done
+	    done
+          done
+
+          exit 0
