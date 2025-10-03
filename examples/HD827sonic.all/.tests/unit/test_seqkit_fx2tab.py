@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 def test_seqkit_fx2tab(conda_prefix):
 
-    with tempfile.TemporaryDirectory(delete=False) as tmpdir:
+    with tempfile.TemporaryDirectory() as tmpdir:
         workdir = Path(tmpdir) / "workdir"
         config_path = Path(".tests/unit/seqkit_fx2tab/config")
         data_path = Path(".tests/unit/seqkit_fx2tab/data")
