@@ -57,3 +57,10 @@ jobs:
 
       - name: Run examples
         run: pixi run -e test env --chdir ./examples/ ./make_dags.sh
+
+      - name: Print logs
+        uses: next-actions/print-logs@master
+        with:
+          working-directory: logs
+          files: |
+            *.log
