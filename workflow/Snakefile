@@ -86,6 +86,12 @@ rule multiqc:
         )
         if is_activated("derep")
         else [],
+        expand_pd(
+            rules.nonpareil_plot.output.json,
+            units.assign(tool="derep", read_type_trim="collapsed"),
+        )
+        if is_activated("derep")
+        else [],
         ### Read grep
         expand_pd(
             rules.fastqc.output.zip,
