@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.4.13...v0.5.0) (2025-11-12)
+
+
+### Features
+
+* restrict nonpareil to merge_lanes output ([#15](https://github.com/GeoGenetics/ngs-derep/issues/15)) ([726a57d](https://github.com/GeoGenetics/ngs-derep/commit/726a57dd18dce2ab2d95528e1401e6a97fb16961))
+* run nonpareil on derep data ([#17](https://github.com/GeoGenetics/ngs-derep/issues/17)) ([7ebff38](https://github.com/GeoGenetics/ngs-derep/commit/7ebff38d3c3a7794cdf74755907f26f1b02cd9ac))
+
+
+### Performance Improvements
+
+* adjust resources ([#13](https://github.com/GeoGenetics/ngs-derep/issues/13)) ([4d2bfb0](https://github.com/GeoGenetics/ngs-derep/commit/4d2bfb018f5fdb65ddf91892526e5aa069b31dba))
+
 ## [0.4.13](https://github.com/GeoGenetics/ngs-derep/compare/v0.4.12...v0.4.13) (2025-07-18)
 
 
