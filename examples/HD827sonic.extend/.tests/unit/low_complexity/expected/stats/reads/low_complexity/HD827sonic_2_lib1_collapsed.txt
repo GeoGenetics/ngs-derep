@@ -1,0 +1,4 @@
+#File	temp/reads/extend/tadpole/HD827sonic_2_lib1_collapsed.fastq.gz
+#Total	819
+#Matched	0	0.00000%
+#Name	Reads	ReadsPct

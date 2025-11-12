@@ -1,0 +1,29 @@
+2025-10-03 13:08:24 command is: loglog.sh
+2025-10-03 13:08:24 extra arguments: seed=1234 k=16 ignorebadquality 
+2025-10-03 13:08:24 Parse input section of snamemake rule into bbmap command
+2025-10-03 13:08:24 parameter_list: temp/reads/merge_lanes/HD827sonic_1_lib1_collapsed.fastq.gz
+2025-10-03 13:08:24 Found 0 unnamed arguments
+2025-10-03 13:08:24 Parse keyword: sample
+2025-10-03 13:08:24 parsed in argument:  in=temp/reads/merge_lanes/HD827sonic_1_lib1_collapsed.fastq.gz 
+2025-10-03 13:08:24 parsed input argument:  in=temp/reads/merge_lanes/HD827sonic_1_lib1_collapsed.fastq.gz 
+2025-10-03 13:08:24 Parse output section of snamemake rule into bbmap command
+2025-10-03 13:08:24 parameter_list: temp/reads/extend/loglog/HD827sonic_1_lib1_collapsed.flag
+2025-10-03 13:08:24 Found unnamed arguments. parse them as output
+2025-10-03 13:08:24 parsed out argument:  out=temp/reads/extend/loglog/HD827sonic_1_lib1_collapsed.flag 
+2025-10-03 13:08:24 parsed output argument:  out=temp/reads/extend/loglog/HD827sonic_1_lib1_collapsed.flag 
+2025-10-03 13:08:24 Parse params section of snamemake rule into bbmap command
+2025-10-03 13:08:24 parameter_list: loglog.sh seed=1234 k=16 ignorebadquality
+2025-10-03 13:08:24 Found 0 unnamed arguments
+2025-10-03 13:08:24 Parse keyword: command
+2025-10-03 13:08:24 command argument detected, This is not passed to the bbtool.
+2025-10-03 13:08:24 Parse keyword: extra
+2025-10-03 13:08:24 extra argument detected, This is not passed to the bbtool.
+2025-10-03 13:08:24 Memory specification: -Xmx912M
+2025-10-03 13:08:24 run command:
+
+	loglog.sh seed=1234 k=16 ignorebadquality  in=temp/reads/merge_lanes/HD827sonic_1_lib1_collapsed.fastq.gz  out=temp/reads/extend/loglog/HD827sonic_1_lib1_collapsed.flag  threads=1  -Xmx912M  >> logs/reads/extend/loglog/HD827sonic_1_lib1_collapsed.log 2>&1
+
+java -ea -Xmx912M -cp /projects/caeg/apps/cache/conda/2c1d16e51407831e76dcd13ff42eb88a_/opt/bbmap-39.33-0/current/ cardinality.LogLogWrapper seed=1234 k=16 ignorebadquality in=temp/reads/merge_lanes/HD827sonic_1_lib1_collapsed.fastq.gz out=temp/reads/extend/loglog/HD827sonic_1_lib1_collapsed.flag threads=1 -Xmx912M
+Set threads to 1
+Cardinality:   84621
+Time: 	0.234 seconds.
