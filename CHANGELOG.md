@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/GeoGenetics/ngs-derep/compare/v0.5.0...v0.5.1) (2025-11-13)
+
+
+### Bug Fixes
+
+* Update pixi env and bump wrapper ver ([#18](https://github.com/GeoGenetics/ngs-derep/issues/18)) ([fea482b](https://github.com/GeoGenetics/ngs-derep/commit/fea482b170b59c997b3295ac557cd785b1f2cca5))
+
 ## [0.5.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.4.13...v0.5.0) (2025-11-12)
 
 
