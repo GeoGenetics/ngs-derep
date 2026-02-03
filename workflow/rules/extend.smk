@@ -42,7 +42,7 @@ rule loglog:
         mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{15* attempt} m",
     wrapper:
-        f"{wrapper_ver}/bio/bbtools"
+        "v7.9.1/bio/bbtools"
 
 
 def _get_filtermem(log, table_cap, bits, hashes):
@@ -84,7 +84,7 @@ rule extend_tadpole:
         mem=lambda w, attempt: f"{100* attempt} GiB",
         runtime=lambda w, attempt: f"{1* attempt} h",
     wrapper:
-        f"{wrapper_ver}/bio/bbtools"
+        "v7.9.1/bio/bbtools"
 
 
 ##########
@@ -113,4 +113,4 @@ rule fastqc:
         mem=lambda w, attempt: f"{5* attempt} GiB",
         runtime=lambda w, attempt: f"{3* attempt} h",
     wrapper:
-        f"{wrapper_ver}/bio/fastqc"
+        "v7.9.1/bio/fastqc"
