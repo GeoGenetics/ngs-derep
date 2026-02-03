@@ -42,6 +42,8 @@ def test_seqkit(conda_prefix):
                 "--show-failed-logs",
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
+                "--allowed-rules",
+                "seqkit",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",

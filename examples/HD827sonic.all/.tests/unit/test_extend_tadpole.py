@@ -41,6 +41,8 @@ def test_extend_tadpole(conda_prefix):
                 "--show-failed-logs",
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
+                "--allowed-rules",
+                "extend_tadpole",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",

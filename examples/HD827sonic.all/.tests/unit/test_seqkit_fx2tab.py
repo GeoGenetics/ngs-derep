@@ -41,6 +41,8 @@ def test_seqkit_fx2tab(conda_prefix):
                 "--show-failed-logs",
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
+                "--allowed-rules",
+                "seqkit_fx2tab",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",
