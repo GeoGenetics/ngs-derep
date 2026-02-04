@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.6.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.5.1...v0.6.0) (2026-02-04)
+
+
+### Features
+
+* remove nonpareil from derep ([#23](https://github.com/GeoGenetics/ngs-derep/issues/23)) ([a8f5788](https://github.com/GeoGenetics/ngs-derep/commit/a8f5788796d4bc3bb21427ece049d578ce434ef2))
+
+
+### Bug Fixes
+
+* MultiQC benchmark extension ([#22](https://github.com/GeoGenetics/ngs-derep/issues/22)) ([6196323](https://github.com/GeoGenetics/ngs-derep/commit/6196323eeaf60a6402f1f80df35afd89b9828684))
+
+
+### Performance Improvements
+
+* Update env, QC wrappers, resources and unit tests ([#20](https://github.com/GeoGenetics/ngs-derep/issues/20)) ([9836710](https://github.com/GeoGenetics/ngs-derep/commit/9836710f8df3abdf37dddbe9b82ca19cc8bc2bb5))
+
 ## [0.5.1](https://github.com/GeoGenetics/ngs-derep/compare/v0.5.0...v0.5.1) (2025-11-13)
 
 
