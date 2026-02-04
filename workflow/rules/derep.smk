@@ -28,7 +28,7 @@ if config["derep"]["tool"] == "vsearch":
             mem=lambda w, attempt: f"{100* attempt} GiB",
             runtime=lambda w, attempt: f"{5* attempt} h",
         wrapper:
-            f"{wrapper_ver}/bio/vsearch"
+            "v7.9.1/bio/vsearch"
 
 elif config["derep"]["tool"] == "seqkit":
 
@@ -58,4 +58,4 @@ elif config["derep"]["tool"] == "seqkit":
             mem=lambda w, input, attempt: f"{(8* input.size_gb+40)* attempt} GiB",
             runtime=lambda w, input, attempt: f"{(0.08* input.size_gb+0.5)* attempt} h",
         wrapper:
-            f"{wrapper_ver}/bio/seqkit"
+            "v7.9.1/bio/seqkit"

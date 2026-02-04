@@ -20,7 +20,7 @@ rule seqkit_fx2tab:
         mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{15* attempt} m",
     wrapper:
-        f"{wrapper_ver}/bio/seqkit"
+        "v7.9.1/bio/seqkit"
 
 
 rule seqkit_grep:
@@ -43,4 +43,4 @@ rule seqkit_grep:
         mem=lambda w, attempt: f"{10* attempt} GiB",
         runtime=lambda w, attempt: f"{30* attempt} m",
     wrapper:
-        f"{wrapper_ver}/bio/seqkit"
+        "v7.9.1/bio/seqkit"
