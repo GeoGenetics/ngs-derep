@@ -24,7 +24,7 @@ rule nonpareil_infer:
         extra="-F",
     threads: 2
     resources:
-        mem=lambda w, attempt: f"{7* attempt} GiB",
+        mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{3* attempt} h",
     wrapper:
         "v7.9.1/bio/nonpareil/infer"
