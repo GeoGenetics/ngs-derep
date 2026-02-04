@@ -110,7 +110,7 @@ rule fastqc:
         tool="merge_lanes|extend/tadpole|derep|represent/grep|low_complexity",
     threads: 4
     resources:
-        mem=lambda w, attempt: f"{5* attempt} GiB",
-        runtime=lambda w, attempt: f"{3* attempt} h",
+        mem=lambda w, attempt: f"{3* attempt} GiB",
+        runtime=lambda w, attempt: f"{2* attempt} h",
     wrapper:
-        "v7.9.1/bio/fastqc"
+        "v9.0.0/bio/fastqc"
