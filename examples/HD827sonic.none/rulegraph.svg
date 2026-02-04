@@ -34,7 +34,7 @@
 <text text-anchor="middle" x="124" y="-159.5" font-family="sans" font-size="10.00" fill="#000000">fastqc</text>
 </g>
 <!-- 2&#45;&gt;1 -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>2&#45;&gt;1</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M124,-143.8314C124,-136.131 124,-126.9743 124,-118.4166"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="127.5001,-118.4132 124,-108.4133 120.5001,-118.4133 127.5001,-118.4132"/>
@@ -82,7 +82,7 @@
 <text text-anchor="middle" x="40" y="-159.5" font-family="sans" font-size="10.00" fill="#000000">nonpareil_plot</text>
 </g>
 <!-- 4&#45;&gt;1 -->
-<g id="edge4" class="edge">
+<g id="edge3" class="edge">
 <title>4&#45;&gt;1</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M61.1967,-143.8314C71.4434,-135.0485 83.9003,-124.3712 95.0097,-114.8489"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="97.4952,-117.3282 102.81,-108.1628 92.9397,-112.0134 97.4952,-117.3282"/>

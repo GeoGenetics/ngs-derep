@@ -22,7 +22,7 @@
 <text text-anchor="middle" x="146" y="-87.5" font-family="sans" font-size="10.00" fill="#000000">multiqc</text>
 </g>
 <!-- 1&#45;&gt;0 -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>1&#45;&gt;0</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M152.8132,-71.8314C155.7644,-63.9617 159.2858,-54.5712 162.555,-45.8533"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="165.8609,-47.0055 166.095,-36.4133 159.3066,-44.5476 165.8609,-47.0055"/>
@@ -46,7 +46,7 @@
 <text text-anchor="middle" x="108" y="-375.5" font-family="sans" font-size="10.00" fill="#000000">merge_lanes</text>
 </g>
 <!-- 3&#45;&gt;2 -->
-<g id="edge5" class="edge">
+<g id="edge6" class="edge">
 <title>3&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M111.1745,-359.9555C117.7965,-322.3144 133.1246,-235.1867 141.0522,-190.1246"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="144.5221,-190.6003 142.8078,-180.1451 137.628,-189.3874 144.5221,-190.6003"/>
@@ -94,7 +94,7 @@
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="57.1678,-190.431 54.8644,-180.0896 50.2161,-189.6103 57.1678,-190.431"/>
 </g>
 <!-- 6&#45;&gt;2 -->
-<g id="edge6" class="edge">
+<g id="edge7" class="edge">
 <title>6&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M160.8469,-287.7623C157.9473,-263.201 152.7584,-219.2474 149.3474,-190.3541"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="152.7839,-189.6103 148.1356,-180.0896 145.8322,-190.431 152.7839,-189.6103"/>
@@ -112,13 +112,13 @@
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="199.3363,-262.5415 202.4458,-252.4133 193.6989,-258.3918 199.3363,-262.5415"/>
 </g>
 <!-- 7&#45;&gt;0 -->
-<g id="edge2" class="edge">
+<g id="edge1" class="edge">
 <title>7&#45;&gt;0</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M212.4078,-215.9555C204.9144,-178.3144 187.5696,-91.1867 178.5989,-46.1246"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="181.9974,-45.2692 176.6122,-36.1451 175.1321,-46.636 181.9974,-45.2692"/>
 </g>
 <!-- 7&#45;&gt;2 -->
-<g id="edge7" class="edge">
+<g id="edge5" class="edge">
 <title>7&#45;&gt;2</title>
 <path fill="none" stroke="#c0c0c0" stroke-width="2" d="M198.336,-215.8314C190.0268,-207.2848 179.9736,-196.9443 170.9082,-187.6198"/>
 <polygon fill="#c0c0c0" stroke="#c0c0c0" stroke-width="2" points="173.3821,-185.1435 163.9018,-180.4133 168.3631,-190.023 173.3821,-185.1435"/>
