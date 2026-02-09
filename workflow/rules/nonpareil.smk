@@ -27,7 +27,7 @@ rule nonpareil_infer:
         mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{3* attempt} h",
     wrapper:
-        "v9.0.0/bio/nonpareil/infer"
+        "v9.0.1/bio/nonpareil/infer"
 
 
 rule nonpareil_plot:
@@ -47,4 +47,4 @@ rule nonpareil_plot:
         mem=lambda w, attempt: f"{5* attempt} GiB",
         runtime=lambda w, attempt: f"{1* attempt} h",
     wrapper:
-        "v9.0.0/bio/nonpareil/plot"
+        "v9.0.1/bio/nonpareil/plot"

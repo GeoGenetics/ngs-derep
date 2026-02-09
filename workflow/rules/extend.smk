@@ -113,4 +113,4 @@ rule fastqc:
         mem=lambda w, attempt: f"{3* attempt} GiB",
         runtime=lambda w, attempt: f"{2* attempt} h",
     wrapper:
-        "v9.0.0/bio/fastqc"
+        "v9.0.1/bio/fastqc"
