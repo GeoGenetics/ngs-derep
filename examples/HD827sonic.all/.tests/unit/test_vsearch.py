@@ -63,8 +63,10 @@ def test_vsearch(conda_prefix):
             {
                 ".log": [
                     "diff",
+                    "--ignore-matching-lines=cores",
                     "--ignore-matching-lines=Started",
                     "--ignore-matching-lines=Finished",
+                    "--ignore-matching-lines=Elapsed",
                     "--ignore-matching-lines=memory",
                 ]
             }
