@@ -12,13 +12,13 @@ from subprocess import check_output
 sys.path.insert(0, os.path.dirname(__file__))
 
 
-def test_extend_tadpole(conda_prefix):
+def test_nonpareil_plot(conda_prefix):
 
     with tempfile.TemporaryDirectory() as tmpdir:
         workdir = Path(tmpdir) / "workdir"
-        config_path = Path(".tests/unit/extend_tadpole/config")
-        data_path = Path(".tests/unit/extend_tadpole/data")
-        expected_path = Path(".tests/unit/extend_tadpole/expected")
+        config_path = Path(".tests/unit/nonpareil_plot/config")
+        data_path = Path(".tests/unit/nonpareil_plot/data")
+        expected_path = Path(".tests/unit/nonpareil_plot/expected")
 
         # Copy config to the temporary workdir.
         shutil.copytree(config_path, workdir)
@@ -32,7 +32,9 @@ def test_extend_tadpole(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/extend/tadpole/HD827sonic_1_lib1_collapsed.fastq.gz",
+                "reports/reads/nonpareil/merge_lanes/HD827sonic_1_lib1_collapsed.pdf",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_1_lib1_collapsed.tsv",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_1_lib1_collapsed.json",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -41,17 +43,13 @@ def test_extend_tadpole(conda_prefix):
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--allowed-rules",
-                "extend_tadpole",
+                "nonpareil_plot",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",
                 "conda",
                 "--directory",
                 workdir,
-                "--set-threads",
-                "extend_tadpole=1",
-                "--set-resources",
-                "extend_tadpole:mem_mb=10000",
             ]
             + conda_prefix
         )
@@ -62,4 +60,6 @@ def test_extend_tadpole(conda_prefix):
         # also see common.py.
         import common
 
-        common.OutputChecker(data_path, expected_path, workdir).check()
+        common.OutputChecker(data_path, expected_path, workdir).check(
+            {".json": ["diff", '--ignore-matching-lines="col":']}
+        )

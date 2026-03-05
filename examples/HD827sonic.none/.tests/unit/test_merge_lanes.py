@@ -1,5 +1,5 @@
 """
-Rule test code for unit testing of rules generated with Snakemake 9.11.6.
+Rule test code for unit testing of rules generated with Snakemake 9.16.4.dev3.
 """
 
 
@@ -33,7 +33,7 @@ def test_merge_lanes(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/merge_lanes/HD827sonic_1_lib1_collapsed.fastq.gz",
+                "temp/reads/merge_lanes/HD827sonic_2_lib2_collapsed.fastq.gz",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",

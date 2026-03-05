@@ -21,7 +21,7 @@ rule nonpareil_infer:
         "benchmarks/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         alg="kmer",
-        extra="-F",
+        extra="-F -r 12345",
     threads: 2
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",

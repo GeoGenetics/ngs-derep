@@ -12,13 +12,13 @@ from subprocess import check_output
 sys.path.insert(0, os.path.dirname(__file__))
 
 
-def test_extend_tadpole(conda_prefix):
+def test_nonpareil_infer(conda_prefix):
 
     with tempfile.TemporaryDirectory() as tmpdir:
         workdir = Path(tmpdir) / "workdir"
-        config_path = Path(".tests/unit/extend_tadpole/config")
-        data_path = Path(".tests/unit/extend_tadpole/data")
-        expected_path = Path(".tests/unit/extend_tadpole/expected")
+        config_path = Path(".tests/unit/nonpareil_infer/config")
+        data_path = Path(".tests/unit/nonpareil_infer/data")
+        expected_path = Path(".tests/unit/nonpareil_infer/expected")
 
         # Copy config to the temporary workdir.
         shutil.copytree(config_path, workdir)
@@ -32,7 +32,10 @@ def test_extend_tadpole(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/extend/tadpole/HD827sonic_1_lib1_collapsed.fastq.gz",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.npo",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.npa",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.npc",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.log",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -41,17 +44,13 @@ def test_extend_tadpole(conda_prefix):
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--allowed-rules",
-                "extend_tadpole",
+                "nonpareil_infer",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",
                 "conda",
                 "--directory",
                 workdir,
-                "--set-threads",
-                "extend_tadpole=1",
-                "--set-resources",
-                "extend_tadpole:mem_mb=10000",
             ]
             + conda_prefix
         )
@@ -62,4 +61,12 @@ def test_extend_tadpole(conda_prefix):
         # also see common.py.
         import common
 
-        common.OutputChecker(data_path, expected_path, workdir).check()
+        common.OutputChecker(data_path, expected_path, workdir).check(
+            {
+                ".log": [
+                    "diff",
+                    "--ignore-matching-lines=created",
+                    "--ignore-matching-lines=Reading",
+                ]
+            }
+        )

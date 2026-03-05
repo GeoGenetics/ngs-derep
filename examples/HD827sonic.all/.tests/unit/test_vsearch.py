@@ -1,7 +1,6 @@
 """
-Rule test code for unit testing of rules generated with Snakemake 9.11.6.
+Rule test code for unit testing of rules generated with Snakemake 9.16.4.dev3.
 """
-
 
 import os
 import sys
@@ -33,8 +32,8 @@ def test_vsearch(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/HD827sonic_2_lib2_collapsed.fastq.gz",
-                "stats/reads/derep/HD827sonic_2_lib2_collapsed.log",
+                "temp/reads/derep/HD827sonic_1_lib1_collapsed.fastq.gz",
+                "stats/reads/derep/HD827sonic_1_lib1_collapsed.log",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -56,7 +55,17 @@ def test_vsearch(conda_prefix):
 
         # Check the output byte by byte using cmp/zmp/bzcmp/xzcmp.
         # To modify this behavior, you can inherit from common.OutputChecker in here
-        # and overwrite the method `compare_files(generated_file, expected_file), 
+        # and overwrite the method `compare_files(generated_file, expected_file),
         # also see common.py.
         import common
-        common.OutputChecker(data_path, expected_path, workdir).check()
+
+        common.OutputChecker(data_path, expected_path, workdir).check(
+            {
+                ".log": [
+                    "diff",
+                    "--ignore-matching-lines=Started",
+                    "--ignore-matching-lines=Finished",
+                    "--ignore-matching-lines=memory",
+                ]
+            }
+        )

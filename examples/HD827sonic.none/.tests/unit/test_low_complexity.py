@@ -1,5 +1,5 @@
 """
-Rule test code for unit testing of rules generated with Snakemake 9.11.6.
+Rule test code for unit testing of rules generated with Snakemake 9.16.4.dev3.
 """
 
 
