@@ -12,13 +12,13 @@ from subprocess import check_output
 sys.path.insert(0, os.path.dirname(__file__))
 
 
-def test_low_complexity(conda_prefix):
+def test_nonpareil_plot(conda_prefix):
 
     with tempfile.TemporaryDirectory() as tmpdir:
         workdir = Path(tmpdir) / "workdir"
-        config_path = Path(".tests/unit/low_complexity/config")
-        data_path = Path(".tests/unit/low_complexity/data")
-        expected_path = Path(".tests/unit/low_complexity/expected")
+        config_path = Path(".tests/unit/nonpareil_plot/config")
+        data_path = Path(".tests/unit/nonpareil_plot/data")
+        expected_path = Path(".tests/unit/nonpareil_plot/expected")
 
         # Copy config to the temporary workdir.
         shutil.copytree(config_path, workdir)
@@ -32,9 +32,9 @@ def test_low_complexity(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "results/reads/low_complexity/HD827sonic_1_lib1_collapsed.fastq.gz",
-                "temp/reads/low_complexity/HD827sonic_1_lib1_collapsed.discarded.fastq.gz",
-                "stats/reads/low_complexity/HD827sonic_1_lib1_collapsed.txt",
+                "reports/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.pdf",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.tsv",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib2_collapsed.json",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -43,15 +43,13 @@ def test_low_complexity(conda_prefix):
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--allowed-rules",
-                "low_complexity",
+                "nonpareil_plot",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",
                 "conda",
                 "--directory",
                 workdir,
-                "--set-threads",
-                "low_complexity=1",
             ]
             + conda_prefix
         )
@@ -62,4 +60,6 @@ def test_low_complexity(conda_prefix):
         # also see common.py.
         import common
 
-        common.OutputChecker(data_path, expected_path, workdir).check()
+        common.OutputChecker(data_path, expected_path, workdir).check(
+            {".json": ["diff", '--ignore-matching-lines="col":']}
+        )
