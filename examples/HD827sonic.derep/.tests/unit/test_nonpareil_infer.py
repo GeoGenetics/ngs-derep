@@ -12,13 +12,13 @@ from subprocess import check_output
 sys.path.insert(0, os.path.dirname(__file__))
 
 
-def test_seqkit(conda_prefix):
+def test_nonpareil_infer(conda_prefix):
 
-    with tempfile.TemporaryDirectory() as tmpdir:
+    with tempfile.TemporaryDirectory(delete=False) as tmpdir:
         workdir = Path(tmpdir) / "workdir"
-        config_path = Path(".tests/unit/seqkit/config")
-        data_path = Path(".tests/unit/seqkit/data")
-        expected_path = Path(".tests/unit/seqkit/expected")
+        config_path = Path(".tests/unit/nonpareil_infer/config")
+        data_path = Path(".tests/unit/nonpareil_infer/data")
+        expected_path = Path(".tests/unit/nonpareil_infer/expected")
 
         # Copy config to the temporary workdir.
         shutil.copytree(config_path, workdir)
@@ -32,8 +32,10 @@ def test_seqkit(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/HD827sonic_2_lib1_collapsed.fastq.gz",
-                "stats/reads/derep/HD827sonic_2_lib1_collapsed.dup.tsv",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib3_collapsed.npo",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib3_collapsed.npa",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib3_collapsed.npc",
+                "stats/reads/nonpareil/merge_lanes/HD827sonic_2_lib3_collapsed.log",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -42,7 +44,7 @@ def test_seqkit(conda_prefix):
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--allowed-rules",
-                "seqkit",
+                "nonpareil_infer",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",
@@ -59,4 +61,12 @@ def test_seqkit(conda_prefix):
         # also see common.py.
         import common
 
-        common.OutputChecker(data_path, expected_path, workdir).check()
+        common.OutputChecker(data_path, expected_path, workdir).check(
+            {
+                ".log": [
+                    "diff",
+                    "--ignore-matching-lines=created",
+                    "--ignore-matching-lines=Reading",
+                ]
+            }
+        )
