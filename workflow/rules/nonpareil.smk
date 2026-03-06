@@ -21,13 +21,13 @@ rule nonpareil_infer:
         "benchmarks/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         alg="kmer",
-        extra="-F",
+        extra="-F -r 12345",
     threads: 2
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{3* attempt} h",
     wrapper:
-        "v9.0.0/bio/nonpareil/infer"
+        "v9.2.0/bio/nonpareil/infer"
 
 
 rule nonpareil_plot:
@@ -47,4 +47,4 @@ rule nonpareil_plot:
         mem=lambda w, attempt: f"{5* attempt} GiB",
         runtime=lambda w, attempt: f"{1* attempt} h",
     wrapper:
-        "v9.0.0/bio/nonpareil/plot"
+        "v9.2.0/bio/nonpareil/plot"

@@ -1,0 +1,10 @@
+vsearch v2.30.1_linux_x86_64, 251.3GB RAM, 88 cores
+vsearch --threads 1 --fastx_uniques temp/reads/extend/tadpole/HD827sonic_1_lib1_collapsed.fastq.gz --strand both --log stats/reads/derep/HD827sonic_1_lib1_collapsed.log --fastqout /dev/stdout
+Started  2026-03-05T15:12:08
+165748 nt in 819 seqs, min 66, max 374, avg 202
+815 unique sequences, avg cluster 1.0, median 0, max 3
+
+
+Finished 2026-03-05T15:12:08
+Elapsed time 00:00
+Max memory 5.2MB
