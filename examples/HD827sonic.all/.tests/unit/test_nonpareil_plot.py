@@ -62,6 +62,4 @@ def test_nonpareil_plot(conda_prefix):
         # also see common.py.
         import common
 
-        common.OutputChecker(data_path, expected_path, workdir).check(
-            {".json": ["diff", '--ignore-matching-lines="col":']}
-        )
+        common.OutputChecker(data_path, expected_path, workdir).check()
