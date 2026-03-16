@@ -7,16 +7,16 @@
 rule merge_lanes:
     input:
         lambda w: expand(
-            "<results>/reads/trim/{sample}_{library}_{lane}_{read_type_trim}.fastq.gz",
+            "<results>/<reads>/trim/{sample}_{library}_{lane}_{read_type_trim}.fastq.gz",
             lane=units.loc[(w.sample, w.library)].lane,
             allow_missing=True,
         ),
     output:
-        fq=temp("<temp>/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz"),
+        fq=temp("<temp>/<reads>/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz"),
     log:
-        "<logs>/reads/merge_lanes/{sample}_{library}_{read_type_trim}.log",
+        "<logs>/<reads>/merge_lanes/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "<benchmarks>/reads/merge_lanes/{sample}_{library}_{read_type_trim}.jsonl"
+        "<benchmarks>/<reads>/merge_lanes/{sample}_{library}_{read_type_trim}.jsonl"
     threads: 1
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",
@@ -31,13 +31,13 @@ rule loglog:
     output:
         temp(
             touch(
-                "<temp>/reads/extend/loglog/{sample}_{library}_{read_type_trim}.flag"
+                "<temp>/<reads>/extend/loglog/{sample}_{library}_{read_type_trim}.flag"
             )
         ),
     log:
-        "<logs>/reads/extend/loglog/{sample}_{library}_{read_type_trim}.log",
+        "<logs>/<reads>/extend/loglog/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "<benchmarks>/reads/extend/loglog/{sample}_{library}_{read_type_trim}.jsonl"
+        "<benchmarks>/<reads>/extend/loglog/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="loglog.sh",
         extra="seed=1234 k={k} ignorebadquality".format(k=config["extension"]["k"]),
@@ -69,12 +69,12 @@ rule extend_tadpole:
         flag=[rules.loglog.log, rules.loglog.output],
     output:
         out=temp(
-            "<temp>/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.fastq.gz"
+            "<temp>/<reads>/extend/tadpole/{sample}_{library}_{read_type_trim}.fastq.gz"
         ),
     log:
-        "<logs>/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.log",
+        "<logs>/<reads>/extend/tadpole/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "<benchmarks>/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.jsonl"
+        "<benchmarks>/<reads>/extend/tadpole/{sample}_{library}_{read_type_trim}.jsonl"
     params:
         command="tadpole.sh",
         mode="extend",
@@ -99,17 +99,17 @@ rule extend_tadpole:
 rule fastqc:
     input:
         lambda w: expand(
-            "{path}/reads/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz",
+            "{path}/<reads>/{tool}/{sample}_{library}_{read_type_trim}.fastq.gz",
             path="results" if w.tool == "low_complexity" else "temp",
             allow_missing=True,
         ),
     output:
-        html="<stats>/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.html",
-        zip="<stats>/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}_fastqc.zip",
+        html="<stats>/<reads>/fastqc/{tool}/{sample}_{library}_{read_type_trim}.html",
+        zip="<stats>/<reads>/fastqc/{tool}/{sample}_{library}_{read_type_trim}_fastqc.zip",
     log:
-        "<logs>/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.log",
+        "<logs>/<reads>/fastqc/{tool}/{sample}_{library}_{read_type_trim}.log",
     benchmark:
-        "<benchmarks>/reads/fastqc/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
+        "<benchmarks>/<reads>/fastqc/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
     wildcard_constraints:
         tool="merge_lanes|extend/tadpole|derep|represent/grep|low_complexity",
     threads: 4

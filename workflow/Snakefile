@@ -54,6 +54,7 @@ pathvars:
     reports="reports",
     stats="stats",
     temp="temp",
+    reads="reads",
 
 
 include: "rules/utils.smk"
