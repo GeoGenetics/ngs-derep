@@ -50,6 +50,12 @@ snakemake.utils.validate(
 ##########################
 ### Read Dereplication ###
 ##########################
+pathvars:
+    reports="reports",
+    stats="stats",
+    temp="temp",
+
+
 include: "rules/utils.smk"
 include: "rules/extend.smk"
 include: "rules/derep.smk"
@@ -96,12 +102,12 @@ rule multiqc:
             units.assign(tool="low_complexity", read_type_trim="collapsed"),
         ),
     output:
-        html="reports/multiqc.html",
-        data="reports/multiqc_data.zip",
+        html="<reports>/multiqc.html",
+        data="<reports>/multiqc_data.zip",
     log:
-        "logs/reports/multiqc.log",
+        "<logs>/<reports>/multiqc.log",
     benchmark:
-        "benchmarks/reports/multiqc.jsonl"
+        "<benchmarks>/<reports>/multiqc.jsonl"
     params:
         extra="--force --clean-up " + config.get("report", {}).get("multiqc", ""),
     localrule: True
