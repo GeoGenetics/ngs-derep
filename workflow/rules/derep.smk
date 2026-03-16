@@ -13,13 +13,13 @@ if config["derep"]["tool"] == "vsearch":
             ),
         output:
             fastqout=temp(
-                "temp/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
+                "<temp>/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
             ),
-            log="stats/reads/derep/{sample}_{library}_{read_type_trim}.log",
+            log="<stats>/reads/derep/{sample}_{library}_{read_type_trim}.log",
         log:
-            "logs/reads/derep/{sample}_{library}_{read_type_trim}.log",
+            "<logs>/reads/derep/{sample}_{library}_{read_type_trim}.log",
         benchmark:
-            "benchmarks/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
+            "<benchmarks>/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
         params:
             extra=config["derep"]["params"],
         priority: 10
@@ -40,15 +40,17 @@ elif config["derep"]["tool"] == "seqkit":
                 else rules.merge_lanes.output.fq
             ),
         output:
-            fastx=temp("temp/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"),
+            fastx=temp(
+                "<temp>/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
+            ),
             # touch() needed, since file is not created if no dup reads
             dup_num=touch(
-                "stats/reads/derep/{sample}_{library}_{read_type_trim}.dup.tsv"
+                "<stats>/reads/derep/{sample}_{library}_{read_type_trim}.dup.tsv"
             ),
         log:
-            "logs/reads/derep/{sample}_{library}_{read_type_trim}.log",
+            "<logs>/reads/derep/{sample}_{library}_{read_type_trim}.log",
         benchmark:
-            "benchmarks/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
+            "<benchmarks>/reads/derep/{sample}_{library}_{read_type_trim}.jsonl"
         params:
             command="rmdup",
             extra="--ignore-case --by-seq " + config["derep"]["params"],
