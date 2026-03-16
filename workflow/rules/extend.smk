@@ -12,9 +12,7 @@ rule merge_lanes:
             allow_missing=True,
         ),
     output:
-        fq=temp(
-            "<temp>/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz"
-        ),
+        fq=temp("<temp>/reads/merge_lanes/{sample}_{library}_{read_type_trim}.fastq.gz"),
     log:
         "<logs>/reads/merge_lanes/{sample}_{library}_{read_type_trim}.log",
     benchmark:
