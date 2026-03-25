@@ -38,13 +38,13 @@ rule loglog:
         "<logs>/reads/extend/loglog/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "<benchmarks>/reads/extend/loglog/{sample}_{library}_{read_type_trim}.jsonl"
-    params:
-        command="loglog.sh",
-        extra="seed=1234 k={k} ignorebadquality".format(k=config["extension"]["k"]),
     threads: 1
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{15* attempt} m",
+    params:
+        command="loglog.sh",
+        extra="seed=1234 k={k} ignorebadquality".format(k=config["extension"]["k"]),
     wrapper:
         "v7.9.1/bio/bbtools"
 
@@ -75,6 +75,10 @@ rule extend_tadpole:
         "<logs>/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "<benchmarks>/reads/extend/tadpole/{sample}_{library}_{read_type_trim}.jsonl"
+    threads: 10
+    resources:
+        mem=lambda w, attempt: f"{100* attempt} GiB",
+        runtime=lambda w, attempt: f"{1* attempt} h",
     params:
         command="tadpole.sh",
         mode="extend",
@@ -83,10 +87,6 @@ rule extend_tadpole:
             c=_get_filtermem(input.flag[0], table_cap=0.5, bits=16, hashes=3),
             extra=config["extension"]["params"],
         ),
-    threads: 10
-    resources:
-        mem=lambda w, attempt: f"{100* attempt} GiB",
-        runtime=lambda w, attempt: f"{1* attempt} h",
     wrapper:
         "v7.9.1/bio/bbtools"
 

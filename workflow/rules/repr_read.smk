@@ -14,13 +14,13 @@ rule seqkit_fx2tab:
         "<logs>/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "<benchmarks>/reads/represent/fx2tab/{sample}_{library}_{read_type_trim}.jsonl"
-    params:
-        command="fx2tab",
-        extra="--name --only-id",
     threads: 10
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{15* attempt} m",
+    params:
+        command="fx2tab",
+        extra="--name --only-id",
     wrapper:
         "v7.9.1/bio/seqkit"
 
@@ -37,12 +37,12 @@ rule seqkit_grep:
         "<logs>/reads/represent/grep/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "<benchmarks>/reads/represent/grep/{sample}_{library}_{read_type_trim}.jsonl"
-    params:
-        command="grep",
-        extra="--delete-matched",
     threads: 10
     resources:
         mem=lambda w, attempt: f"{10* attempt} GiB",
         runtime=lambda w, attempt: f"{30* attempt} m",
+    params:
+        command="grep",
+        extra="--delete-matched",
     wrapper:
         "v7.9.1/bio/seqkit"

@@ -27,14 +27,14 @@ rule low_complexity:
         "<logs>/reads/low_complexity/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "<benchmarks>/reads/low_complexity/{sample}_{library}_{read_type_trim}.jsonl"
-    params:
-        command="bbduk.sh",
-        extra=config["low_complex"]["params"],
-        ref=["adapters", "artifacts"],
     priority: 10
     threads: 4
     resources:
         mem=lambda w, attempt: f"{4* attempt} GiB",
         runtime=lambda w, attempt: f"{2* attempt} h",
+    params:
+        command="bbduk.sh",
+        extra=config["low_complex"]["params"],
+        ref=["adapters", "artifacts"],
     wrapper:
-        "v7.9.1/bio/bbtools"
+        "fix_import/bio/bbtools"

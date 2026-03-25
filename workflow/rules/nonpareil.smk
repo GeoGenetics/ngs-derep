@@ -19,13 +19,13 @@ rule nonpareil_infer:
         "<logs>/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.log",
     benchmark:
         "<benchmarks>/reads/nonpareil/{tool}/{sample}_{library}_{read_type_trim}.jsonl"
-    params:
-        alg="kmer",
-        extra="-F -r 12345",
     threads: 2
     resources:
         mem=lambda w, attempt: f"{1* attempt} GiB",
         runtime=lambda w, attempt: f"{3* attempt} h",
+    params:
+        alg="kmer",
+        extra="-F -r 12345",
     wrapper:
         "v9.2.0/bio/nonpareil/infer"
 
