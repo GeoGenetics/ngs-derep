@@ -46,7 +46,7 @@ rule loglog:
         command="loglog.sh",
         extra="seed=1234 k={k} ignorebadquality".format(k=config["extension"]["k"]),
     wrapper:
-        "v7.9.1/bio/bbtools"
+        "v9.4.2/bio/bbtools"
 
 
 def _get_filtermem(log, table_cap, bits, hashes):
@@ -88,7 +88,7 @@ rule extend_tadpole:
             extra=config["extension"]["params"],
         ),
     wrapper:
-        "v7.9.1/bio/bbtools"
+        "v9.4.2/bio/bbtools"
 
 
 ##########
