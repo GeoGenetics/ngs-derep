@@ -37,4 +37,4 @@ rule low_complexity:
         extra=config["low_complex"]["params"],
         ref=["adapters", "artifacts"],
     wrapper:
-        "fix_import/bio/bbtools"
+        "v9.4.2/bio/bbtools"
