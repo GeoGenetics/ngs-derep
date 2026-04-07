@@ -50,6 +50,12 @@ snakemake.utils.validate(
 ##########################
 ### Read Dereplication ###
 ##########################
+pathvars:
+    reports="reports",
+    stats="stats",
+    temp="temp",
+
+
 include: "rules/utils.smk"
 include: "rules/extend.smk"
 include: "rules/derep.smk"
@@ -96,24 +102,25 @@ rule multiqc:
             units.assign(tool="low_complexity", read_type_trim="collapsed"),
         ),
     output:
-        html="reports/multiqc.html",
-        data="reports/multiqc_data.zip",
+        html="<reports>/multiqc.html",
+        data="<reports>/multiqc_data.zip",
     log:
-        "logs/reports/multiqc.log",
+        "<logs>/<reports>/multiqc.log",
     benchmark:
-        "benchmarks/reports/multiqc.jsonl"
-    params:
-        extra="--force --clean-up " + config.get("report", {}).get("multiqc", ""),
+        "<benchmarks>/<reports>/multiqc.jsonl"
     localrule: True
     threads: 1
     resources:
         mem=lambda w, attempt: f"{10* attempt} GiB",
         runtime=lambda w, attempt: f"{30* attempt} m",
+    params:
+        extra="--force --clean-up " + config.get("report", {}).get("multiqc", ""),
     wrapper:
         "v8.1.1/bio/multiqc"
 
 
 rule all:
+    default_target: True
     input:
         qc=rules.multiqc.output.html,
         res=expand_pd(
@@ -126,4 +133,3 @@ rule all:
         ),
     message:
         "Read Dereplication/Extension finished successfully!"
-    default_target: True
