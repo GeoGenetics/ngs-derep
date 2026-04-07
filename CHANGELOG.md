@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/GeoGenetics/ngs-derep/compare/v0.6.0...v0.6.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* switch to using pathvars ([#27](https://github.com/GeoGenetics/ngs-derep/issues/27)) ([0123339](https://github.com/GeoGenetics/ngs-derep/commit/01233395dd60edffc20dd99a154b23d580f532e6))
+
 ## [0.6.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.5.1...v0.6.0) (2026-03-06)
 
 
