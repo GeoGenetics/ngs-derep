@@ -88,7 +88,6 @@ elif config["derep"]["tool"] == "swarm":
         wrapper:
             "v9.4.2/bio/vsearch"
 
-
     rule swarm_vsearch_N:
         input:
             fastx_filter=rules.swarm_vsearch.output.fastaout,
@@ -110,7 +109,6 @@ elif config["derep"]["tool"] == "swarm":
         wrapper:
             "v9.4.2/bio/vsearch"
 
-
     rule swarm_unbgzip:
         input:
             fastx_filter=rules.swarm_vsearch_N.output.fastaout,
@@ -131,7 +129,6 @@ elif config["derep"]["tool"] == "swarm":
             extra="--decompress",
         wrapper:
             "v9.4.1/bio/bgzip"
-
 
     rule swarm:
         input:
@@ -156,7 +153,6 @@ elif config["derep"]["tool"] == "swarm":
             extra="--usearch-abundance " + config["derep"]["params"],
         wrapper:
             "v9.5.0/bio/swarm"
-
 
     rule swarm_grep:
         input:
