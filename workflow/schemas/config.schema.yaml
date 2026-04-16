@@ -25,7 +25,7 @@ properties:
     properties:
       tool:
         type: string
-        enum: ["vsearch", "seqkit"]
+        enum: ["vsearch", "seqkit", "swarm"]
       params:
         type: string
         pattern: "^((?!\b--?(fastx_uniques|fastqout|sizein|sizeout|j|threads|s|by-seq|i|ignore-case|D|dup-num-file|o|out-file)[ =]).)*$"
