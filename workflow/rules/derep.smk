@@ -109,30 +109,9 @@ elif config["derep"]["tool"] == "swarm":
         wrapper:
             "v9.4.2/bio/vsearch"
 
-    rule swarm_unbgzip:
-        input:
-            fastx_filter=rules.swarm_vsearch_N.output.fastaout,
-        output:
-            fastaout=pipe(
-                "<temp>/reads/derep/swarm_unbgzip/{sample}_{library}_{read_type_trim}.fasta"
-            ),
-        log:
-            "<logs>/reads/derep/swarm_unbgzip/{sample}_{library}_{read_type_trim}.log",
-        benchmark:
-            "<benchmarks>/reads/derep/swarm_unbgzip/{sample}_{library}_{read_type_trim}.jsonl"
-        priority: 10
-        threads: 1
-        resources:
-            mem=lambda w, attempt: f"{10* attempt} GiB",
-            runtime=lambda w, attempt: f"{1* attempt} h",
-        params:
-            extra="--decompress",
-        wrapper:
-            "v9.4.1/bio/bgzip"
-
     rule swarm:
         input:
-            rules.swarm_unbgzip.output.fastaout,
+            rules.swarm_vsearch_N.output.fastaout,
         output:
             structure="<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.struct.tsv",
             network="<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.network.tsv",
@@ -152,7 +131,7 @@ elif config["derep"]["tool"] == "swarm":
         params:
             extra="--usearch-abundance " + config["derep"]["params"],
         wrapper:
-            "v9.5.0/bio/swarm"
+            "v9.6.0/bio/swarm"
 
     rule swarm_grep:
         input:
