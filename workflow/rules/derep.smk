@@ -92,7 +92,7 @@ elif config["derep"]["tool"] == "swarm":
         input:
             fastx_filter=rules.swarm_vsearch.output.fastaout,
         output:
-            fastaout=pipe(
+            fastaout=temp(
                 "<temp>/reads/derep/swarm_vsearch_N/{sample}_{library}_{read_type_trim}.fasta.gz"
             ),
         log:
