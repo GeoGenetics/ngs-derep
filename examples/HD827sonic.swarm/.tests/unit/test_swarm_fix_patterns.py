@@ -12,13 +12,13 @@ from subprocess import check_output
 sys.path.insert(0, os.path.dirname(__file__))
 
 
-def test_swarm_grep(conda_prefix):
+def test_swarm_fix_patterns(conda_prefix):
 
     with tempfile.TemporaryDirectory() as tmpdir:
         workdir = Path(tmpdir) / "workdir"
-        config_path = Path(".tests/unit/swarm_grep/config")
-        data_path = Path(".tests/unit/swarm_grep/data")
-        expected_path = Path(".tests/unit/swarm_grep/expected")
+        config_path = Path(".tests/unit/swarm_fix_patterns/config")
+        data_path = Path(".tests/unit/swarm_fix_patterns/data")
+        expected_path = Path(".tests/unit/swarm_fix_patterns/expected")
 
         # Copy config to the temporary workdir.
         shutil.copytree(config_path, workdir)
@@ -32,7 +32,7 @@ def test_swarm_grep(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/HD827sonic_2_lib2_collapsed.fastq.gz",
+                "temp/reads/derep/swarm/fix_patterns/HD827sonic_2_lib2_collapsed.tsv",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -41,7 +41,7 @@ def test_swarm_grep(conda_prefix):
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--allowed-rules",
-                "swarm_grep",
+                "swarm_fix_patterns",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",
