@@ -33,7 +33,6 @@ def test_vsearch(conda_prefix):
                 "-m",
                 "snakemake",
                 "temp/reads/derep/HD827sonic_1_lib1_collapsed.fastq.gz",
-                "stats/reads/derep/HD827sonic_1_lib1_collapsed.log",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",

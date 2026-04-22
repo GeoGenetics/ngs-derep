@@ -1,4 +1,4 @@
-# HD827sonic (read extension and dereplication)
+# HD827sonic (read dereplication with VSEARCH and extension)
 <details><summary>Rulegraph</summary>
 
 ![rulegraph.svg](HD827sonic.all/rulegraph.svg)
@@ -15,7 +15,7 @@
 </details>
 
 
-# HD827sonic (read extension but no dereplication)
+# HD827sonic (no read dereplication but extension)
 <details><summary>Rulegraph</summary>
 
 ![rulegraph.svg](HD827sonic.extend/rulegraph.svg)
@@ -32,7 +32,7 @@
 </details>
 
 
-# HD827sonic (read dereplication but no extension)
+# HD827sonic (read dereplication with SeqKit but no extension)
 <details><summary>Rulegraph</summary>
 
 ![rulegraph.svg](HD827sonic.derep/rulegraph.svg)
@@ -40,16 +40,32 @@
 
 <details><summary>DAG</summary>
 
-![dag.svg](HD827sonic.derep/dag.svg)
+![dag.svg](HD827sonic.seqkit/dag.svg)
 </details>
 
 <details><summary>Filegraph</summary>
 
-![filegraph.svg](HD827sonic.derep/filegraph.svg)
+![filegraph.svg](HD827sonic.seqkit/filegraph.svg)
 </details>
 
 
-# HD827sonic (no read extension or dereplication)
+# HD827sonic (read dereplication with Swarm but no extension)
+<details><summary>Rulegraph</summary>
+
+![rulegraph.svg](HD827sonic.derep/rulegraph.svg)
+</details>
+
+<details><summary>DAG</summary>
+
+![dag.svg](HD827sonic.swarm/dag.svg)
+</details>
+
+<details><summary>Filegraph</summary>
+
+![filegraph.svg](HD827sonic.swarm/filegraph.svg)
+</details>
+
+# HD827sonic (no read dereplication or extension)
 <details><summary>Rulegraph</summary>
 
 ![rulegraph.svg](HD827sonic.none/rulegraph.svg)
