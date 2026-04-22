@@ -12,13 +12,13 @@ from subprocess import check_output
 sys.path.insert(0, os.path.dirname(__file__))
 
 
-def test_swarm_fix_patterns(conda_prefix):
+def test_swarm_fix_read_ids(conda_prefix):
 
     with tempfile.TemporaryDirectory() as tmpdir:
         workdir = Path(tmpdir) / "workdir"
-        config_path = Path(".tests/unit/swarm_fix_patterns/config")
-        data_path = Path(".tests/unit/swarm_fix_patterns/data")
-        expected_path = Path(".tests/unit/swarm_fix_patterns/expected")
+        config_path = Path(".tests/unit/swarm_fix_read_ids/config")
+        data_path = Path(".tests/unit/swarm_fix_read_ids/data")
+        expected_path = Path(".tests/unit/swarm_fix_read_ids/expected")
 
         # Copy config to the temporary workdir.
         shutil.copytree(config_path, workdir)
@@ -32,7 +32,7 @@ def test_swarm_fix_patterns(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/swarm/fix_patterns/HD827sonic_2_lib2_collapsed.tsv",
+                "temp/reads/derep/swarm/fix_read_ids/HD827sonic_2_lib2_collapsed.tsv",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -41,7 +41,7 @@ def test_swarm_fix_patterns(conda_prefix):
                 "-j1",
                 "--target-files-omit-workdir-adjustment",
                 "--allowed-rules",
-                "swarm_fix_patterns",
+                "swarm_fix_read_ids",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",

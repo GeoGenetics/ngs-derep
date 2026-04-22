@@ -133,16 +133,17 @@ elif config["derep"]["tool"] == "swarm":
         wrapper:
             "v9.6.0/bio/swarm"
 
-    rule swarm_fix_patterns:
+    rule swarm_fix_read_ids:
         input:
             rules.swarm.output.output,
         output:
             temp(
-                "<temp>/reads/derep/swarm/fix_patterns/{sample}_{library}_{read_type_trim}.tsv"
+                "<temp>/reads/derep/swarm/fix_read_ids/{sample}_{library}_{read_type_trim}.tsv"
             ),
         log:
-            "<logs>/reads/derep/swarm/fix_patterns/{sample}_{library}_{read_type_trim}.log",
+            "<logs>/reads/derep/swarm/fix_read_ids/{sample}_{library}_{read_type_trim}.log",
         priority: 10
+        localrule: True
         threads: 10
         resources:
             mem=lambda w, attempt: f"{1* attempt} GiB",
@@ -156,7 +157,7 @@ elif config["derep"]["tool"] == "swarm":
     rule swarm_grep:
         input:
             fastx=rules.swarm_vsearch.input.fastx_uniques,
-            pattern=rules.swarm_fix_patterns.output[0],
+            pattern=rules.swarm_fix_read_ids.output[0],
         output:
             fastx=temp(
                 "<temp>/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
