@@ -57,6 +57,7 @@ pathvars:
 
 
 include: "rules/utils.smk"
+include: "rules/merge.smk"
 include: "rules/extend.smk"
 include: "rules/derep.smk"
 include: "rules/repr_read.smk"
