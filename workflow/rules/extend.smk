@@ -2,6 +2,7 @@
 ### RULES ###
 #############
 
+
 rule loglog:
     input:
         sample=[rules.merge_lanes.output.fq],
