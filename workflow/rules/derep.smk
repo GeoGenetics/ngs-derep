@@ -53,7 +53,7 @@ elif config["derep"]["tool"] == "seqkit":
         priority: 10
         threads: 4
         resources:
-            mem=lambda w, input, attempt: f"{(8* input.size_gb+40)* attempt} GiB",
+            mem=lambda w, input, attempt: f"{(8* input.size_gb+50)* attempt} GiB",
             runtime=lambda w, input, attempt: f"{(0.08* input.size_gb+0.5)* attempt} h",
         params:
             command="rmdup",
@@ -131,7 +131,7 @@ elif config["derep"]["tool"] == "swarm":
         params:
             extra="--usearch-abundance " + config["derep"]["params"],
         wrapper:
-            "v9.6.0/bio/swarm"
+            "v9.15.0/bio/swarm"
 
     rule swarm_fix_read_ids:
         input:
