@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-snakemake.utils.min_version("9.13.5")
+snakemake.utils.min_version("9.22.0")
 
 ######################
 ### Validate Input ###
@@ -50,12 +50,6 @@ snakemake.utils.validate(
 ##########################
 ### Read Dereplication ###
 ##########################
-pathvars:
-    reports="reports",
-    stats="stats",
-    temp="temp",
-
-
 include: "rules/utils.smk"
 include: "rules/merge.smk"
 include: "rules/extend.smk"
