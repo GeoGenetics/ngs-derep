@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.6.0...v0.7.0) (2026-08-24)
+
+
+### Features
+
+* add swarm dereplication ([#29](https://github.com/GeoGenetics/ngs-derep/issues/29)) ([ea4427e](https://github.com/GeoGenetics/ngs-derep/commit/ea4427efc9c8dc4e3100720f88704e7d8c6fadc7))
+
+
+### Bug Fixes
+
+* small tweaks ([#31](https://github.com/GeoGenetics/ngs-derep/issues/31)) ([aad7950](https://github.com/GeoGenetics/ngs-derep/commit/aad795056a503f3e908c7d2ad95f4ea6b1e4b09f))
+* switch to using pathvars ([#27](https://github.com/GeoGenetics/ngs-derep/issues/27)) ([0123339](https://github.com/GeoGenetics/ngs-derep/commit/01233395dd60edffc20dd99a154b23d580f532e6))
+
 ## [0.6.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.5.1...v0.6.0) (2026-03-06)
 
 
