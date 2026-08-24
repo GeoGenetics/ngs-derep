@@ -4,7 +4,7 @@ set -euxo pipefail
 
 SNAKEMAKE_OPTS="--snakefile ../../workflow/Snakefile --configfile config/config.yaml --software-deployment-method conda --forceall $@"
 
-for TEST in HD827sonic.all HD827sonic.extend HD827sonic.seqkit HD827sonic.swarm HD827sonic.none
+for TEST in HD827sonic.all HD827sonic.extend HD827sonic.seqkit HD827sonic.swarm HD827sonic.none empty.all
 do
     cd $TEST/
     snakemake $SNAKEMAKE_OPTS --dryrun

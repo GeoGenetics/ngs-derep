@@ -22,7 +22,7 @@ rule seqkit_fx2tab:
         command="fx2tab",
         extra="--name --only-id",
     wrapper:
-        "v7.9.1/bio/seqkit"
+        "v9.15.0/bio/seqkit"
 
 
 rule seqkit_grep:
@@ -45,4 +45,4 @@ rule seqkit_grep:
         command="grep",
         extra="--delete-matched",
     wrapper:
-        "v7.9.1/bio/seqkit"
+        "v9.15.0/bio/seqkit"

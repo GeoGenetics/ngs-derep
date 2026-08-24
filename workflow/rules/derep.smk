@@ -27,7 +27,7 @@ if config["derep"]["tool"] == "vsearch":
         params:
             extra=config["derep"]["params"],
         wrapper:
-            "v7.9.1/bio/vsearch"
+            "v9.8.0/bio/vsearch"
 
 elif config["derep"]["tool"] == "seqkit":
 
@@ -59,7 +59,7 @@ elif config["derep"]["tool"] == "seqkit":
             command="rmdup",
             extra="--ignore-case --by-seq " + config["derep"]["params"],
         wrapper:
-            "v7.9.1/bio/seqkit"
+            "v9.15.0/bio/seqkit"
 
 elif config["derep"]["tool"] == "swarm":
 
@@ -86,7 +86,7 @@ elif config["derep"]["tool"] == "swarm":
         params:
             extra="--strand both --sizeout --fasta_width 0",
         wrapper:
-            "v9.4.2/bio/vsearch"
+            "v9.8.0/bio/vsearch"
 
     rule swarm_vsearch_N:
         input:
@@ -107,7 +107,7 @@ elif config["derep"]["tool"] == "swarm":
         params:
             extra="--fastq_maxns 0",
         wrapper:
-            "v9.4.2/bio/vsearch"
+            "v9.8.0/bio/vsearch"
 
     rule swarm:
         input:
@@ -152,7 +152,7 @@ elif config["derep"]["tool"] == "swarm":
             expr=r"s/;size=[0-9]+//",
             extra="-r",
         wrapper:
-            "v9.7.0/utils/sed"
+            "v9.8.0/utils/sed"
 
     rule swarm_grep:
         input:
@@ -175,4 +175,4 @@ elif config["derep"]["tool"] == "swarm":
             command="grep",
             extra="--delete-matched",
         wrapper:
-            "v9.4.2/bio/seqkit"
+            "v9.15.0/bio/seqkit"

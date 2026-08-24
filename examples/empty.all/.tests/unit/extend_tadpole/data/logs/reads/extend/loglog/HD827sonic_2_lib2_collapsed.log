@@ -1,0 +1,5 @@
+java -ea -XX:+ExitOnOutOfMemoryError --add-modules jdk.incubator.vector -Xmx912m -Xms912m -cp /projects/caeg/apps/cache/conda/43d5bf23d531b5022a7443eb8e9c1b56_/opt/bbmap-39.81-1/bbtools.jar cardinality.LogLogWrapper -Xmx912M -eoom threads=1 in=temp/reads/merge_lanes/HD827sonic_2_lib2_collapsed.fastq.gz seed=1234 k=16 ignorebadquality out=temp/reads/extend/loglog/HD827sonic_2_lib2_collapsed.flag
+WARNING: Using incubator modules: jdk.incubator.vector
+Set threads to 1
+Cardinality:   0
+Time: 	0.139 seconds.

@@ -51,4 +51,4 @@ rule fastqc:
         mem=lambda w, attempt: f"{3* attempt} GiB",
         runtime=lambda w, attempt: f"{2* attempt} h",
     wrapper:
-        "v7.6.0/bio/fastqc"
+        "v9.15.0/bio/fastqc"
