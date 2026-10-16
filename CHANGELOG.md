@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/GeoGenetics/ngs-derep/compare/v0.7.0...v0.7.1) (2026-10-16)
+
+
+### Bug Fixes
+
+* bug when choosing swarm centroids ([#33](https://github.com/GeoGenetics/ngs-derep/issues/33)) ([e9859b5](https://github.com/GeoGenetics/ngs-derep/commit/e9859b517d4270476f2434dade6ae54ffee8ccb0))
+
 ## [0.7.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.6.0...v0.7.0) (2026-08-24)
 
 
