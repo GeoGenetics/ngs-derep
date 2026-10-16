@@ -149,7 +149,7 @@ elif config["derep"]["tool"] == "swarm":
             mem=lambda w, attempt: f"{1* attempt} GiB",
             runtime=lambda w, attempt: f"{10* attempt} m",
         params:
-            expr=r"s/;size=[0-9]+//",
+            expr=r"s/;size=[0-9]+.*//",
             extra="-r",
         wrapper:
             "v9.8.0/utils/sed"
