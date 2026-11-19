@@ -27,7 +27,7 @@ if config["derep"]["tool"] == "vsearch":
         params:
             extra=config["derep"]["params"],
         wrapper:
-            "v9.8.0/bio/vsearch"
+            "v9.18.1/bio/vsearch"
 
 elif config["derep"]["tool"] == "seqkit":
 
@@ -59,7 +59,7 @@ elif config["derep"]["tool"] == "seqkit":
             command="rmdup",
             extra="--ignore-case --by-seq " + config["derep"]["params"],
         wrapper:
-            "v9.15.0/bio/seqkit"
+            "v9.19.5/bio/seqkit"
 
 elif config["derep"]["tool"] == "swarm":
 
@@ -71,8 +71,8 @@ elif config["derep"]["tool"] == "swarm":
                 else rules.merge_lanes.output.fq
             ),
         output:
-            fastaout=temp(
-                "<temp>/reads/derep/swarm_vsearch/{sample}_{library}_{read_type_trim}.fasta.gz"
+            fastqout=temp(
+                "<temp>/reads/derep/swarm_vsearch/{sample}_{library}_{read_type_trim}.fastq.gz"
             ),
         log:
             "<logs>/reads/derep/swarm_vsearch/{sample}_{library}_{read_type_trim}.log",
@@ -84,13 +84,13 @@ elif config["derep"]["tool"] == "swarm":
             mem=lambda w, attempt: f"{100* attempt} GiB",
             runtime=lambda w, attempt: f"{5* attempt} h",
         params:
-            extra="--strand both --sizeout --fasta_width 0",
+            extra="--strand both --sizeout",
         wrapper:
-            "v9.8.0/bio/vsearch"
+            "v9.18.1/bio/vsearch"
 
     rule swarm_vsearch_N:
         input:
-            fastx_filter=rules.swarm_vsearch.output.fastaout,
+            fastx_filter=rules.swarm_vsearch.output.fastqout,
         output:
             fastaout=temp(
                 "<temp>/reads/derep/swarm_vsearch_N/{sample}_{library}_{read_type_trim}.fasta.gz"
@@ -107,7 +107,7 @@ elif config["derep"]["tool"] == "swarm":
         params:
             extra="--fastq_maxns 0",
         wrapper:
-            "v9.8.0/bio/vsearch"
+            "v9.18.1/bio/vsearch"
 
     rule swarm:
         input:
@@ -149,14 +149,14 @@ elif config["derep"]["tool"] == "swarm":
             mem=lambda w, attempt: f"{1* attempt} GiB",
             runtime=lambda w, attempt: f"{10* attempt} m",
         params:
-            expr=r"s/;size=[0-9]+.*//",
+            expr=r"s/\s.*//",
             extra="-r",
         wrapper:
             "v9.8.0/utils/sed"
 
     rule swarm_grep:
         input:
-            fastx=rules.swarm_vsearch.input.fastx_uniques,
+            fastx=rules.swarm_vsearch.output.fastqout,
             pattern=rules.swarm_fix_read_ids.output[0],
         output:
             fastx=temp(
@@ -175,4 +175,4 @@ elif config["derep"]["tool"] == "swarm":
             command="grep",
             extra="--delete-matched",
         wrapper:
-            "v9.15.0/bio/seqkit"
+            "v9.19.5/bio/seqkit"
