@@ -11,7 +11,7 @@ derep:
   activate: true
   # vsearch or seqkit
   tool: vsearch
-  params: "--strand both"
+  params: "--strand both --sizeout"
 
 low_complex:
   # dust threshold:

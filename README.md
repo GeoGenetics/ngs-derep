@@ -7,7 +7,7 @@ This module implements read derelication steps:
 - Read extension:
   - [Tadpole](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/tadpole-guide/)
 - Dereplication
-  - [vsearch](https://github.com/torognes/vsearch) / [seqkit rmdup](https://bioinf.shenwei.me/seqkit/usage/#rmdup)
+  - [vsearch](https://github.com/torognes/vsearch) / [seqkit rmdup](https://bioinf.shenwei.me/seqkit/usage/#rmdup) / [swarm](https://github.com/torognes/swarm)
 - Select original representative read
   - [seqkit fx2tab](https://bioinf.shenwei.me/seqkit/usage/#fx2tab-tab2fx)
   - [seqkit grep](https://bioinf.shenwei.me/seqkit/usage/#grep)
