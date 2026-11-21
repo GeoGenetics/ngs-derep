@@ -11,7 +11,7 @@ derep:
   activate: true
   # vsearch or seqkit
   tool: swarm
-  params: "--differences 1 --fastidious --boundary 3 --ceiling 10000"
+  params: "--differences 1 --fastidious --boundary 3"
 
 low_complex:
   # dust threshold:

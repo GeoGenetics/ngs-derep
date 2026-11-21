@@ -1,5 +1,5 @@
 """
-Rule test code for unit testing of rules generated with Snakemake 9.19.0.
+Rule test code for unit testing of rules generated with Snakemake 9.27.2.
 """
 
 import os
@@ -32,7 +32,7 @@ def test_swarm_fix_read_ids(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/swarm/fix_read_ids/HD827sonic_2_lib2_collapsed.tsv",
+                "temp/reads/derep/swarm/fix_read_ids/HD827sonic_2_lib1_collapsed.tsv",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",

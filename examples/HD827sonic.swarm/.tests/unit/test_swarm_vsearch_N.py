@@ -1,5 +1,5 @@
 """
-Rule test code for unit testing of rules generated with Snakemake 9.19.0.
+Rule test code for unit testing of rules generated with Snakemake 9.27.2.
 """
 
 import os
@@ -32,7 +32,7 @@ def test_swarm_vsearch_N(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/swarm_vsearch_N/HD827sonic_2_lib3_collapsed.fasta.gz",
+                "temp/reads/derep/swarm_vsearch_N/HD827sonic_2_lib1_collapsed.fasta.gz",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
@@ -42,8 +42,6 @@ def test_swarm_vsearch_N(conda_prefix):
                 "--target-files-omit-workdir-adjustment",
                 "--allowed-rules",
                 "swarm_vsearch_N",
-                "--omit-flags",
-                "pipe",
                 "--configfile",
                 "config/config.yaml",
                 "--software-deployment-method",
