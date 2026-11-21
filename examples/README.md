@@ -1,4 +1,4 @@
-# HD827sonic (read dereplication with VSEARCH and extension)
+# HD827sonic (read dereplication with VSearch and extension)
 <details><summary>Rulegraph</summary>
 
 ![rulegraph.svg](HD827sonic.all/rulegraph.svg)
@@ -35,7 +35,7 @@
 # HD827sonic (read dereplication with SeqKit but no extension)
 <details><summary>Rulegraph</summary>
 
-![rulegraph.svg](HD827sonic.derep/rulegraph.svg)
+![rulegraph.svg](HD827sonic.seqkit/rulegraph.svg)
 </details>
 
 <details><summary>DAG</summary>
@@ -52,7 +52,7 @@
 # HD827sonic (read dereplication with Swarm but no extension)
 <details><summary>Rulegraph</summary>
 
-![rulegraph.svg](HD827sonic.derep/rulegraph.svg)
+![rulegraph.svg](HD827sonic.swarm/rulegraph.svg)
 </details>
 
 <details><summary>DAG</summary>

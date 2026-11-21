@@ -27,7 +27,7 @@ rule nonpareil_infer:
         alg="kmer",
         extra="-F -r 12345",
     wrapper:
-        "v9.15.0/bio/nonpareil/infer"
+        "v9.19.3/bio/nonpareil/infer"
 
 
 rule nonpareil_plot:
