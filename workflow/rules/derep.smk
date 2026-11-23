@@ -12,7 +12,7 @@ if config["derep"]["tool"] == "vsearch":
                 else rules.merge_lanes.output.fq
             ),
         output:
-	    # NOTE: Base Qualities if output FASTQ file are not the same as in the input read. They are either an average or the maximum value.
+            # NOTE: Base Qualities if output FASTQ file are not the same as in the input read. They are either an average or the maximum value.
             fastqout=temp(
                 "<temp>/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
             ),
@@ -114,7 +114,9 @@ elif config["derep"]["tool"] == "swarm":
         input:
             rules.swarm_vsearch_N.output.fastaout,
         output:
-            output=temp("<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.clusters"),
+            output=temp(
+                "<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.clusters"
+            ),
             statistics="<stats>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.stats.tsv",
         log:
             "<logs>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.log",
