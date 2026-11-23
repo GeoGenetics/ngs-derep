@@ -32,7 +32,7 @@ def test_swarm_vsearch_N(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/swarm_vsearch_N/HD827sonic_2_lib1_collapsed.fasta.gz",
+                "temp/reads/derep/swarm_vsearch_N/HD827sonic_2_lib3_collapsed.fasta.gz",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",

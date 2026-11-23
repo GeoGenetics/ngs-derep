@@ -32,7 +32,7 @@ def test_swarm_fix_read_ids(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/swarm/fix_read_ids/HD827sonic_2_lib1_collapsed.tsv",
+                "temp/reads/derep/swarm/fix_read_ids/HD827sonic_2_lib3_collapsed.tsv",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",
