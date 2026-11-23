@@ -32,7 +32,7 @@ def test_swarm_grep(conda_prefix):
                 "python",
                 "-m",
                 "snakemake",
-                "temp/reads/derep/HD827sonic_2_lib1_collapsed.fastq.gz",
+                "temp/reads/derep/HD827sonic_2_lib3_collapsed.fastq.gz",
                 "--snakefile",
                 "../../workflow/Snakefile",
                 "-f",

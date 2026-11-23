@@ -12,6 +12,7 @@ if config["derep"]["tool"] == "vsearch":
                 else rules.merge_lanes.output.fq
             ),
         output:
+            # NOTE: Base Qualities if output FASTQ file are not the same as in the input read. They are either an average or the maximum value.
             fastqout=temp(
                 "<temp>/reads/derep/{sample}_{library}_{read_type_trim}.fastq.gz"
             ),
@@ -71,8 +72,8 @@ elif config["derep"]["tool"] == "swarm":
                 else rules.merge_lanes.output.fq
             ),
         output:
-            fastqout=temp(
-                "<temp>/reads/derep/swarm_vsearch/{sample}_{library}_{read_type_trim}.fastq.gz"
+            fastaout=temp(
+                "<temp>/reads/derep/swarm_vsearch/{sample}_{library}_{read_type_trim}.fasta.gz"
             ),
         log:
             "<logs>/reads/derep/swarm_vsearch/{sample}_{library}_{read_type_trim}.log",
@@ -84,13 +85,13 @@ elif config["derep"]["tool"] == "swarm":
             mem=lambda w, attempt: f"{100* attempt} GiB",
             runtime=lambda w, attempt: f"{5* attempt} h",
         params:
-            extra="--strand both --sizeout",
+            extra="--strand both --sizeout --fasta_width 0",
         wrapper:
             "v9.18.1/bio/vsearch"
 
     rule swarm_vsearch_N:
         input:
-            fastx_filter=rules.swarm_vsearch.output.fastqout,
+            fastx_filter=rules.swarm_vsearch.output.fastaout,
         output:
             fastaout=temp(
                 "<temp>/reads/derep/swarm_vsearch_N/{sample}_{library}_{read_type_trim}.fasta.gz"
@@ -113,12 +114,10 @@ elif config["derep"]["tool"] == "swarm":
         input:
             rules.swarm_vsearch_N.output.fastaout,
         output:
-            structure="<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.struct.tsv",
-            network="<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.network.tsv",
-            output="<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.clusters",
+            output=temp(
+                "<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.clusters"
+            ),
             statistics="<stats>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.stats.tsv",
-            uclust="<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.uclust.tsv",
-            seeds="<temp>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.seeds.fas",
         log:
             "<logs>/reads/derep/swarm/{sample}_{library}_{read_type_trim}.log",
         benchmark:
@@ -149,14 +148,14 @@ elif config["derep"]["tool"] == "swarm":
             mem=lambda w, attempt: f"{1* attempt} GiB",
             runtime=lambda w, attempt: f"{10* attempt} m",
         params:
-            expr=r"s/\s.*//",
+            expr=r"s/;size=[0-9]+.*//",
             extra="-r",
         wrapper:
             "v9.8.0/utils/sed"
 
     rule swarm_grep:
         input:
-            fastx=rules.swarm_vsearch.output.fastqout,
+            fastx=rules.swarm_vsearch.input.fastx_uniques,
             pattern=rules.swarm_fix_read_ids.output[0],
         output:
             fastx=temp(
