@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.1](https://github.com/GeoGenetics/ngs-derep/compare/v0.7.0...v0.7.1) (2026-11-23)
+
+
+### Bug Fixes
+
+* bug when choosing swarm centroids ([#33](https://github.com/GeoGenetics/ngs-derep/issues/33)) ([e9859b5](https://github.com/GeoGenetics/ngs-derep/commit/e9859b517d4270476f2434dade6ae54ffee8ccb0))
+* swarm bug ([#35](https://github.com/GeoGenetics/ngs-derep/issues/35)) ([389b731](https://github.com/GeoGenetics/ngs-derep/commit/389b7314b004bf7ab04f1a2f479ae7ae42275e03))
+
+
+### Performance Improvements
+
+* revert VSEARCH BQ, update DAGs and pixi env ([#36](https://github.com/GeoGenetics/ngs-derep/issues/36)) ([c3d9dfa](https://github.com/GeoGenetics/ngs-derep/commit/c3d9dfade5e696d6e5c92f7e4e773ff864e520bf))
+
 ## [0.7.0](https://github.com/GeoGenetics/ngs-derep/compare/v0.6.0...v0.7.0) (2026-08-24)
 
 
